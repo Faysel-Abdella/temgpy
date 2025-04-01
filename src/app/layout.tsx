@@ -46,6 +46,7 @@ export const metadata: Metadata = {
         width: 1200,
         height: 630,
         alt: "Growztech Homepage Preview",
+        type: "image/png",
       },
     ],
   },
