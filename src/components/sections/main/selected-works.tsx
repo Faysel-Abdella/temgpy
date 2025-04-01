@@ -17,7 +17,8 @@ export default function SelectedWorks() {
           <p
             data-aos="fade-up"
             data-aos-duration="600"
-            className="text-foreground text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold font-gilroy leading-tight md:leading-[57.60px] max-w-full md:max-w-[810px]">
+            className="text-foreground text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold font-gilroy leading-tight md:leading-[57.60px] max-w-full md:max-w-[810px]"
+          >
             Explore how we’ve helped businesses achieve digital success.
           </p>
 
@@ -25,7 +26,8 @@ export default function SelectedWorks() {
             href={"/projects"}
             data-aos="flip-up"
             data-aos-duration="600"
-            className="hidden md:flex bg-primary group text-primary-foreground w-fit pl-4 pr-2 gap-2 h-12 hover:cursor-pointer text-base font-medium font-clash leading-normal border-0 rounded-full justify-center items-center transition-all duration-300 ease-in-out">
+            className="hidden md:flex bg-primary group text-primary-foreground w-fit pl-4 pr-2 gap-2 h-12 hover:cursor-pointer text-base font-medium font-clash leading-normal border-0 rounded-full justify-center items-center transition-all duration-300 ease-in-out"
+          >
             <span className="ml-2">View More!</span>
             <span className="bg-white text-background2 size-8 flex items-center justify-center rounded-full">
               <ArrowUpRight className="size-4" />
@@ -41,30 +43,35 @@ export default function SelectedWorks() {
             data-aos="flip-right"
             data-aos-duration="600"
             data-aos-delay={index * 200}
-            className="flex flex-col gap-3  w-[380px]">
-            <Image
-              src={project.imageUrl}
-              className="w-full  h-auto aspect-square object-cover"
-              width={380}
-              height={380}
-              alt="selected work"
-            />
-            <div className="flex justify-between items-center">
-              <p className="line-clamp-1 font-clash text-lg font-medium">
-                {project.title}
-              </p>
-              <Link
-                href={`projects/${project.slug}`}
-                className="rounded-full bg-orange p-2 text-white flex-shrink-0">
-                <ArrowUpRight />
-              </Link>
-            </div>
+            className="flex flex-col gap-3  w-[380px]"
+          >
+            <Link
+              href={`projects/${project.slug}`}
+              className="flex flex-col gap-3  w-[380px]"
+            >
+              <Image
+                src={project.imageUrl}
+                className="w-full  h-auto aspect-square object-cover"
+                width={380}
+                height={380}
+                alt="selected work"
+              />
+              <div className="flex justify-between items-center">
+                <p className="line-clamp-1 font-clash text-lg font-medium">
+                  {project.title}
+                </p>
+                <div className="rounded-full bg-orange p-2 text-white flex-shrink-0">
+                  <ArrowUpRight />
+                </div>
+              </div>
+            </Link>
           </div>
         ))}
       </div>
       <Link
         href={"/projects"}
-        className="flex md:hidden bg-primary group text-primary-foreground w-fit pl-4 pr-2 gap-2 h-12 hover:cursor-pointer text-base font-medium font-clash leading-normal border-0 rounded-full justify-center items-center transition-all duration-300 ease-in-out mx-auto">
+        className="flex md:hidden bg-primary group text-primary-foreground w-fit pl-4 pr-2 gap-2 h-12 hover:cursor-pointer text-base font-medium font-clash leading-normal border-0 rounded-full justify-center items-center transition-all duration-300 ease-in-out mx-auto"
+      >
         <span className="ml-2">View More!</span>
         <span className="bg-white text-background2 size-8 flex items-center justify-center rounded-full">
           <ArrowUpRight className="size-4" />

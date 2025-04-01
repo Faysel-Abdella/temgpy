@@ -37,10 +37,10 @@ export default function Hero() {
           <div
             data-aos="fade-up"
             data-aos-duration="150"
-            className="h-[41px] w-full sm:w-fit pl-1 md:pl-2.5 pr-1 py-1 bg-background rounded-[100px] border border-[#E7E9EF] justify-center items-center gap-1.5 inline-flex overflow-hidden"
+            className="h-[41px] w-full sm:w-fit pl-1 md:pl-5 pr-1 py-1 bg-background rounded-[100px] border border-[#E7E9EF] justify-center items-center gap-1.5 inline-flex overflow-hidden border-l-4 border-l-blue-500"
           >
             <div className="justify-start items-center gap-1 sm:gap-2 flex">
-              <div className="justify-start items-start flex relative mr-8 md:mr-10">
+              {/* <div className="justify-start items-start flex relative mr-8 md:mr-10">
                 <Image
                   data-aos="fade-up"
                   data-aos-duration="150"
@@ -68,13 +68,20 @@ export default function Hero() {
                   className="size-7 md:size-[34px] left-[23px] md:left-[35px] z-10 absolute rounded-[100px] border-[0.5px] border-white bg-white"
                   src="/icons/profile3.svg"
                 />
-              </div>
-              <div
+              </div> */}
+              {/* <div
                 data-aos="fade-up"
                 data-aos-duration="400"
                 className="text-center text-foreground  text-nowrap text-sm md:text-base font-normal font-inter leading-normal"
               >
                 100+ Satisfied Customers
+              </div> */}
+              <div
+                data-aos="fade-up"
+                data-aos-duration="400"
+                className="text-center text-foreground  text-nowrap text-sm md:text-base font-normal font-inter leading-normal"
+              >
+                Quality. Speed. Trust.
               </div>
               <div
                 data-aos="fade-up"
@@ -178,7 +185,7 @@ export default function Hero() {
                 <Icons.projects />
               </span>
               <div className="">
-                <span className="font-extrabold">850</span>
+                <span className="font-extrabold">15</span>
                 <span className="font-bold">+ Projects completed</span>
               </div>
             </div>

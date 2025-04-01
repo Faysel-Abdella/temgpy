@@ -22,7 +22,8 @@ const CustomLink: React.FC<{
         className={cn(
           "justify-start text-white/70 text-base font-normal font-inter leading-normal",
           className
-        )}>
+        )}
+      >
         {children}
         <span className="absolute -bottom-1 left-0 w-full h-[1px] bg-gradient-to-r from-white/30 via-white to-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </Link>
@@ -71,7 +72,8 @@ export default function Footer() {
   return (
     <footer
       id="contact-us"
-      className="bg-background2 border-t-2 border-stone-600/40 w-full mx-auto items-center justify-center flex flex-col text-white pt-32 gap-8 pb-10 px-4">
+      className="bg-background2 border-t-2 border-stone-600/40 w-full mx-auto items-center justify-center flex flex-col text-white pt-32 gap-8 pb-10 px-4"
+    >
       <div className="max-w-7xl w-full relative mx-auto flex flex-col lg:flex-row justify-between gap-14">
         <div className="flex flex-col gap-8">
           <Image
@@ -88,7 +90,8 @@ export default function Footer() {
             data-aos="fade-up"
             data-aos-duration="500"
             data-aos-delay="200"
-            className="text-xl md:text-2xl font-normal font-gilroy leading-normal lg:max-w-[490px]">
+            className="text-xl md:text-2xl font-normal font-gilroy leading-normal lg:max-w-[490px]"
+          >
             We growing up your business with custom software solutions tailored
             to your business.
           </p>
@@ -96,8 +99,9 @@ export default function Footer() {
             data-aos="fade-up"
             data-aos-duration="500"
             data-aos-delay="300"
-            className="text-base font-normal font-inter leading-tight">
-            Cooleres, 2023.
+            className="text-base font-normal font-inter leading-tight"
+          >
+            GrowzTech, 2025.
           </p>
         </div>
         <div className="flex space-x-20 flex-wrap gap-y-10">
@@ -105,7 +109,8 @@ export default function Footer() {
             data-aos="fade-up"
             data-aos-duration="500"
             data-aos-delay="200"
-            className="flex flex-col space-y-4">
+            className="flex flex-col space-y-4"
+          >
             <p className="justify-start text-white text-lg font-normal font-gilroy uppercase leading-normal pb-3">
               Landing
             </p>
@@ -113,7 +118,8 @@ export default function Footer() {
               <Link
                 href="/#home"
                 onClick={(e) => handleNavClick(e, "#home")}
-                className="text-white/70">
+                className="text-white/70"
+              >
                 Home
                 <span className="absolute -bottom-1 left-0 w-full h-[1px] bg-gradient-to-r from-white/30 via-white to-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
@@ -122,7 +128,8 @@ export default function Footer() {
               <Link
                 href="/#services"
                 onClick={(e) => handleNavClick(e, "#services")}
-                className="text-white/70">
+                className="text-white/70"
+              >
                 Services
                 <span className="absolute -bottom-1 left-0 w-full h-[1px] bg-gradient-to-r from-white/30 via-white to-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
@@ -131,7 +138,8 @@ export default function Footer() {
               <Link
                 href="/#contact-us"
                 onClick={(e) => handleNavClick(e, "#contact-us")}
-                className="text-white/70">
+                className="text-white/70"
+              >
                 Contact Us
                 <span className="absolute -bottom-1 left-0 w-full h-[1px] bg-gradient-to-r from-white/30 via-white to-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
@@ -142,7 +150,8 @@ export default function Footer() {
             data-aos="fade-up"
             data-aos-duration="500"
             data-aos-delay="400"
-            className="flex flex-col space-y-4">
+            className="flex flex-col space-y-4"
+          >
             <p className="justify-start text-white text-lg font-normal font-gilroy uppercase leading-normal pb-3">
               Links
             </p>
@@ -155,7 +164,8 @@ export default function Footer() {
             data-aos="fade-up"
             data-aos-duration="500"
             data-aos-delay="500"
-            className="flex flex-col space-y-4">
+            className="flex flex-col space-y-4"
+          >
             <p className="justify-start text-white text-lg font-normal font-gilroy uppercase leading-normal pb-3">
               Contact
             </p>
