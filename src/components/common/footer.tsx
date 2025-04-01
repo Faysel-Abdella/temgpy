@@ -171,7 +171,8 @@ export default function Footer() {
             </p>
             <CopyButton text="info@growztech.com" />
             <CopyButton text="+251947344248" />
-            <p className="text-white/70">More Coming soon...</p>
+            <CopyButton text="+251954624638" />
+            {/* <p className="text-white/70">More Coming soon...</p> */}
           </div>
         </div>
       </div>
