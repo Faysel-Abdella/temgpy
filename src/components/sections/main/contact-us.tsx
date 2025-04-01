@@ -3,7 +3,7 @@
 import SectionShow from "@/components/section-show";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight, CircleCheck } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
 import {
   Form,
   FormControl,
@@ -19,6 +19,7 @@ import { z } from "zod";
 //   import { Textarea } from "../ui/textarea";
 import Image from "next/image";
 import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/hooks/use-toast";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -30,12 +31,13 @@ const formSchema = z.object({
   message: z.string().min(2, {
     message: "Your Message must be at least 7 characters.",
   }),
-  subject: z.string().min(2, {
-    message: "Your Subject must be at least 2 characters.",
-  }),
+  subject: z.string(),
 });
 
 export default function ContactUs() {
+  const [loading, setLoading] = useState(false);
+  const { toast } = useToast();
+
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -48,10 +50,37 @@ export default function ContactUs() {
   });
 
   // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values);
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    setLoading(true);
+
+    try {
+      const res = await fetch("/api/contacts", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) throw new Error(data.message || "Something went wrong.");
+
+      // clear the form
+      form.reset();
+
+      toast({
+        title: "Message sent successfully!",
+        description: "We'll get back to you as soon as possible.",
+        duration: 3000,
+      });
+    } catch (_error) {
+      toast({
+        title: "Something went wrong, please try again later.",
+      });
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -95,7 +124,7 @@ export default function ContactUs() {
         </div>
         <div className="flex flex-col items-center px-4 lg:px-0 w-full h-full lg:w-1/2 gap-7 rounded-2xl">
           <p className="justify-start text-white text-lg font-normal font-gilroy leading-snug">
-            Fields with * are required
+            Fill out the form below and we’ll be in touch soon!
           </p>
           <div className="flex flex-col w-full">
             <Form {...form}>
@@ -110,7 +139,7 @@ export default function ContactUs() {
                     <FormItem>
                       <FormControl>
                         <Input
-                          className="h-12 lg:h-16 px-8 placeholder:text-background2-description/80  placeholder:text-lg rounded-[32px] border-gray-300/25 lg:rounded-[31px] bg-[#334155]"
+                          className="h-12 lg:h-14 px-8 placeholder:text-background2-description/80  placeholder:text-lg rounded-2xl border-gray-300/25 lg:rounded-2xl bg-[#334155]"
                           placeholder="Full Name *"
                           {...field}
                         />
@@ -126,7 +155,7 @@ export default function ContactUs() {
                     <FormItem>
                       <FormControl>
                         <Input
-                          className="h-12 lg:h-16 px-8 placeholder:text-background2-description/80  placeholder:text-lg rounded-[32px] border-gray-300/25 lg:rounded-[31px] bg-[#334155]"
+                          className="h-12 lg:h-14 px-8 placeholder:text-background2-description/80  placeholder:text-lg rounded-2xl border-gray-300/25 lg:rounded-2xl bg-[#334155]"
                           placeholder="Email *"
                           {...field}
                         />
@@ -142,9 +171,10 @@ export default function ContactUs() {
                     <FormItem>
                       <FormControl>
                         <Input
-                          className="h-12 lg:h-16 px-8 placeholder:text-background2-description/80  placeholder:text-lg rounded-[32px] border-gray-300/25 lg:rounded-[31px] bg-[#334155]"
-                          placeholder="Inquire Subject *"
+                          className="h-12 lg:h-14 px-8 placeholder:text-background2-description/80  placeholder:text-lg rounded-2xl border-gray-300/25 lg:rounded-2xl bg-[#334155]"
+                          placeholder="Inquire Subject "
                           {...field}
+                          required={false}
                         />
                       </FormControl>
                       <FormMessage className="ml-4 lg:text-sm text-red-500" />
@@ -158,7 +188,7 @@ export default function ContactUs() {
                     <FormItem>
                       <FormControl>
                         <Textarea
-                          className="h-40 lg:h-48 rounded-[32px] font-gilroy  placeholder:text-background2-description/80 placeholder:text-md placeholder:text-md p-8 lg:rounded-[32px] border-gray-300/25 bg-[#334155]"
+                          className="h-40 lg:h-48 rounded-2xl font-gilroy  placeholder:text-background2-description/80 placeholder:text-md placeholder:text-md p-8 lg:rounded-2xl border-gray-300/25 bg-[#334155]"
                           placeholder="Your Message Here"
                           {...field}
                         />
@@ -170,7 +200,8 @@ export default function ContactUs() {
                 <div className="flex mx-6 lg:mx-20 pt-6">
                   <Button
                     type="submit"
-                    className="bg-primary hover:cursor-pointer hover:bg-primary text-md font-semibold  flex items-center gap-4 rounded-full h-12 lg:h-14 w-full py-4 lg:py-5 px-6 lg:px-8"
+                    className="bg-primary hover:cursor-pointer hover:bg-primary text-md font-semibold  flex items-center gap-4 rounded-full h-12 lg:h-14 w-full py-4 lg:py-5 px-6 lg:px-8 disabled:opacity-50"
+                    disabled={loading}
                   >
                     Send A Message!
                   </Button>
