@@ -65,7 +65,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${gilroy.variable}`}>
+    <html
+      lang="en"
+      className={`${inter.variable} ${gilroy.variable} scroll-smooth`}
+    >
       <body className="flex flex-col overflow-x-hidden max-w-screen">
         <Navbar />
         {children}

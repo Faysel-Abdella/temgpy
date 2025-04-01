@@ -30,13 +30,15 @@ export default function Hero() {
   return (
     <main
       id="home"
-      className="w-screen h-fit flex items-center justify-center pt-36 md:pt-60 bg-gradient-to-b from-indigo-50 to-white">
+      className="w-screen h-fit flex items-center justify-center pt-36 md:pt-60 bg-gradient-to-b from-indigo-50 to-white"
+    >
       <div className="w-full p-4 lg:max-w-[1275px] lg:items-center h-fit flex flex-col lg:flex-row gap-16 md:gap-20 lg:gap-6">
         <div className="relative flex flex-col w-full lg:w-[55%] space-y-5 md:space-y-8">
           <div
             data-aos="fade-up"
             data-aos-duration="150"
-            className="h-[41px] w-full sm:w-fit pl-1 md:pl-2.5 pr-1 py-1 bg-background rounded-[100px] border border-[#E7E9EF] justify-center items-center gap-1.5 inline-flex overflow-hidden">
+            className="h-[41px] w-full sm:w-fit pl-1 md:pl-2.5 pr-1 py-1 bg-background rounded-[100px] border border-[#E7E9EF] justify-center items-center gap-1.5 inline-flex overflow-hidden"
+          >
             <div className="justify-start items-center gap-1 sm:gap-2 flex">
               <div className="justify-start items-start flex relative mr-8 md:mr-10">
                 <Image
@@ -70,23 +72,26 @@ export default function Hero() {
               <div
                 data-aos="fade-up"
                 data-aos-duration="400"
-                className="text-center text-foreground  text-nowrap text-sm md:text-base font-normal font-inter leading-normal">
+                className="text-center text-foreground  text-nowrap text-sm md:text-base font-normal font-inter leading-normal"
+              >
                 100+ Satisfied Customers
               </div>
               <div
                 data-aos="fade-up"
                 data-aos-duration="500"
-                className="px-3 text-white py-1 md:py-1.5 bg-primary rounded-[114.29px] border border-primary justify-center items-center gap-1.5 flex overflow-hidden">
-                <p className="text-sm font-medium text-nowrap font-inter leading-tight">
-                  Get Yours
-                </p>
+                className="px-3 text-white py-1 md:py-1.5 bg-primary rounded-[114.29px] border border-primary justify-center items-center gap-1.5 flex overflow-hidden"
+              >
+                <button className="text-sm font-medium text-nowrap font-inter leading-tight">
+                  <Link href="#contact-us">Get Yours</Link>
+                </button>
               </div>
             </div>
           </div>
           <p
             data-aos="fade-up"
             data-aos-duration="700"
-            className="font-gilroy flex flex-wrap font-extrabold text-4xl md:text-5xl lg:text-6xl mt-2 leading-10 md:leading-[67.20px]">
+            className="font-gilroy flex flex-wrap font-extrabold text-4xl md:text-5xl lg:text-6xl mt-2 leading-10 md:leading-[67.20px]"
+          >
             <span className="block md:hidden">
               Build, Scale and Innovate with Cutting Edge Tech Solutions
             </span>
@@ -97,7 +102,8 @@ export default function Hero() {
           <p
             data-aos="fade-up"
             data-aos-duration="600"
-            className="text-base md:text-lg font-normal font-inter leading-normal md:leading-relaxed lg:w-[85%]">
+            className="text-base md:text-lg font-normal font-inter leading-normal md:leading-relaxed lg:w-[85%]"
+          >
             We build cutting-edge websites, powerful software, and connect you
             with top tech talent to drive your business forward.
           </p>
@@ -110,7 +116,8 @@ export default function Hero() {
               }}
               data-aos="flip-up"
               data-aos-duration="400"
-              className="w-fit text-base bg-white font-medium font-gilroy gap-1 md:gap-2.5 leading-normal pl-[1px] pr-1 shadow-sm drop-shadow-lg min-h-13 rounded-full flex items-center">
+              className="w-fit text-base bg-white font-medium font-gilroy gap-1 md:gap-2.5 leading-normal pl-[1px] pr-1 shadow-sm drop-shadow-lg min-h-13 rounded-full flex items-center"
+            >
               <span className="bg-primary text-white rounded-full h-12 ml-0.5 flex items-center justify-center px-6 py-3 md:py-3.5">
                 Contact Us
               </span>
@@ -122,7 +129,8 @@ export default function Hero() {
               href={"/about-us"}
               data-aos="fade-up"
               data-aos-duration="550"
-              className="px-2.5 py-3.5 inline-flex justify-center items-center gap-2.5">
+              className="px-2.5 py-3.5 inline-flex justify-center items-center gap-2.5"
+            >
               <span className="justify-start text-sm md:text-md lg:text-lg">
                 <span className="font-bold md:font-medium font-inter underline leading-relaxed">
                   Discover More
@@ -152,7 +160,8 @@ export default function Hero() {
             <div
               data-aos="fade-up"
               data-aos-duration="800"
-              className="absolute top-[5%] left-[75%] md:left-[68%] pl-1 pr-5 md:pr-6 py-1 bg-white rounded-full shadow-sm inline-flex justify-center items-center gap-3 overflow-hidden transform -translate-x-1/2">
+              className="absolute top-[5%] left-[75%] md:left-[68%] pl-1 pr-5 md:pr-6 py-1 bg-white rounded-full shadow-sm inline-flex justify-center items-center gap-3 overflow-hidden transform -translate-x-1/2"
+            >
               <span className="p-2 md:p-2.5 bg-primary rounded-full outline outline-1 outline-offset-[-1px] flex justify-center items-center gap-2">
                 <Icons.Peoples />
               </span>
@@ -163,7 +172,8 @@ export default function Hero() {
             <div
               data-aos="fade-up"
               data-aos-duration="900"
-              className="absolute z-50 left-[2%] bottom-[5%] text-sm md:text-md lg:text-lg font-inter leading-relaxed pl-1 pr-5 md:pr-6 py-1 bg-white rounded-full shadow-sm inline-flex justify-center items-center gap-3 overflow-hidden">
+              className="absolute z-50 left-[2%] bottom-[5%] text-sm md:text-md lg:text-lg font-inter leading-relaxed pl-1 pr-5 md:pr-6 py-1 bg-white rounded-full shadow-sm inline-flex justify-center items-center gap-3 overflow-hidden"
+            >
               <span className="p-2 md:p-2.5 bg-orange-600 rounded-full outline outline-1 outline-offset-[-1px] flex justify-center items-center gap-2">
                 <Icons.projects />
               </span>

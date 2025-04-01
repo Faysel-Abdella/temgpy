@@ -57,7 +57,8 @@ export default function ContactUs() {
   return (
     <section
       id="contact-us"
-      className="w-screen flex items-center justify-center  mx-auto bg-background2 py-16 md:py-24 lg:py-32">
+      className="w-screen flex items-center justify-center  mx-auto bg-background2 py-16 md:py-24 lg:py-32"
+    >
       <div className="flex flex-col lg:flex-row justify-center mx-auto lg:w-[1212px] gap-24 xl:gap-32">
         <div className="flex px-4 lg:px-0 flex-col w-full lg:w-1/2 gap-4 md:gap-8">
           <SectionShow
@@ -74,8 +75,8 @@ export default function ContactUs() {
             <Image
               src={"/images/3dCard.svg"}
               data-aos="fade-down"
-              data-aos-duration="700"
-              data-aos-offset="400"
+              data-aos-duration="600"
+              data-aos-offset="250"
               width={551}
               height={282}
               alt="about us image"
@@ -86,7 +87,7 @@ export default function ContactUs() {
               width={551}
               height={282}
               data-aos="fade-down"
-              data-aos-duration="300"
+              data-aos-duration="200"
               alt="about us image"
               className="absolute mt-14 z-0"
             />
@@ -100,7 +101,8 @@ export default function ContactUs() {
             <Form {...form}>
               <form
                 onSubmit={form.handleSubmit(onSubmit)}
-                className="space-y-5 md:space-y-7 font-gilroy text-white text-xl">
+                className="space-y-5 md:space-y-7 font-gilroy text-white text-xl"
+              >
                 <FormField
                   control={form.control}
                   name="name"
@@ -168,7 +170,8 @@ export default function ContactUs() {
                 <div className="flex mx-6 lg:mx-20 pt-6">
                   <Button
                     type="submit"
-                    className="bg-primary hover:cursor-pointer hover:bg-primary text-md font-semibold  flex items-center gap-4 rounded-full h-12 lg:h-14 w-full py-4 lg:py-5 px-6 lg:px-8">
+                    className="bg-primary hover:cursor-pointer hover:bg-primary text-md font-semibold  flex items-center gap-4 rounded-full h-12 lg:h-14 w-full py-4 lg:py-5 px-6 lg:px-8"
+                  >
                     Send A Message!
                   </Button>
                 </div>
