@@ -20,7 +20,7 @@ const inter = localFont({
 // Site-wide metadata with image for social previews
 export const metadata: Metadata = {
   title: {
-    default: "Growztech | Scalable Digital Solutions for Businesses",
+    default: "GrowzTech | Scalable Digital Solutions for Businesses",
     template: "%s | Growztech", // For dynamic page titles
   },
   description:
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   ],
   robots: "index, follow",
   openGraph: {
-    title: "Growztech | Empowering Businesses with Cutting-Edge Tech",
+    title: "GrowzTech | Empowering Businesses with Cutting-Edge Tech",
     description:
       "From Ethiopia to the world: Growztech delivers scalable software, AI, and cloud solutions for digital success.",
     url: "https://growztech.com",
@@ -64,9 +64,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${gilroy.variable}`}>
+    <html lang="en" className={`${inter.variable} ${gilroy.variable}`}>
       <body className="flex flex-col overflow-x-hidden max-w-screen">
         <Navbar />
         {children}
