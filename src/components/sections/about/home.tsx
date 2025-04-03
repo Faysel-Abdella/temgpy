@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <main className="w-screen h-fit flex items-center pb-10 justify-center pt-40 md:pt-52 lg:pt-60 bg-gradient-to-b from-indigo-50 to-white">
       <div className="w-full p-4 lg:p-0 lg:max-w-[1232px]  h-fit flex flex-col lg:flex-row gap-10">
-        <div className="flex flex-col w-full lg:w-[54%] gap-5">
+        <div className="flex flex-col w-full lg:w-[53%] gap-5">
           <SectionShow
             title="More About Us"
             className="bg-white"
@@ -25,12 +25,22 @@ export default function Home() {
             digital era with cutting-edge technology and expert guidance.
           </div>
         </div>
-        <div className="flex flex-col w-full h-full lg:w-[46%] gap-5">
-          <VideoBanner
+        <div className="flex flex-col w-full h-full lg:w-[47%] gap-5">
+          <Image
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+            src={"/images/about2.svg"}
+            width={1000}
+            height={1000}
+            alt="About Us Video"
+            className="object-cover"
+          />
+
+          {/* <VideoBanner
             bannerUrl="/images/about-video-banner2.png"
             videoUrl="https://www.youtube.com/embed/kcfs1-ryKWE?autoplay=1"
             className="lg:w-full"
-          />
+          /> */}
 
           <div className="w-full p-7 flex justify-between items-center h-32 bg-muted rounded-t-2xl rounded-b-3xl shadow-md ">
             <div className="flex flex-col  items-center  gap-1.6">

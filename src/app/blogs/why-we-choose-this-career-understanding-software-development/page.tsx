@@ -28,9 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
       type: "article",
       images: [
         {
-          url:
-            blog?.image ||
-            "https://growztech.com/images/ai-transforms-preview.jpg",
+          url: blog?.image || "/social-media-preview.svg",
           width: 1200,
           height: 630,
           alt: `${blog?.title} Preview`,
@@ -41,9 +39,7 @@ export async function generateMetadata(): Promise<Metadata> {
       card: "summary_large_image",
       title: blog?.title,
       description: blog?.description || "Check out this Growztech blog post.",
-      images: [
-        blog?.image || "https://growztech.com/images/ai-transforms-preview.jpg",
-      ],
+      images: [blog?.image || "/social-media-preview.svg"],
     },
   };
 }

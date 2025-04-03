@@ -10,15 +10,31 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import VideoBanner from "./video-banner";
 import { useRouter } from "next/navigation";
+import { cn } from "@/lib/utils";
 export default function AboutUs() {
   const router = useRouter();
   return (
     <section className="w-screen flex items-center justify-center mx-auto bg-background2  py-16 md:py-24 lg:py-32">
-      <div className="flex flex-col lg:flex-row  justify-center mx-auto  lg:w-[1212px] gap-8 md:gap-10 lg:gap-16">
-        <VideoBanner
+      <div className="flex flex-col lg:flex-row  justify-center lg:items-center mx-auto  lg:w-[1242px] gap-8 md:gap-10 lg:gap-16">
+        {/* <VideoBanner
           bannerUrl="/images/about-video-banner.png"
           videoUrl="https://www.youtube.com/embed/kcfs1-ryKWE?autoplay=1"
-        />
+        /> */}
+        <div
+          className={cn(
+            "flex group relative flex-col px-4 lg:px-0 w-full h-full lg:w-1/2 gap-5"
+          )}>
+          {/* Image with overlay */}
+          <Image
+            data-aos="zoom-in"
+            data-aos-duration="1000"
+            src={"/images/about1.svg"}
+            width={1000}
+            height={1000}
+            alt="About Us Video"
+            className="object-cover"
+          />
+        </div>
         <div className="flex flex-col w-full lg:w-1/2 gap-3 md:gap-5 px-4 lg:px-0">
           <SectionShow
             title="About Us"

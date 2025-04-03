@@ -21,7 +21,7 @@ const inter = localFont({
 export const metadata: Metadata = {
   title: {
     default: "GrowzTech | Scalable Digital Solutions for Businesses",
-    template: "%s | Growztech", // For dynamic page titles
+    template: "%s | Growztech",
   },
   description:
     "Transform your business with custom software, AI, and cloud solutions from Growztech, an Ethiopia-based tech innovator. Drive growth with secure, future-ready technology.",
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://growztech.com/images/home-preview.jpg", // Main preview image
+        url: "/social-media-preview.svg",
         width: 1200,
         height: 630,
         alt: "Growztech Homepage Preview",
@@ -51,11 +51,11 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    card: "summary_large_image", // Ensures large image preview
+    card: "summary_large_image",
     title: "Growztech | Empowering Businesses with Cutting-Edge Tech",
     description:
       "From Ethiopia to the world: Growztech delivers scalable software, AI, and cloud solutions for digital success.",
-    images: ["https://growztech.com/images/home-preview.jpg"],
+    images: ["/social-media-preview.svg"],
   },
 };
 
@@ -67,8 +67,16 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${gilroy.variable} scroll-smooth`}
-    >
+      className={`${inter.variable} ${gilroy.variable} scroll-smooth`}>
+      <head>
+        {/* Add favicon here */}
+        <link
+          rel="icon"
+          href="/tab-icon.svg"
+          type="image/svg+xml"
+        />
+        {/* Optional: Add a fallback for older browsers */}
+      </head>
       <body className="flex flex-col overflow-x-hidden max-w-screen">
         <Navbar />
         {children}
