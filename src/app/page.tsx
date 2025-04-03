@@ -24,7 +24,7 @@ export default function page() {
       <WhyChooseUs />
       <SelectedWorks />
       {/* <CarouselWithPagination /> */}
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Partners />
       <AboutUs />
       <ContactUs />
