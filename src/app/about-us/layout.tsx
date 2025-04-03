@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://growztech.com/images/about-preview.jpg",
+        url: "/social-media-preview.svg",
         width: 1200,
         height: 630,
         alt: "Growztech About Preview",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: "About Growztech | Innovating Digital Solutions",
     description:
       "Discover Growztech: From Ethiopia, we empower global businesses with cutting-edge software, AI, and cloud solutions.",
-    images: ["https://growztech.com/images/about-preview.jpg"],
+    images: ["/social-media-preview.svg"],
   },
 };
 
