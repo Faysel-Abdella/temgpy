@@ -1,4 +1,3 @@
-// import FeaturesCarousel from "@/components/sections/main/features";
 import Expertise from "@/components/sections/main/services";
 import FeaturesCarousel from "@/components/sections/main/features";
 import Hero from "@/components/sections/main/hero";
@@ -13,7 +12,6 @@ import WhyChooseUs from "@/components/sections/main/why-choose-us";
 export default function page() {
   return (
     <main className="max-w-screen overflow-x-hidden">
-      {/* <Navbar /> */}
       <Hero />
       <FeaturesCarousel
         RightEdgeColor="from-white"
@@ -23,8 +21,7 @@ export default function page() {
       <Expertise />
       <WhyChooseUs />
       <SelectedWorks />
-      {/* <CarouselWithPagination /> */}
-      {/* <Testimonials /> */}
+      <Testimonials />
       <Partners />
       <AboutUs />
       <ContactUs />

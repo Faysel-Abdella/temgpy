@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/social-media-preview.svg",
+        url: "https://growztech.com/media-preview.png",
         width: 1200,
         height: 630,
         alt: "Growztech Blog Preview",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: "Growztech Blog | Innovating the Digital Future",
     description:
       "Stay ahead with Growztech’s blog: Expert insights on software, AI, and cloud solutions from Ethiopia to the world.",
-    images: ["/social-media-preview.svg"],
+    images: ["https://growztech.com/media-preview.png"],
   },
 };
 
