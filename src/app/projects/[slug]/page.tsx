@@ -48,7 +48,7 @@ export async function generateMetadata({
       type: "article",
       images: [
         {
-          url: project.overviewImage || "/social-media-preview.svg",
+          url: "https://growztech.com/media-preview.png",
           width: 1200,
           height: 630,
           alt: `${project.title} Preview`,
@@ -61,7 +61,7 @@ export async function generateMetadata({
       description:
         project.description ||
         "Check out this Growztech project delivering innovative tech solutions.",
-      images: [project.overviewImage || "/social-media-preview.svg"],
+      images: ["https://growztech.com/media-preview.png"],
     },
   };
 }

@@ -1,47 +1,94 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/common/navbar";
-import React from "react";
+import Home from "@/components/sections/works/project-details/home";
+import ProjectOverview from "@/components/sections/works/project-details/overview";
+import RelatedProjects from "@/components/sections/works/project-details/related-projects";
+import TechStacks from "@/components/sections/works/project-details/tech-stacks";
+import {
+  getManyProjects,
+  getOneProject,
+  Project,
+} from "@/components/sections/works/projects-data";
+import { Separator } from "@/components/ui/separator";
 
-// Projects-section-wide metadata
-export const metadata: Metadata = {
-  title: "Growztech Projects | Showcasing Digital Innovation",
-  description:
-    "Discover Growztech’s projects: Custom software, AI, and cloud solutions driving digital transformation for businesses worldwide, from our Ethiopia-based team.",
-  keywords: [
-    "Growztech projects",
-    "digital transformation",
-    "custom software",
-    "AI solutions",
-    "cloud technology",
-    "Ethiopia tech",
-  ],
-  robots: "index, follow",
-  openGraph: {
-    title: "Growztech Projects | Innovating for the Future",
+// Generate metadata for each project dynamically
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const project: Project | undefined = getOneProject(slug);
+
+  if (!project) {
+    return {
+      title: "Project Not Found | Growztech",
+      description: "This project could not be found on Growztech.",
+    };
+  }
+
+  return {
+    title: `${project.title} | Growztech`,
     description:
-      "Explore Growztech’s portfolio: Cutting-edge software, AI, and cloud projects from Ethiopia to the world.",
-    url: "https://growztech.com/projects",
-    type: "website",
-    images: [
-      {
-        url: "/social-media-preview.svg",
-        width: 1200,
-        height: 630,
-        alt: "Growztech Projects Preview",
-      },
+      project.description ||
+      "Explore this Growztech project showcasing custom software, AI, or cloud solutions for digital transformation.",
+    keywords: [
+      project.title,
+      "Growztech project",
+      "digital transformation",
+      "custom software",
+      "AI solutions",
+      "cloud technology",
     ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Growztech Projects | Innovating for the Future",
-    description:
-      "Explore Growztech’s portfolio: Cutting-edge software, AI, and cloud projects from Ethiopia to the world.",
-    images: ["/social-media-preview.svg"],
-  },
-};
+    openGraph: {
+      title: project.title,
+      description:
+        project.description ||
+        "Check out this Growztech project delivering innovative tech solutions.",
+      url: `https://growztech.com/projects/${slug}`,
+      type: "article",
+      images: [
+        {
+          url: "https://growztech.com/media-preview.png",
+          width: 1200,
+          height: 630,
+          alt: `${project.title} Preview`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: project.title,
+      description:
+        project.description ||
+        "Check out this Growztech project delivering innovative tech solutions.",
+      images: ["https://growztech.com/media-preview.png"],
+    },
+  };
+}
 
-export default function ProjectsLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
-  return <>{children}</>;
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const project: Project | undefined = getOneProject(slug);
+  if (!project) {
+    return <div>Project not found</div>;
+  }
+  const projects = getManyProjects();
+  return (
+    <div className="pt-32">
+      <Home project={project} />
+      <ProjectOverview project={project} />
+      <div className="flex bg-white">
+        <Separator className="mx-auto max-w-[1112px]" />
+      </div>
+      <TechStacks project={project} />
+      <div className="flex bg-white">
+        <Separator className="mx-auto max-w-[1112px]" />
+      </div>
+      <RelatedProjects projects={projects} />
+    </div>
+  );
 }
