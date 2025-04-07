@@ -23,7 +23,7 @@ export default function page() {
       <OurStory />
       <Mission />
       <Vision />
-      <TeamSection />
+      {/* <TeamSection /> */}
       <CoreValues />
       <div className=" hidden lg:flex">
         <Partners />
