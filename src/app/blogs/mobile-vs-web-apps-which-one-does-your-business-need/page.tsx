@@ -29,8 +29,8 @@ export async function generateMetadata(): Promise<Metadata> {
       images: [
         {
           url:
-            blog?.image ||
-            "https://growztech.com/images/ai-transforms-preview.jpg",
+            `https://fb-check.vercel.app/${blog?.image}` ||
+            "https://growztech.com/media-preview.png",
           width: 1200,
           height: 630,
           alt: `${blog?.title} Preview`,
@@ -42,7 +42,8 @@ export async function generateMetadata(): Promise<Metadata> {
       title: blog?.title,
       description: blog?.description || "Check out this Growztech blog post.",
       images: [
-        blog?.image || "https://growztech.com/images/ai-transforms-preview.jpg",
+        `https://fb-check.vercel.app/${blog?.image}` ||
+          "https://growztech.com/media-preview.png",
       ],
     },
   };
