@@ -18,7 +18,7 @@ export default function Navbar() {
   ];
 
   const navItems2 = [
-    { name: "Projects", path: "/projects" },
+    // { name: "Projects", path: "/projects" },
     { name: "Blogs", path: "/blogs" },
   ];
 
@@ -79,18 +79,15 @@ export default function Navbar() {
     <nav
       className={`fixed w-screen px-1.5 z-[2350] flex items-center justify-center transition-all duration-300 ease-in-out ${
         isSticky ? "top-3" : "top-10"
-      }`}
-    >
+      }`}>
       <div
         className={`w-full max-w-[1384px] h-16 font-inter px-6 py-5 md:pl-14 md:pr-10 bg-background2 border-b border-white/10 shadow-lg shadow-black/5 rounded-full flex items-center justify-between ${
           isSticky ? "mt-0" : ""
-        }`}
-      >
+        }`}>
         {/* Logo - left on mobile */}
         <div
           className="md:hidden hover:cursor-pointer"
-          onClick={() => router.push("/")}
-        >
+          onClick={() => router.push("/")}>
           <Image
             src="/logo.svg"
             alt="logo"
@@ -105,15 +102,16 @@ export default function Navbar() {
           {navItems1.map((item) => {
             const isActive = pathname === item.path;
             return (
-              <div key={item.name} className="relative group">
+              <div
+                key={item.name}
+                className="relative group">
                 <Link
                   href={item.path}
                   className={`text-base py-2.5 h-full text-white font-inter leading-normal transition-colors duration-300 ${
                     isActive
                       ? "text-white font-extrabold"
                       : "text-white font-normal hover:text-[#dadada]"
-                  }`}
-                >
+                  }`}>
                   {item.name}
                   <span
                     className={`self-center translate-x-1/4 w-2/3 absolute -bottom-2 left-0 right-0 h-[1px] bg-gradient-to-r from-white/30 via-white to-white/30 transition-opacity duration-500 ${
@@ -131,8 +129,7 @@ export default function Navbar() {
         {/* Logo - center on desktop */}
         <div
           className="hidden md:flex hover:cursor-pointer"
-          onClick={() => router.push("/")}
-        >
+          onClick={() => router.push("/")}>
           <Image
             src="/logo.svg"
             alt="logo"
@@ -146,8 +143,7 @@ export default function Navbar() {
         <button
           onClick={toggleMenu}
           className="md:hidden text-white"
-          aria-label="Toggle menu"
-        >
+          aria-label="Toggle menu">
           {isMenuOpen ? (
             <X className="h-6 w-6" />
           ) : (
@@ -164,15 +160,16 @@ export default function Navbar() {
           {navItems2.map((item) => {
             const isActive = pathname === item.path;
             return (
-              <div key={item.name} className="relative group">
+              <div
+                key={item.name}
+                className="relative group">
                 <Link
                   href={item.path}
                   className={`text-base py-2.5 h-full text-white font-inter leading-normal transition-colors duration-300 ${
                     isActive
                       ? "text-white font-extrabold"
                       : "text-white font-normal hover:text-[#dadada]"
-                  }`}
-                >
+                  }`}>
                   {item.name}
                   <span
                     className={`self-center translate-x-1/4 w-2/3 absolute -bottom-2 left-0 right-0 h-[1px] bg-gradient-to-r from-white/30 via-white to-white/30 transition-opacity duration-300 ${
@@ -189,8 +186,7 @@ export default function Navbar() {
           <Link
             href="/#contact-us"
             onClick={handleNavClick}
-            className="h-12 transition-colors duration-300 text-white font-normal hover:text-[#dadada] text-base justify-center items-center gap-1 flex"
-          >
+            className="h-12 transition-colors duration-300 text-white font-normal hover:text-[#dadada] text-base justify-center items-center gap-1 flex">
             Contact Us
             <ArrowUpRight className="size-4" />
           </Link>
@@ -212,8 +208,7 @@ export default function Navbar() {
                       ? "text-white font-extrabold"
                       : "text-white font-normal"
                   }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
+                  onClick={() => setIsMenuOpen(false)}>
                   {item.name}
                 </Link>
               );
@@ -224,8 +219,7 @@ export default function Navbar() {
               onClick={(e) => {
                 handleNavClick(e);
                 setIsMenuOpen(false);
-              }}
-            >
+              }}>
               Contact Us
               <ArrowUpRight className="size-4" />
             </Link>

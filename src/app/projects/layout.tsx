@@ -25,6 +25,7 @@ export async function generateMetadata({
       description: "This project could not be found on Growztech.",
     };
   }
+  console.log("project", project);
 
   return {
     title: `${project.title} | Growztech`,
