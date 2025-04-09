@@ -31,11 +31,11 @@ export const InfiniteMovingCards = ({
   }, []);
 
   function addAnimation() {
-    console.log("Adding animation...");
+    // console.log("Adding animation...");
     if (containerRef.current && scrollerRef.current) {
-      console.log("Refs exist:", containerRef.current, scrollerRef.current);
+      // console.log("Refs exist:", containerRef.current, scrollerRef.current);
       const scrollerContent = Array.from(scrollerRef.current.children);
-      console.log("Current children:", scrollerContent.length);
+      // console.log("Current children:", scrollerContent.length);
       scrollerContent.forEach((item) => {
         const duplicatedItem = (item as HTMLElement).cloneNode(true);
         if (scrollerRef.current) {
@@ -45,12 +45,12 @@ export const InfiniteMovingCards = ({
       getDirection();
       getSpeed();
       setStart(true);
-      console.log(
-        "Animation started, start:",
-        start,
-        "pauseOnHover:",
-        pauseOnHover
-      );
+      // console.log(
+      //   "Animation started, start:",
+      //   start,
+      //   "pauseOnHover:",
+      //   pauseOnHover
+      // );
     } else {
       console.error("Refs are null, animation not applied");
     }
@@ -58,7 +58,7 @@ export const InfiniteMovingCards = ({
 
   const getDirection = () => {
     if (containerRef.current) {
-      console.log("Setting direction:", direction);
+      // console.log("Setting direction:", direction);
       containerRef.current.style.setProperty(
         "--animation-direction",
         direction === "left" ? "forwards" : "reverse"
@@ -70,7 +70,7 @@ export const InfiniteMovingCards = ({
     if (containerRef.current) {
       const duration =
         speed === "fast" ? "20s" : speed === "normal" ? "40s" : "80s";
-      console.log("Setting speed:", duration);
+      // console.log("Setting speed:", duration);
       containerRef.current.style.setProperty("--animation-duration", duration);
     }
   };

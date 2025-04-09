@@ -46,7 +46,7 @@ export default function ProjectsList() {
     } else if (activeSort === "popular") {
       filtered = filtered.filter((project) => project.sortType === "popular");
     }
-    console.log("Projects length final ", filtered.length);
+    // console.log("Projects length final ", filtered.length);
     return filtered;
   }, [activeFilter, activeSort]);
 
