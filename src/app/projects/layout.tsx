@@ -1,94 +1,47 @@
 import type { Metadata } from "next";
-import Home from "@/components/sections/works/project-details/home";
-import ProjectOverview from "@/components/sections/works/project-details/overview";
-import RelatedProjects from "@/components/sections/works/project-details/related-projects";
-import TechStacks from "@/components/sections/works/project-details/tech-stacks";
-import {
-  getManyProjects,
-  getOneProject,
-  Project,
-} from "@/components/sections/works/projects-data";
-import { Separator } from "@/components/ui/separator";
 
-// Generate metadata for each project dynamically
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
-  const { slug } = await params;
-  const project: Project | undefined = getOneProject(slug);
-
-  if (!project) {
-    return {
-      title: "Project Not Found | Growztech",
-      description: "This project could not be found on Growztech.",
-    };
-  }
-
-  return {
-    title: `${project.title} | Growztech`,
+export const metadata: Metadata = {
+  title: "Growztech Projects | Showcasing Innovative Tech Solutions",
+  description:
+    "Discover Growztech’s Projects: Explore our portfolio of cutting-edge software development, AI innovations, and cloud-based solutions from an Ethiopia-based tech leader.",
+  keywords: [
+    "Growztech projects",
+    "tech portfolio",
+    "software development",
+    "AI innovations",
+    "cloud solutions",
+    "Ethiopia technology",
+  ],
+  robots: "index, follow",
+  openGraph: {
+    title: "Growztech Projects | Pioneering Tech Excellence",
     description:
-      project.description ||
-      "Explore this Growztech project showcasing custom software, AI, or cloud solutions for digital transformation.",
-    keywords: [
-      project.title,
-      "Growztech project",
-      "digital transformation",
-      "custom software",
-      "AI solutions",
-      "cloud technology",
+      "Dive into Growztech’s project showcase: From software development to AI and cloud solutions, see how we’re shaping the future from Ethiopia.",
+    url: "https://growztech.com/projects",
+    type: "website",
+    images: [
+      {
+        url: "https://growztech.com/media-preview.png",
+        width: 1200,
+        height: 630,
+        alt: "Growztech Projects Preview",
+      },
     ],
-    openGraph: {
-      title: project.title,
-      description:
-        project.description ||
-        "Check out this Growztech project delivering innovative tech solutions.",
-      url: `https://growztech.com/projects/${slug}`,
-      type: "article",
-      images: [
-        {
-          url: "https://growztech.com/media-preview.png",
-          width: 1200,
-          height: 630,
-          alt: `${project.title} Preview`,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: project.title,
-      description:
-        project.description ||
-        "Check out this Growztech project delivering innovative tech solutions.",
-      images: ["https://growztech.com/media-preview.png"],
-    },
-  };
-}
-
-export default async function Page({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const { slug } = await params;
-  const project: Project | undefined = getOneProject(slug);
-  if (!project) {
-    return <div>Project not found</div>;
-  }
-  const projects = getManyProjects();
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Growztech Projects | Pioneering Tech Excellence",
+    description:
+      "Dive into Growztech’s project showcase: From software development to AI and cloud solutions, see how we’re shaping the future from Ethiopia.",
+    images: ["https://growztech.com/media-preview.png"],
+  },
+};
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <div className="pt-32">
-      <Home project={project} />
-      <ProjectOverview project={project} />
-      <div className="flex bg-white">
-        <Separator className="mx-auto max-w-[1112px]" />
-      </div>
-      <TechStacks project={project} />
-      <div className="flex bg-white">
-        <Separator className="mx-auto max-w-[1112px]" />
-      </div>
-      <RelatedProjects projects={projects} />
-    </div>
+    <>
+      <main className="bg-muted">{children}</main>
+    </>
   );
 }

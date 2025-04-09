@@ -1,12 +1,17 @@
 export const getOneProject = (slug: string) => {
-    return projects.find((project) => project.slug === slug);
+  const oneProject =  projects.find((project) => project.slug === slug);
+  //  console.log("get three projects", oneProject);
+  return oneProject
   }
 
   export const getThreeProjects = () => {
-    return projects.slice(0, 3);
+    const threeProjects =  projects.slice(0, 3);
+    //  console.log("get three projects", threeProjects);
+    return threeProjects;
   }
 
 export const getManyProjects = () => {
+    //  console.log("get many projects", projects);
     return projects;
   }
 
