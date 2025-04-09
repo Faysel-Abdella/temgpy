@@ -72,11 +72,17 @@ export default async function Page({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  console.log("slug , ", slug);
   const project: Project | undefined = getOneProject(slug);
+  console.log("projects , ", project);
+
   if (!project) {
     return <div>Project not found</div>;
   }
+
   const projects = getManyProjects();
+  console.log("projects , ", projects);
+
   return (
     <div className="pt-32">
       <Home project={project} />

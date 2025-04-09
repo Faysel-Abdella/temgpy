@@ -20,7 +20,7 @@ export default function page() {
       />
       <Expertise />
       <WhyChooseUs />
-      {/* <SelectedWorks /> */}
+      <SelectedWorks />
       {/*       <Testimonials /> */}
       <Partners />
       <AboutUs />

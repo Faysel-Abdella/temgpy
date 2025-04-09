@@ -18,7 +18,7 @@ export default function Navbar() {
   ];
 
   const navItems2 = [
-    // { name: "Projects", path: "/projects" },
+    { name: "Projects", path: "/projects" },
     { name: "Blogs", path: "/blogs" },
   ];
 
@@ -33,10 +33,8 @@ export default function Navbar() {
     const targetId = "#contact-us";
 
     if (pathname !== "/") {
-      // Navigate to root with hash
       router.push(`/${targetId}`);
     } else {
-      // Scroll directly if already on root
       const section = document.querySelector(targetId);
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
@@ -44,10 +42,9 @@ export default function Navbar() {
     }
   };
 
-  // Handle scrolling after navigation or page load with hash
   useEffect(() => {
     const handleHashScroll = () => {
-      const hash = window.location.hash; // e.g., "#contact-us"
+      const hash = window.location.hash;
       if (hash === "#contact-us") {
         const section = document.querySelector(hash);
         if (section) {
@@ -56,15 +53,11 @@ export default function Navbar() {
       }
     };
 
-    // Run on mount or when pathname changes
     handleHashScroll();
-
-    // Listen for hash changes (optional, if using browser back/forward)
     window.addEventListener("hashchange", handleHashScroll);
     return () => window.removeEventListener("hashchange", handleHashScroll);
-  }, [pathname]); // Re-run when pathname changes
+  }, [pathname]);
 
-  // Scroll handler for sticky navbar
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
@@ -75,6 +68,15 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Helper function to determine if a nav item is active
+  const isNavItemActive = (itemPath: string) => {
+    // Exact match for root, startsWith for nested routes
+    if (itemPath === "/") {
+      return pathname === "/";
+    }
+    return pathname.startsWith(itemPath);
+  };
+
   return (
     <nav
       className={`fixed w-screen px-1.5 z-[2350] flex items-center justify-center transition-all duration-300 ease-in-out ${
@@ -84,7 +86,6 @@ export default function Navbar() {
         className={`w-full max-w-[1384px] h-16 font-inter px-6 py-5 md:pl-14 md:pr-10 bg-background2 border-b border-white/10 shadow-lg shadow-black/5 rounded-full flex items-center justify-between ${
           isSticky ? "mt-0" : ""
         }`}>
-        {/* Logo - left on mobile */}
         <div
           className="md:hidden hover:cursor-pointer"
           onClick={() => router.push("/")}>
@@ -97,10 +98,9 @@ export default function Navbar() {
           />
         </div>
 
-        {/* First nav items - hidden on mobile */}
         <div className="hidden md:flex gap-7">
           {navItems1.map((item) => {
-            const isActive = pathname === item.path;
+            const isActive = isNavItemActive(item.path);
             return (
               <div
                 key={item.name}
@@ -126,7 +126,6 @@ export default function Navbar() {
           })}
         </div>
 
-        {/* Logo - center on desktop */}
         <div
           className="hidden md:flex hover:cursor-pointer"
           onClick={() => router.push("/")}>
@@ -139,7 +138,6 @@ export default function Navbar() {
           />
         </div>
 
-        {/* Mobile hamburger menu */}
         <button
           onClick={toggleMenu}
           className="md:hidden text-white"
@@ -155,10 +153,9 @@ export default function Navbar() {
           )}
         </button>
 
-        {/* Second nav items and contact - hidden on mobile */}
         <div className="hidden md:flex gap-7 items-center">
           {navItems2.map((item) => {
-            const isActive = pathname === item.path;
+            const isActive = isNavItemActive(item.path);
             return (
               <div
                 key={item.name}
@@ -193,12 +190,11 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile dropdown menu */}
       {isMenuOpen && (
         <div className="absolute top-[70px] left-0 mx-1.5 rounded-4xl right-0 bg-background2 border-b border-white/10 shadow-lg shadow-black/5 rounded-b-2xl overflow-hidden md:hidden z-50 transition-all duration-300 ease-in-out">
           <div className="max-h-[80vh] overflow-y-auto py-4 px-6 flex flex-col gap-4">
             {allNavItems.map((item) => {
-              const isActive = pathname === item.path;
+              const isActive = isNavItemActive(item.path);
               return (
                 <Link
                   key={item.name}
