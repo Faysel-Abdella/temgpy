@@ -20,32 +20,32 @@ export default function FooterSocials() {
   const nameRefs = useRef<(HTMLSpanElement | null)[]>([]);
 
   const socialLinks: SocialLink[] = [
-    {
-      name: "Facebook",
-      icon: <Facebook className="h-5 w-5" />,
-      url: "https://facebook.com",
-    },
-    {
-      name: "Instagram",
-      icon: <Instagram className="h-5 w-5" />,
+    // {
+    //   name: "Facebook",
+    //   icon: <Facebook className="h-5 w-5" />,
+    //   url: "https://facebook.com",
+    // },
+    // {
+    //   name: "Instagram",
+    //   icon: <Instagram className="h-5 w-5" />,
 
-      url: "https://instagram.com",
-    },
-    {
+    //   url: "https://instagram.com",
+    // },
+   {
       name: "LinkedIn",
       icon: <Linkedin className="h-5 w-5" />,
-      url: "https://linkedin.com",
+      url: "https://www.linkedin.com/company/106809924",
     },
     {
       name: "Upwork",
       icon: <Icons.Upwork className="h-5 w-5" />,
-      url: "https://upwork.com",
+      url: "https://www.upwork.com/agencies/1906779003227193271/",
     },
-    {
-      name: "Twitter",
-      icon: <Icons.XTwitter className="h-5 w-5" />,
-      url: "https://x.com",
-    },
+    // {
+    //   name: "Twitter",
+    //   icon: <Icons.XTwitter className="h-5 w-5" />,
+    //   url: "https://x.com",
+    // },
   ];
 
   // Measure text widths on mount
