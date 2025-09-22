@@ -71,7 +71,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${gilroy.variable} scroll-smooth`}
     >
-      {/* Inject GTM scripts automatically */}
+      {/* Inject GTM scripts automatically  */}
       <GoogleTagManager gtmId="G-JNNFWWMV78" />
 
       <body className="flex flex-col overflow-x-hidden max-w-screen">
