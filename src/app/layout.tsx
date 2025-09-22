@@ -1,3 +1,5 @@
+import { GoogleTagManager } from "@next/third-parties/google";
+
 import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
@@ -67,17 +69,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${gilroy.variable} scroll-smooth`}>
-      <head>
-        {/* Add favicon here */}
-        <link
-          rel="icon"
-          href="/tab-icon.svg"
-          type="image/svg+xml"
-        />
-        {/* Optional: Add a fallback for older browsers */}
-      </head>
+      className={`${inter.variable} ${gilroy.variable} scroll-smooth`}
+    >
+      {/* Inject GTM scripts automatically */}
+      <GoogleTagManager gtmId="G-JNNFWWMV78" />
+
       <body className="flex flex-col overflow-x-hidden max-w-screen">
+        {/* Favicon */}
+        <link rel="icon" href="/tab-icon.svg" type="image/svg+xml" />
+
         <Navbar />
         {children}
         <Footer />
