@@ -44,8 +44,8 @@ const FaqAccordionItem = ({ faqItem }: FaqAccordionItemProps) => {
             </div>
           </AccordionTrigger>
 
-          <AccordionContent className="flex flex-col  px-3 pt-4">
-            <p className="text-start">{faqItem.answer}</p>
+          <AccordionContent className="flex flex-col  px-3 pt-4 text-start">
+            {faqItem.answer}
           </AccordionContent>
         </div>
       </div>
