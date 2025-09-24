@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { ReactNode } from "react";
 
 export const metadata: Metadata = {
-  title: "About Growztech | Driving Digital Excellence",
+  title: "About GrowzTech | Leading Tech Company in Ethiopia & AI Solutions",
   description:
-    "Learn about Growztech, an Ethiopia-based tech company delivering custom software, AI, and cloud solutions to empower businesses worldwide with scalable, secure technology.",
+    "Discover GrowzTech, a trusted AI solutions company and one of the top tech companies in Ethiopia, delivering custom software and cloud solutions globally.",
   keywords: [
     "about Growztech",
     "digital transformation",
@@ -15,9 +15,9 @@ export const metadata: Metadata = {
   ],
   robots: "index, follow",
   openGraph: {
-    title: "About Growztech | Innovating Digital Solutions",
+    title: "About GrowzTech | Leading Tech Company in Ethiopia & AI Solutions",
     description:
-      "Discover Growztech: From Ethiopia, we empower global businesses with cutting-edge software, AI, and cloud solutions.",
+      "Discover GrowzTech, a trusted AI solutions company and one of the top tech companies in Ethiopia, delivering custom software and cloud solutions globally.",
     url: "https://growztech.com/about",
     type: "website",
     images: [
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Growztech | Innovating Digital Solutions",
+    title: "About GrowzTech | Leading Tech Company in Ethiopia & AI Solutions",
     description:
-      "Discover Growztech: From Ethiopia, we empower global businesses with cutting-edge software, AI, and cloud solutions.",
+      "Discover GrowzTech, a trusted AI solutions company and one of the top tech companies in Ethiopia, delivering custom software and cloud solutions globally.",
     images: ["https://growztech.com/media-preview.png"],
   },
 };

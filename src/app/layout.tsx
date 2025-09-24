@@ -22,11 +22,11 @@ const inter = localFont({
 // Site-wide metadata with image for social previews
 export const metadata: Metadata = {
   title: {
-    default: "GrowzTech | Scalable Digital Solutions for Businesses",
+    default: "Best Software Company in Ethiopia | GrowzTech",
     template: "%s | Growztech",
   },
   description:
-    "Transform your business with custom software, AI, and cloud solutions from Growztech, an Ethiopia-based tech innovator. Drive growth with secure, future-ready technology.",
+    "GrowzTech is a top software company in Ethiopia offering scalable custom software, AI, and cloud solutions to drive business growth globally",
   keywords: [
     "digital transformation",
     "custom software",
@@ -37,9 +37,9 @@ export const metadata: Metadata = {
   ],
   robots: "index, follow",
   openGraph: {
-    title: "GrowzTech | Empowering Businesses with Cutting-Edge Tech",
+    title: "Best Software Company in Ethiopia | GrowzTech",
     description:
-      "From Ethiopia to the world: Growztech delivers scalable software, AI, and cloud solutions for digital success.",
+      "GrowzTech is a top software company in Ethiopia offering scalable custom software, AI, and cloud solutions to drive business growth globally",
     url: "https://growztech.com",
     type: "website",
     images: [
@@ -54,9 +54,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Growztech | Empowering Businesses with Cutting-Edge Tech",
+    title: "Best Software Company in Ethiopia | GrowzTech",
     description:
-      "From Ethiopia to the world: Growztech delivers scalable software, AI, and cloud solutions for digital success.",
+      "GrowzTech is a top software company in Ethiopia offering scalable custom software, AI, and cloud solutions to drive business growth globally",
     images: ["https://growztech.com/media-preview.png"],
   },
 };
