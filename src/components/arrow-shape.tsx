@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, easeInOut } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 export default function ArrowShape() {
@@ -27,7 +27,7 @@ export default function ArrowShape() {
       pathLength: 1,
       opacity: 1,
       transition: {
-        pathLength: { duration: 1.5, ease: "easeInOut" },
+        pathLength: { duration: 1.5, ease: easeInOut },
         opacity: { duration: 0.7 },
       },
     },
@@ -36,14 +36,16 @@ export default function ArrowShape() {
   return (
     <div
       ref={ref}
-      className="h-[54px] w-[106px] flex items-center justify-center">
+      className="h-[54px] w-[106px] flex items-center justify-center"
+    >
       <motion.svg
         width="100"
         height="100"
         viewBox="80 0 400 250"
         initial="hidden"
         animate={startAnimation ? "visible" : "hidden"} // Control animation state
-        className="w-full h-full">
+        className="w-full h-full"
+      >
         {/* Main curved path */}
         <motion.path
           d="M10 40 C 100 40, 260 50, 310 222"
