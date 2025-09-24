@@ -3,10 +3,10 @@ import SectionShow from "@/components/section-show";
 
 const FAQ = () => {
   return (
-    <section className="bg-muted px-4 py-16 md:py-28">
+    <section className=" px-4 py-16 md:py-28">
       <div className="container mx-auto max-w-7xl">
         <div className="mx-auto mb-12 max-w-3xl text-center">
-          <SectionShow title="FAQ" className="bg-background" />
+          <SectionShow title="FAQ" />
           <h2
             data-aos="fade-up"
             data-aos-duration="600"
@@ -23,7 +23,7 @@ const FAQ = () => {
           </p>
         </div>
         <div
-          className="max-w-5xl mx-auto"
+          className="max-w-4xl mx-auto"
           data-aos="fade-up"
           data-aos-duration="800"
         >

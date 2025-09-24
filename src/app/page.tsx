@@ -24,8 +24,8 @@ export default function page() {
       <SelectedWorks />
       {/*       <Testimonials /> */}
       <Partners />
-      <AboutUs />
       <FAQ />
+      <AboutUs />
       <ContactUs />
     </main>
   );
