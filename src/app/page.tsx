@@ -8,6 +8,7 @@ import Partners from "@/components/sections/main/partners";
 import AboutUs from "@/components/sections/main/about-us";
 import ContactUs from "@/components/sections/main/contact-us";
 import WhyChooseUs from "@/components/sections/main/why-choose-us";
+import FAQ from "@/components/sections/main/faq";
 
 export default function page() {
   return (
@@ -24,6 +25,7 @@ export default function page() {
       {/*       <Testimonials /> */}
       <Partners />
       <AboutUs />
+      <FAQ />
       <ContactUs />
     </main>
   );
