@@ -1,13 +1,7 @@
-"use client";
-import React, { useState } from "react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "./ui/accordion";
-import { Mail, Minus, Phone, Plus } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
+import React from "react";
 import FaqAccordionItem from "./faq-accordion-item";
+import { Accordion } from "./ui/accordion";
 
 export type FaqItem = {
   value: string;
@@ -223,9 +217,6 @@ export const faqContent: FaqItem[] = [
   },
 ];
 const FaqAccordion = () => {
-  const midIndex = Math.ceil(faqContent.length / 2);
-  const firstHalf = faqContent.slice(0, midIndex);
-  const secondHalf = faqContent.slice(midIndex);
   return (
     <Accordion type="single" collapsible className="w-full space-y-3">
       {faqContent.map((faq) => {
