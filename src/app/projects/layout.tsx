@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Growztech Projects | Showcasing Innovative Tech Solutions",
+  title: "GrowzTech Projects | Leading Software Development Company Portfolio",
   description:
-    "Discover Growztech’s Projects: Explore our portfolio of cutting-edge software development, AI innovations, and cloud-based solutions from an Ethiopia-based tech leader.",
+    "See how GrowzTech stands among leading software development companies with custom projects in AI, cloud, and scalable digital solutions",
   keywords: [
     "Growztech projects",
     "tech portfolio",
@@ -14,9 +14,10 @@ export const metadata: Metadata = {
   ],
   robots: "index, follow",
   openGraph: {
-    title: "Growztech Projects | Pioneering Tech Excellence",
+    title:
+      "GrowzTech Projects | Leading Software Development Company Portfolio",
     description:
-      "Dive into Growztech’s project showcase: From software development to AI and cloud solutions, see how we’re shaping the future from Ethiopia.",
+      "See how GrowzTech stands among leading software development companies with custom projects in AI, cloud, and scalable digital solutions",
     url: "https://growztech.com/projects",
     type: "website",
     images: [
@@ -30,9 +31,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Growztech Projects | Pioneering Tech Excellence",
+    title:
+      "GrowzTech Projects | Leading Software Development Company Portfolio",
     description:
-      "Dive into Growztech’s project showcase: From software development to AI and cloud solutions, see how we’re shaping the future from Ethiopia.",
+      "See how GrowzTech stands among leading software development companies with custom projects in AI, cloud, and scalable digital solutions",
     images: ["https://growztech.com/media-preview.png"],
   },
 };
