@@ -1,0 +1,33 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"cta_title": {
+				"__TYPE__": "FieldContent",
+				"value": "writing",
+				"type": "Text"
+			},
+			"text": {
+				"__TYPE__": "FieldContent",
+				"value": "wire",
+				"type": "Text"
+			},
+			"cta_button_link": {
+				"key": "5d6d7b7b-8c39-476f-967f-a7908f097c00",
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://google.com",
+					"text": "than"
+				}
+			},
+			"button_text": {
+				"__TYPE__": "FieldContent",
+				"value": "carry",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

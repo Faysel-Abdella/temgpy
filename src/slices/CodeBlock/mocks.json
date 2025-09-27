@@ -1,0 +1,20 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"code_snipper": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Occaecat fugiat ad labore dolor anim adipisicing consequat adipisicing aliqua velit adipisicing eiusmod laboris laborum officia."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

@@ -1,0 +1,28 @@
+{
+  "id": "code_block",
+  "type": "SharedSlice",
+  "name": "CodeBlock",
+  "description": "CodeBlock",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "code_snipper": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Code snipper",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "preformatted"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
