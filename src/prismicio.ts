@@ -23,8 +23,8 @@ const routes: Route[] = [
   // { type: "homepage", path: "/" },
   // { type: "page", path: "/:uid" },
   {
-    type: "blog_post",
-    path: "/blog/:uid",
+    type: "blog",
+    path: "/blogs/:uid",
   },
 ];
 

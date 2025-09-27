@@ -109,74 +109,80 @@ export type AuthorDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<AuthorDocumentData>, "author", Lang>;
 
 /**
- * Item in *Blog post → Tags*
+ * Item in *Blog → Tags*
  */
-export interface BlogPostDocumentDataTagsItem {
+export interface BlogDocumentDataTagsItem {
   /**
-   * Tag name field in *Blog post → Tags*
+   * Tag name field in *Blog → Tags*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: blog_post.tags[].tag_name
+   * - **API ID Path**: blog.tags[].tag_name
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
   tag_name: prismic.KeyTextField;
 }
 
+type BlogDocumentDataSlicesSlice =
+  | CallToActionSlice
+  | ImageBlockSlice
+  | RichTextContentSlice
+  | CodeBlockSlice;
+
 /**
- * Content for Blog post documents
+ * Content for Blog documents
  */
-interface BlogPostDocumentData {
+interface BlogDocumentData {
   /**
-   * Title field in *Blog post*
+   * Title field in *Blog*
    *
    * - **Field Type**: Text
-   * - **Placeholder**: Blog post title
-   * - **API ID Path**: blog_post.title
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.title
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
   title: prismic.KeyTextField;
 
   /**
-   * Short Description field in *Blog post*
+   * Short Description field in *Blog*
    *
    * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blog_post.short_description
+   * - **Placeholder**: Short description for the blog post
+   * - **API ID Path**: blog.short_description
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
   short_description: prismic.RichTextField;
 
   /**
-   * Featured Image field in *Blog post*
+   * Featured Image field in *Blog*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: blog_post.featured_image
+   * - **API ID Path**: blog.featured_image
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/fields/image
    */
   featured_image: prismic.ImageField<never>;
 
   /**
-   * Publication Date field in *Blog post*
+   * Publication Date field in *Blog*
    *
    * - **Field Type**: Date
    * - **Placeholder**: *None*
-   * - **API ID Path**: blog_post.publication_date
+   * - **API ID Path**: blog.publication_date
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/fields/date
    */
   publication_date: prismic.DateField;
 
   /**
-   * Author field in *Blog post*
+   * Author field in *Blog*
    *
    * - **Field Type**: Content Relationship
    * - **Placeholder**: *None*
-   * - **API ID Path**: blog_post.author
+   * - **API ID Path**: blog.author
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/fields/content-relationship
    */
@@ -185,42 +191,53 @@ interface BlogPostDocumentData {
   >;
 
   /**
-   * Tags field in *Blog post*
+   * Tags field in *Blog*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: blog_post.tags[]
+   * - **API ID Path**: blog.tags[]
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
    */
-  tags: prismic.GroupField<Simplify<BlogPostDocumentDataTagsItem>> /**
-   * Meta Title field in *Blog post*
+  tags: prismic.GroupField<Simplify<BlogDocumentDataTagsItem>>;
+
+  /**
+   * Slice Zone field in *Blog*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/slices
+   */
+  slices: prismic.SliceZone<BlogDocumentDataSlicesSlice> /**
+   * Meta Title field in *Blog*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: blog_post.meta_title
+   * - **API ID Path**: blog.meta_title
    * - **Tab**: SEO
    * - **Documentation**: https://prismic.io/docs/fields/text
    */;
   meta_title: prismic.KeyTextField;
 
   /**
-   * Meta Description field in *Blog post*
+   * Meta Description field in *Blog*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: blog_post.meta_description
+   * - **API ID Path**: blog.meta_description
    * - **Tab**: SEO
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
   meta_description: prismic.KeyTextField;
 
   /**
-   * Social Image field in *Blog post*
+   * Social Image field in *Blog*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: blog_post.social_image
+   * - **API ID Path**: blog.social_image
    * - **Tab**: SEO
    * - **Documentation**: https://prismic.io/docs/fields/image
    */
@@ -228,22 +245,18 @@ interface BlogPostDocumentData {
 }
 
 /**
- * Blog post document from Prismic
+ * Blog document from Prismic
  *
- * - **API ID**: `blog_post`
+ * - **API ID**: `blog`
  * - **Repeatable**: `true`
  * - **Documentation**: https://prismic.io/docs/content-modeling
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type BlogPostDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithUID<
-    Simplify<BlogPostDocumentData>,
-    "blog_post",
-    Lang
-  >;
+export type BlogDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<BlogDocumentData>, "blog", Lang>;
 
-export type AllDocumentTypes = AuthorDocument | BlogPostDocument;
+export type AllDocumentTypes = AuthorDocument | BlogDocument;
 
 /**
  * Primary content in *CallToAction → Default → Primary*
@@ -494,9 +507,10 @@ declare module "@prismicio/client" {
     export type {
       AuthorDocument,
       AuthorDocumentData,
-      BlogPostDocument,
-      BlogPostDocumentData,
-      BlogPostDocumentDataTagsItem,
+      BlogDocument,
+      BlogDocumentData,
+      BlogDocumentDataTagsItem,
+      BlogDocumentDataSlicesSlice,
       AllDocumentTypes,
       CallToActionSlice,
       CallToActionSliceDefaultPrimary,
