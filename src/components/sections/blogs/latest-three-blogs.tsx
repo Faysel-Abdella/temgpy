@@ -1,5 +1,3 @@
-"use client";
-
 import { calculateReadingTimeFromSlices, formatBlogDate } from "@/lib/utils";
 import { asDate } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
@@ -11,7 +9,6 @@ interface LatestThreeBlogsProps {
 }
 
 export function LatestThreeBlogs({ blogs }: LatestThreeBlogsProps) {
-  console.log(blogs);
   return (
     <div className="flex w-full lg:w-1/2 font-inter">
       <div className="flex flex-col space-y-6 md:space-y-8 w-full">

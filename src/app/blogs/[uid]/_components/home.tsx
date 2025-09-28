@@ -1,9 +1,7 @@
 import SectionShow, { SectionShowWithOutIcon } from "@/components/section-show";
-import Image from "next/image";
-import React from "react";
-import { BlogDocument } from "../../../../../prismicio-types";
-import { PrismicRichText, PrismicText } from "@prismicio/react";
 import { PrismicNextImage } from "@prismicio/next";
+import { PrismicRichText } from "@prismicio/react";
+import { BlogDocument } from "../../../../../prismicio-types";
 
 interface BlogHomeProps {
   blog: BlogDocument;
