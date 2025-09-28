@@ -17,7 +17,6 @@ interface OlderBlogsProps {
 }
 
 export function OlderBlogs({ blogs, isSearchActive }: OlderBlogsProps) {
-  const router = useRouter();
   return (
     <AnimatePresence mode="wait">
       <motion.div

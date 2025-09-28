@@ -130,6 +130,21 @@ type BlogDocumentDataSlicesSlice =
   | CodeBlockSlice;
 
 /**
+ * Item in *Blog → Keywords*
+ */
+export interface BlogDocumentDataKeywordsItem {
+  /**
+   * Keyword field in *Blog → Keywords*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.keywords[].keyword
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  keyword: prismic.KeyTextField;
+}
+
+/**
  * Content for Blog documents
  */
 interface BlogDocumentData {
@@ -210,7 +225,49 @@ interface BlogDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/slices
    */
-  slices: prismic.SliceZone<BlogDocumentDataSlicesSlice>;
+  slices: prismic.SliceZone<BlogDocumentDataSlicesSlice> /**
+   * Meta Title field in *Blog*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.meta_title
+   * - **Tab**: SEO
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Blog*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.meta_description
+   * - **Tab**: SEO
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Social Image field in *Blog*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.social_image
+   * - **Tab**: SEO
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  social_image: prismic.ImageField<never>;
+
+  /**
+   * Keywords field in *Blog*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.keywords[]
+   * - **Tab**: SEO
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  keywords: prismic.GroupField<Simplify<BlogDocumentDataKeywordsItem>>;
 }
 
 /**
@@ -535,6 +592,7 @@ declare module "@prismicio/client" {
       BlogDocumentData,
       BlogDocumentDataTagsItem,
       BlogDocumentDataSlicesSlice,
+      BlogDocumentDataKeywordsItem,
       FeaturedBlogDocument,
       FeaturedBlogDocumentData,
       AllDocumentTypes,

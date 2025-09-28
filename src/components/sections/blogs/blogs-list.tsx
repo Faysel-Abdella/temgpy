@@ -63,7 +63,7 @@ export default async function BlogsList({ searchQuery }: BlogsList) {
         </div>
       )} */}
 
-      <OlderBlogs blogs={olderBlogs} isSearchActive={isSearchActive} />
+      <OlderBlogs blogs={olderBlogs} isSearchActive={false} />
     </div>
   );
 }

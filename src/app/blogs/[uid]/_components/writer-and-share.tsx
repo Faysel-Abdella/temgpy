@@ -2,11 +2,10 @@
 
 import { Icons } from "@/components/ui/icons";
 import { Separator } from "@/components/ui/separator";
-import { Share2 } from "lucide-react";
-import React from "react";
-import { BlogDocument } from "../../../../../prismicio-types";
 import { calculateReadingTimeFromSlices, formatBlogDate } from "@/lib/utils";
 import { asDate } from "@prismicio/client";
+import { Share2 } from "lucide-react";
+import { BlogDocument } from "../../../../../prismicio-types";
 
 interface WriterAndShareProps {
   blog: BlogDocument;

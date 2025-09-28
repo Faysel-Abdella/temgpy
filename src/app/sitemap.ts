@@ -1,6 +1,15 @@
+import { createClient } from "@/prismicio";
 import type { MetadataRoute } from "next";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const client = createClient();
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://growztech.com";
+
+  const blogs = await client.getAllByType("blog");
+  const postUrls = blogs.map((post) => ({
+    url: `${baseUrl}/blogs/${post.uid}`,
+    lastModified: new Date(post.last_publication_date),
+  }));
   return [
     {
       url: "https://growztech.com/",
@@ -26,5 +35,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.5,
     },
+    ...postUrls,
   ];
 }

@@ -9,6 +9,77 @@ import ReadingBlog from "./_components/reading-blog";
 import Subscribe from "@/components/sections/blogs/subscribe";
 import RelatedPosts from "@/components/sections/blogs/related-posts";
 import { getHeadingId } from "@/lib/utils";
+import { Metadata } from "next";
+import { notFound } from "next/navigation";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ uid: string }>;
+}): Promise<Metadata> {
+  const { uid } = await params;
+
+  const client = createClient();
+  const blog = await client.getByUID("blog", uid).catch(() => notFound());
+
+  const keywords = blog.data.keywords
+    ? blog?.data.keywords.map((keyword) => keyword.keyword as string)
+    : [];
+
+  const title = `${blog.data.meta_title || blog?.data.title} | Growztech`,
+    description =
+      blog.data.meta_description || "Explore this Growztech blog post.";
+
+  return {
+    title,
+    description,
+    keywords: [
+      blog?.data.title || "Default Blog Title",
+      "Growztech blog",
+      "digital transformation",
+      "AI solutions",
+      ...keywords,
+    ],
+    openGraph: {
+      title,
+      description,
+      url: `https://growztech.com/blogs/${blog.uid}`,
+      type: "article",
+      images: [
+        {
+          url:
+            blog.data.featured_image.url ||
+            "https://growztech.com/media-preview.png",
+          width: blog.data.featured_image.dimensions
+            ? blog?.data.featured_image.dimensions.width
+            : 1200,
+          height: blog.data.featured_image.dimensions
+            ? blog?.data.featured_image.dimensions.height
+            : 630,
+          alt: `${blog?.data.meta_title || blog?.data.title} Preview`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [
+        blog.data.featured_image.url ||
+          "https://growztech.com/media-preview.png",
+      ],
+    },
+  };
+}
+
+export async function generateStaticParams() {
+  const client = createClient();
+  const pages = await client.getAllByType("blog");
+
+  return pages.map((page) => {
+    return { uid: page.uid };
+  });
+}
 
 interface BlogPostPageProps {
   params: Promise<{ uid: string }>;

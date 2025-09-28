@@ -29,9 +29,9 @@ export default function BlogHome({ blog }: BlogHomeProps) {
               )}
           </div>
 
-          <p className="mt-4 text-background2-foreground md:mt-6 font-gilroy font-extrabold text-4xl md:text-5xl lg:text-6xl">
+          <h1 className="mt-4 text-background2-foreground md:mt-6 font-gilroy font-extrabold text-4xl md:text-5xl lg:text-6xl">
             {blog.data.title}
-          </p>
+          </h1>
           <div className="text-md md:text-lg text-background2-description font-inter">
             <PrismicRichText field={blog.data.short_description} />
           </div>

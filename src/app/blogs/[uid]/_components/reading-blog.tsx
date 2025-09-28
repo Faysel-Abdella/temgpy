@@ -1,8 +1,7 @@
+import { components } from "@/slices";
 import { SliceZone } from "@prismicio/client";
 import { SliceZone as SliceZoneComponent } from "@prismicio/react";
-import { useEffect, useRef, useState } from "react";
 import { BlogDocumentDataSlicesSlice } from "../../../../../prismicio-types";
-import { components } from "@/slices";
 import TableOfContents from "./toc";
 
 interface ReadingBlogProps {
