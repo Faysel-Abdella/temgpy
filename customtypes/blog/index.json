@@ -93,30 +93,6 @@
           }
         }
       }
-    },
-    "SEO": {
-      "meta_title": {
-        "type": "Text",
-        "config": {
-          "label": "Meta Title",
-          "placeholder": ""
-        }
-      },
-      "meta_description": {
-        "type": "Text",
-        "config": {
-          "label": "Meta Description",
-          "placeholder": ""
-        }
-      },
-      "social_image": {
-        "type": "Image",
-        "config": {
-          "label": "Social Image",
-          "constraint": {},
-          "thumbnails": []
-        }
-      }
     }
   }
 }

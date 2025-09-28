@@ -8,18 +8,12 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import useIsMobile from "@/hooks/useIsMobile";
+import { useState } from "react";
 
-interface BlogFiltersProps {
-  activeFilter: string;
-  setActiveFilter: (filter: string) => void;
-  isMobile: boolean;
-}
-
-export function BlogFilters({
-  activeFilter,
-  setActiveFilter,
-  isMobile,
-}: BlogFiltersProps) {
+export function BlogFilters() {
+  const [activeFilter, setActiveFilter] = useState("");
+  const isMobile = useIsMobile();
   const filterOptions = [
     { value: "all", label: "All" },
     { value: "web-development", label: "Web-development" },
@@ -38,7 +32,8 @@ export function BlogFilters({
           {filterOptions.map((option) => (
             <DropdownMenuItem
               key={option.value}
-              onClick={() => setActiveFilter(option.value)}>
+              onClick={() => setActiveFilter(option.value)}
+            >
               {option.label}
             </DropdownMenuItem>
           ))}
@@ -51,13 +46,15 @@ export function BlogFilters({
     <Tabs
       value={activeFilter}
       onValueChange={setActiveFilter}
-      className="w-full md:w-auto h-full items-center flex">
+      className="w-full md:w-auto h-full items-center flex"
+    >
       <TabsList className="p-1 gap-1 h-full">
         {filterOptions.map((option) => (
           <TabsTrigger
             key={option.value}
             value={option.value}
-            className="rounded-full font-inter px-5 hover:bg-muted cursor-pointer transition-all duration-300 py-2 data-[state=active]:bg-muted data-[state=active]:border font-medium text-md">
+            className="rounded-full font-inter px-5 hover:bg-muted cursor-pointer transition-all duration-300 py-2 data-[state=active]:bg-muted data-[state=active]:border font-medium text-md"
+          >
             {option.label}
           </TabsTrigger>
         ))}

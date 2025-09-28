@@ -210,38 +210,7 @@ interface BlogDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/slices
    */
-  slices: prismic.SliceZone<BlogDocumentDataSlicesSlice> /**
-   * Meta Title field in *Blog*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blog.meta_title
-   * - **Tab**: SEO
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */;
-  meta_title: prismic.KeyTextField;
-
-  /**
-   * Meta Description field in *Blog*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blog.meta_description
-   * - **Tab**: SEO
-   * - **Documentation**: https://prismic.io/docs/fields/text
-   */
-  meta_description: prismic.KeyTextField;
-
-  /**
-   * Social Image field in *Blog*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: blog.social_image
-   * - **Tab**: SEO
-   * - **Documentation**: https://prismic.io/docs/fields/image
-   */
-  social_image: prismic.ImageField<never>;
+  slices: prismic.SliceZone<BlogDocumentDataSlicesSlice>;
 }
 
 /**
@@ -256,7 +225,62 @@ interface BlogDocumentData {
 export type BlogDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<BlogDocumentData>, "blog", Lang>;
 
-export type AllDocumentTypes = AuthorDocument | BlogDocument;
+/**
+ * Content for Featured Blog documents
+ */
+interface FeaturedBlogDocumentData {
+  /**
+   * Blog field in *Featured Blog*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: featured_blog.blog
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/content-relationship
+   */
+  blog: ContentRelationshipFieldWithData<
+    [
+      {
+        id: "blog";
+        fields: [
+          "title",
+          "short_description",
+          "featured_image",
+          "publication_date",
+          {
+            id: "author";
+            customtypes: [{ id: "author"; fields: ["name", "picture"] }];
+          },
+          { id: "tags"; fields: ["tag_name"] },
+          "meta_title",
+          "meta_description",
+          "social_image",
+        ];
+      },
+    ]
+  >;
+}
+
+/**
+ * Featured Blog document from Prismic
+ *
+ * - **API ID**: `featured_blog`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type FeaturedBlogDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<FeaturedBlogDocumentData>,
+    "featured_blog",
+    Lang
+  >;
+
+export type AllDocumentTypes =
+  | AuthorDocument
+  | BlogDocument
+  | FeaturedBlogDocument;
 
 /**
  * Primary content in *CallToAction → Default → Primary*
@@ -511,6 +535,8 @@ declare module "@prismicio/client" {
       BlogDocumentData,
       BlogDocumentDataTagsItem,
       BlogDocumentDataSlicesSlice,
+      FeaturedBlogDocument,
+      FeaturedBlogDocumentData,
       AllDocumentTypes,
       CallToActionSlice,
       CallToActionSliceDefaultPrimary,

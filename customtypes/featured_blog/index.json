@@ -1,0 +1,46 @@
+{
+  "format": "custom",
+  "id": "featured_blog",
+  "label": "Featured Blog",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "blog": {
+        "type": "Link",
+        "config": {
+          "label": "Blog",
+          "select": "document",
+          "repeat": false,
+          "customtypes": [
+            {
+              "id": "blog",
+              "fields": [
+                "title",
+                "short_description",
+                "featured_image",
+                "publication_date",
+                {
+                  "id": "author",
+                  "customtypes": [
+                    {
+                      "id": "author",
+                      "fields": ["name", "picture"]
+                    }
+                  ]
+                },
+                {
+                  "id": "tags",
+                  "fields": ["tag_name"]
+                },
+                "meta_title",
+                "meta_description",
+                "social_image"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}

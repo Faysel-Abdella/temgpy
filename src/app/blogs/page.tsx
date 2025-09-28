@@ -5,11 +5,15 @@ import ShapeFuture from "@/components/sections/blogs/shape-future";
 import Subscribe from "@/components/sections/blogs/subscribe";
 import { createClient } from "@/prismicio";
 
-export default async function BlogsPage() {
+interface BlogsPageProps {
+  searchParams: Promise<{ searchQuery: string }>;
+}
+export default async function BlogsPage({ searchParams }: BlogsPageProps) {
+  const { searchQuery } = await searchParams;
   return (
     <div className="">
       <Home />
-      <BlogsList />
+      <BlogsList searchQuery={searchQuery} />
       <ShapeFuture />
       <Subscribe />
     </div>

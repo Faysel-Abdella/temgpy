@@ -5,19 +5,17 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Search, X } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import useIsMobile from "@/hooks/useIsMobile";
 
 interface BlogSearchProps {
   searchQuery: string;
   setSearchQuery: (query: string) => void;
-  isMobile: boolean;
 }
 
-export function BlogSearch({
-  searchQuery,
-  setSearchQuery,
-  isMobile,
-}: BlogSearchProps) {
+export function BlogSearch() {
+  const [searchQuery, setSearchQuery] = useState("");
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     if (isSearchOpen) {
@@ -42,7 +40,8 @@ export function BlogSearch({
               animate={{ width: 150, opacity: 1 }}
               exit={{ width: 0, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="absolute right-0">
+              className="absolute right-0"
+            >
               <Input
                 id="search-input"
                 type="text"
@@ -58,7 +57,8 @@ export function BlogSearch({
           variant="ghost"
           size="icon"
           onClick={toggleSearch}
-          className="rounded-full bg-muted border p-2 ml-2 z-10">
+          className="rounded-full bg-muted border p-2 ml-2 z-10"
+        >
           {isSearchOpen ? (
             <X className="h-4 w-4" />
           ) : (
@@ -84,7 +84,8 @@ export function BlogSearch({
           variant="ghost"
           size="icon"
           onClick={() => setSearchQuery("")}
-          className="absolute right-2 h-5 w-5 rounded-full p-0">
+          className="absolute right-2 h-5 w-5 rounded-full p-0"
+        >
           <X className="h-3 w-3" />
         </Button>
       )}
