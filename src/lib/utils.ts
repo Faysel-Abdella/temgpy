@@ -77,3 +77,11 @@ export function formatBlogDate(dateInput: string | Date) {
 
   return date.toLocaleDateString("en-US", options);
 }
+
+export const getHeadingId = (text?: string) => {
+  if (!text) return "";
+  return text
+    .toLowerCase()
+    .replace(/\s+/g, "-")
+    .replace(/[^\w-]+/g, "");
+};

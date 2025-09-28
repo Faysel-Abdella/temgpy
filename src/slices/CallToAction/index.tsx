@@ -1,51 +1,45 @@
 import { FC } from "react";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
+import * as prismic from "@prismicio/client"; // Needed for isFilled and asLink
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
-/**
- * Props for `CallToAction`.
- */
 export type CallToActionProps = SliceComponentProps<Content.CallToActionSlice>;
 
-/**
- * Component for "CallToAction" Slices.
- */
 const CallToAction: FC<CallToActionProps> = ({ slice }) => {
+  const { cta_title, text, cta_button_link, button_text } = slice.primary;
+
+  if (!prismic.isFilled.keyText(cta_title)) {
+    return null;
+  }
+
   return (
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      className="py-16 md:py-24 bg-gray-50 border-y border-gray-200"
     >
-      Placeholder component for call_to_action (variation: {slice.variation})
-      slices.
-      <br />
-      <strong>You can edit this slice directly in your code editor.</strong>
-      {/**
-       * 💡 Use Prismic MCP with your code editor
-       *
-       * Get AI-powered help to build your slice components — based on your actual model.
-       *
-       * ▶️ Setup:
-       * 1. Add a new MCP Server in your code editor:
-       *
-       * {
-       *   "mcpServers": {
-       *     "Prismic MCP": {
-       *       "command": "npx",
-       *       "args": ["-y", "@prismicio/mcp-server@latest"]
-       *     }
-       *   }
-       * }
-       *
-       * 2. Select a model optimized for coding (e.g. Claude 3.7 Sonnet or similar)
-       *
-       * ✅ Then open your slice file and ask your code editor:
-       *    "Code this slice"
-       *
-       * Your code editor reads your slice model and helps you code faster ⚡
-       * 🎙️ Give your feedback: https://community.prismic.io/t/help-us-shape-the-future-of-slice-creation/19505
-       * 📚 Documentation: https://prismic.io/docs/ai#code-with-prismics-mcp-server
-       */}
+      <div className="mx-auto max-w-4xl px-4 text-center">
+        <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-4">
+          {cta_title}
+        </h2>
+
+        {prismic.isFilled.keyText(text) && (
+          <p className="text-lg md:text-xl text-gray-600 mb-10 max-w-3xl mx-auto">
+            {text}
+          </p>
+        )}
+
+        {prismic.isFilled.link(cta_button_link) &&
+          prismic.isFilled.keyText(button_text) && (
+            <Button asChild>
+              <Link href={prismic.asLink(cta_button_link) || "#"}>
+                {button_text}
+              </Link>
+            </Button>
+          )}
+      </div>
     </section>
   );
 };
