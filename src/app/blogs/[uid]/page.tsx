@@ -108,7 +108,11 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
       <BlogHome blog={blog} />
       <WriterAndShare blog={blog} />
       <Separator className="mx-auto w-full px-4 max-w-[1055px]" />
-      <ReadingBlog slices={blog.data.slices} tocSections={tocSections} />
+      <ReadingBlog
+        blog={blog}
+        slices={blog.data.slices}
+        tocSections={tocSections}
+      />
       <div className="flex mx-auto">
         <RelatedPosts blog={blog} />
       </div>

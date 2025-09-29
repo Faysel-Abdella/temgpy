@@ -33,8 +33,8 @@ export default async function BlogsList({ searchQuery }: BlogsList) {
     pageSize: 100,
   });
 
-  const latestThreeBlogs = allBlogs.slice(0, 4);
-  const olderBlogs = allBlogs.slice(4);
+  const latestThreeBlogs = allBlogs.slice(0, 3);
+  const olderBlogs = allBlogs.slice(3);
 
   return (
     <div className="flex w-screen bg-white items-center justify-center py-10 md:py-16 px-4 lg:px-0 flex-col gap-10">

@@ -12,19 +12,19 @@ interface RelatedPostsProps {
 export default async function RelatedPosts({ blog }: RelatedPostsProps) {
   const client = createClient();
 
-  const tags = blog.data.tags.map((tag) => tag.tag_name as string);
-
-  const relatedBlogs = await client.getAllByType("blog", {
+  const response = await client.getByType("blog", {
     orderings: {
       field: "my.blog.publication_date",
       direction: "desc",
     },
     filters: [
-      filter.any("my.blog.tags.tag_name", tags),
+      // filter.any("my.blog.tags.tag_name", tags),
       filter.not("document.id", blog.id),
     ],
     pageSize: 3,
   });
+
+  const relatedBlogs = response.results;
 
   if (relatedBlogs.length > 0)
     return (

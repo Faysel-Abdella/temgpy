@@ -16,17 +16,12 @@ export default function BlogHome({ blog }: BlogHomeProps) {
               title="Blogs"
               className="bg-muted/15 border-2 border-[#565656] outline-0 text-white pr-4"
             />
-            {blog.data.tags.length > 0 &&
-              blog.data.tags.map(
-                (tag, index) =>
-                  tag.tag_name && (
-                    <SectionShowWithOutIcon
-                      key={index}
-                      title={tag.tag_name}
-                      className="bg-muted/15 border-2 border-[#565656] outline-0 text-white px-4"
-                    />
-                  )
-              )}
+            {blog.data.tags.length > 0 && blog.data.tags[0] && (
+              <SectionShowWithOutIcon
+                title={blog.data.tags[0].tag_name || ""}
+                className="bg-muted/15 border-2 border-[#565656] outline-0 text-white px-4"
+              />
+            )}
           </div>
 
           <h1 className="mt-4 text-background2-foreground md:mt-6 font-gilroy font-extrabold text-4xl md:text-5xl lg:text-6xl">
