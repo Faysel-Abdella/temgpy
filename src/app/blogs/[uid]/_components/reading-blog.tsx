@@ -24,7 +24,7 @@ export default function ReadingBlog({
   const blogTags = blog.data.tags.map((tag) => (tag.tag_name as string).trim());
   return (
     <div className="relative mx-auto w-full px-4 max-w-[1080px] flex gap-14 ">
-      <div className="flex flex-col  max-w-[777px] mx-auto gap-6 md:gap-8">
+      <div className="flex flex-col  max-w-[777px] mx-auto ">
         <SliceZoneComponent slices={slices} components={components} />
         <div className="flex md:-ml-4 mt-4 flex-wrap gap-2">
           {blogTags.map((item) => (
