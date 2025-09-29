@@ -41,9 +41,19 @@ const TableOfContents = ({ tocSections }: TableOfContentsProps) => {
   }, [tocSections]);
 
   const handleLinkClick = (id: string) => {
+    const FIXED_HEADER_HEIGHT = 80;
     const element = document.getElementById(id);
+
     if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+      const elementPosition = element.getBoundingClientRect().top;
+
+      const offsetPosition =
+        elementPosition + window.scrollY - FIXED_HEADER_HEIGHT;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
     }
   };
   return (
