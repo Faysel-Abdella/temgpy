@@ -35,7 +35,6 @@ export default function BlogHome({ blog }: BlogHomeProps) {
             width={1115}
             height={1080}
             className="w-full z-20 h-full max-w-[1115px] max-h-[590px]"
-            alt=""
           />
         </div>
         <div className="absolute bottom-0 w-full z-0 h-14 md:h-20 lg:h-28 bg-background" />

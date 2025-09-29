@@ -20,7 +20,6 @@ export function LatestThreeBlogs({ blogs }: LatestThreeBlogsProps) {
           >
             <PrismicNextImage
               field={blog.data.featured_image}
-              alt=""
               className="object-cover  hover:cursor-pointer flex-shrink-0 w-36 h-24 sm:w-[223px] sm:h-[155px] rounded-lg overflow-hidden"
             />
 

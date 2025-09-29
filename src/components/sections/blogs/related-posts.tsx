@@ -44,7 +44,6 @@ export default async function RelatedPosts({ blog }: RelatedPostsProps) {
                   field={blog.data.featured_image}
                   width={335}
                   height={335}
-                  alt=""
                   className="object-cover w-full h-full cursor-pointer"
                 />
               </div>

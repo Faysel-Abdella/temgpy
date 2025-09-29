@@ -26,7 +26,6 @@ export function FeaturedBlog({ featuredBlog }: FeaturedBlogProps) {
         >
           <PrismicNextImage
             field={featuredBlogData.data!.featured_image}
-            alt=""
             className="object-cover hover:cursor-pointer aspect-[16/11] rounded-lg w-full"
           />
 

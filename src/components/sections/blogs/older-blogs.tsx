@@ -41,7 +41,6 @@ export function OlderBlogs({ blogs, isSearchActive }: OlderBlogsProps) {
                 >
                   <PrismicNextImage
                     field={blog.data.featured_image}
-                    alt=""
                     className="object-cover l hover:cursor-pointer relative w-full max-w-[364px] sm:max-w-[388px] h-[244px] sm:h-[260px] rounded-lg overflow-hidden"
                   />
 
