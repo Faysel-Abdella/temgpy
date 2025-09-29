@@ -6,14 +6,14 @@ import Subscribe from "@/components/sections/blogs/subscribe";
 import { createClient } from "@/prismicio";
 
 interface BlogsPageProps {
-  searchParams: Promise<{ searchQuery: string }>;
+  searchParams: Promise<{ searchQuery: string; filter: string }>;
 }
 export default async function BlogsPage({ searchParams }: BlogsPageProps) {
-  const { searchQuery } = await searchParams;
+  const { searchQuery, filter } = await searchParams;
   return (
     <div className="">
       <Home />
-      <BlogsList searchQuery={searchQuery} />
+      <BlogsList searchQuery={searchQuery} filter={filter} />
       <ShapeFuture />
       <Subscribe />
     </div>

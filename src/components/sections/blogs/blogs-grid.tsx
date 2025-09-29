@@ -11,12 +11,12 @@ import { calculateReadingTimeFromSlices, formatBlogDate } from "@/lib/utils";
 import { asDate } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 
-interface OlderBlogsProps {
+interface BlogsGridProps {
   blogs: BlogDocument[];
   isSearchActive: boolean;
 }
 
-export function OlderBlogs({ blogs, isSearchActive }: OlderBlogsProps) {
+export function BlogsGrid({ blogs, isSearchActive }: BlogsGridProps) {
   return (
     <AnimatePresence mode="wait">
       <motion.div
