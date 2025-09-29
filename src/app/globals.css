@@ -2,6 +2,8 @@
 
 @plugin "tailwindcss-animate";
 
+@plugin "@tailwindcss/typography";
+
 @custom-variant dark (&:is(.dark *));
 
 @theme {
@@ -236,8 +238,8 @@
 }
 
 .blended-image {
-  background: url("/images/our-story.png") lightgray 28.886px -53.968px / 98.466%
-    121.282% no-repeat;
+  background: url("/images/our-story.png") lightgray 28.886px -53.968px /
+    98.466% 121.282% no-repeat;
   width: 1000px;
   background-blend-mode: multiply;
   mix-blend-mode: darken;

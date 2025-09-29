@@ -53,9 +53,7 @@ export default async function Page() {
       <WriterAndShare slug={slug} />
       <Separator className="mx-auto w-full px-4 max-w-[1055px]" />
       <ReadingBlog />
-      <div className="flex mx-auto">
-        <RelatedPosts slug={slug} />
-      </div>
+
       <Subscribe />
     </div>
   );

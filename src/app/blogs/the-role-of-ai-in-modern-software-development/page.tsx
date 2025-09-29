@@ -1,12 +1,10 @@
-import type { Metadata } from "next";
-import React from "react";
-import BlogHome from "./home";
+import { getOneBlog } from "@/components/sections/blogs/blogs-data";
+import Subscribe from "@/components/sections/blogs/subscribe";
 import { Separator } from "@/components/ui/separator";
+import type { Metadata } from "next";
+import BlogHome from "./home";
 import ReadingBlog from "./reading-blog";
 import WriterAndShare from "./writer-and-share";
-import RelatedPosts from "@/components/sections/blogs/related-posts";
-import Subscribe from "@/components/sections/blogs/subscribe";
-import { getOneBlog } from "@/components/sections/blogs/blogs-data";
 
 export async function generateMetadata(): Promise<Metadata> {
   const slug = "the-role-of-ai-in-modern-software-development"; // Static slug for this route
@@ -53,9 +51,6 @@ export default async function Page() {
       <WriterAndShare slug={slug} />
       <Separator className="mx-auto w-full px-4 max-w-[1055px]" />
       <ReadingBlog />
-      <div className="flex mx-auto">
-        <RelatedPosts slug={slug} />
-      </div>
       <Subscribe />
     </div>
   );

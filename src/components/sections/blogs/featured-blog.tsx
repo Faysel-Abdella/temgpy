@@ -1,54 +1,63 @@
 "use client";
 
-import Image from "next/image";
-import { Blog } from "./blogs-data";
+import { formatBlogDate } from "@/lib/utils";
+import { asDate } from "@prismicio/client";
+import { PrismicNextImage } from "@prismicio/next";
+import { PrismicRichText } from "@prismicio/react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { FeaturedBlogDocument } from "../../../../prismicio-types";
 
 interface FeaturedBlogProps {
-  blog: Blog;
+  featuredBlog: FeaturedBlogDocument;
 }
 
-export function FeaturedBlog({ blog }: FeaturedBlogProps) {
-  const router = useRouter();
+export function FeaturedBlog({ featuredBlog }: FeaturedBlogProps) {
+  const featuredBlogData =
+    featuredBlog.data.blog && featuredBlog.data.blog.link_type == "Document"
+      ? featuredBlog.data.blog
+      : null;
 
-  return (
-    <div className="flex w-full lg:w-1/2 mb-8 lg:mb-0">
-      <div className="flex flex-col h-full gap-4">
-        <div className="relative w-full aspect-[16/11] rounded-lg overflow-hidden">
-          <Image
-            onClick={() => router.push(`/blogs/${blog.slug}`)}
-            src={blog.image}
-            alt="Featured article image"
-            fill
-            className="object-cover hover:cursor-pointer"
+  if (featuredBlogData)
+    return (
+      <div className="flex w-full lg:w-1/2 mb-8 lg:mb-0">
+        <Link
+          href={`/blogs/${featuredBlogData.uid}`}
+          className="flex flex-col h-full gap-4"
+        >
+          <PrismicNextImage
+            field={featuredBlogData.data!.featured_image}
+            className="object-cover hover:cursor-pointer aspect-[16/11] rounded-lg w-full"
           />
-        </div>
-        <div className="flex flex-col flex-grow gap-3 font-instrument">
-          <p className="text-sm font-normal font-inter text-description/80 uppercase">
-            {blog.techIndustry}
-          </p>
-          <Link
-            href={`/blogs/${blog.slug}`}
-            className="text-2xl hover:opacity-80 md:text-3xl font-semibold font-gilroy">
-            {blog.title}
-          </Link>
-          <Link
-            href={`/blogs/${blog.slug}`}
-            className="text-md hover:opacity-80 font-inter text-description mt-2 font-normal">
-            {blog.description}
-          </Link>
-          <div className="flex items-center gap-2 opacity-60">
-            <span className="text-sm font-inter font-medium tracking-wide">
-              {blog.publishedAt}
-            </span>
-            <span className="size-[5px] bg-black rounded-full items-center justify-center" />
-            <span className="text-sm font-inter font-medium tracking-wide">
-              {blog.readingTime}
-            </span>
+
+          <div className="flex flex-col flex-grow gap-3 font-instrument">
+            {featuredBlogData.data!.tags.length > 0 && (
+              <p className="text-sm font-normal font-inter text-description/80 uppercase">
+                {featuredBlogData.data!.tags[0]?.tag_name}
+              </p>
+            )}
+            <p className="text-2xl hover:opacity-80 md:text-3xl font-semibold font-gilroy">
+              {featuredBlogData.data!.title}
+            </p>
+            <div className="text-md hover:opacity-80 font-inter text-description mt-2 font-normal">
+              <PrismicRichText
+                field={featuredBlogData.data!.short_description}
+              />
+            </div>
+            <div className="flex items-center gap-2 opacity-60">
+              {featuredBlogData.data!.publication_date && (
+                <span className="text-sm font-inter font-medium tracking-wide">
+                  {formatBlogDate(
+                    asDate(featuredBlogData.data!.publication_date)
+                  )}
+                </span>
+              )}
+              {/* <span className="size-[5px] bg-black rounded-full items-center justify-center" /> */}
+              {/* <span className="text-sm font-inter font-medium tracking-wide">
+              {calculateReadingTimeFromSlices(featuredBlogData.data!.slices)}
+            </span> */}
+            </div>
           </div>
-        </div>
+        </Link>
       </div>
-    </div>
-  );
+    );
 }
