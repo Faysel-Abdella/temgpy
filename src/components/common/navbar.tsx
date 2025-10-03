@@ -12,7 +12,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isSticky, setIsSticky] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const navItems = [
     { name: "Home", path: "/" },
@@ -20,11 +20,7 @@ export default function Navbar() {
     { name: "Projects", path: "/projects" },
     { name: "Services", path: "/#" },
     { name: "Blogs", path: "/blogs" },
-    
   ];
-
- 
-
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -45,6 +41,23 @@ export default function Navbar() {
   };
 
   useEffect(() => {
+    const handleScroll = () => {
+      // Set 'isScrolled' to true if scroll position is greater than 10px
+      if (window.scrollY > 10) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    // Attach listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up listener
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
     const handleHashScroll = () => {
       const hash = window.location.hash;
       if (hash === "#contact-us") {
@@ -60,16 +73,6 @@ export default function Navbar() {
     return () => window.removeEventListener("hashchange", handleHashScroll);
   }, [pathname]);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      setIsSticky(scrollPosition >= 40);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   // Helper function to determine if a nav item is active
   const isNavItemActive = (itemPath: string) => {
     // Exact match for root, startsWith for nested routes
@@ -81,15 +84,18 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed w-screen  z-[2350]  top-0 flex items-center justify-center transition-all duration-300 ease-in-out bg-indigo-50 border-b border-white/10  `}>
+      className={cn(
+        `fixed w-screen  z-[2350]  h-24 top-0 flex  justify-center border-b border-transparent transition-all duration-300 ease-in-out bg-gradient-to-b from-background3 via-background3 to-transparent   `,
+        isScrolled && "to-background3 h-16 border-border "
+      )}
+    >
       <div
-        className={`w-full  h-16 font-inter px-6   lg:pl-14 lg:pr-10  max-w-[1400px] flex items-center justify-between `}>
-
-
-          
+        className={`w-full   font-inter px-6   lg:pl-14 lg:pr-10  max-w-[1400px] flex items-center justify-between `}
+      >
         <div
           className="md:hidden hover:cursor-pointer"
-          onClick={() => router.push("/")}>
+          onClick={() => router.push("/")}
+        >
           <Image
             src="/logo.svg"
             alt="logo"
@@ -99,9 +105,10 @@ export default function Navbar() {
           />
         </div>
 
-<div
+        <div
           className="hidden md:flex hover:cursor-pointer"
-          onClick={() => router.push("/")}>
+          onClick={() => router.push("/")}
+        >
           <Image
             src="/logo.svg"
             alt="logo"
@@ -115,16 +122,15 @@ export default function Navbar() {
           {navItems.map((item) => {
             const isActive = isNavItemActive(item.path);
             return (
-              <div
-                key={item.name}
-                className="relative group">
+              <div key={item.name} className="relative group">
                 <Link
                   href={item.path}
                   className={`text-base py-2.5 h-full   font-inter leading-normal transition-all duration-300 ${
                     isActive
                       ? " font-semibold"
                       : " font-normal hover:font-semibold"
-                  }`}>
+                  }`}
+                >
                   {item.name}
                   <span
                     className={`self-center  w-full absolute -bottom-1 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-black to-transparent transition-opacity duration-500 ${
@@ -139,68 +145,78 @@ export default function Navbar() {
           })}
         </div>
 
-        
-
         <button
           onClick={toggleMenu}
           className="md:hidden text-black"
-          aria-label="Toggle menu">
-            <span className="flex flex-col px-0 space-y-1.5 py-0 h-5 w-7 bg-transparent items-end justify-end text-white/90 ">
-              <span className={cn("w-full h-0.5 bg-black/90 rounded-full transition-all duration-300  rotate-0 translate-y-0 " ,isMenuOpen&&"w-4/5 rotate-45 translate-y-2")} />
-              <span className={cn("w-4/5 h-0.5 bg-black/90 rounded-full  rotate-0 transition-all duration-300 " , isMenuOpen && " w-4/5 -rotate-45")} />
-              <span className={cn("w-[60%] h-0.5 bg-black/90 rounded-full transition-all duration-300", isMenuOpen&& "w-0")} />
-            </span>
-          
+          aria-label="Toggle menu"
+        >
+          <span className="flex flex-col px-0 space-y-1.5 py-0 h-5 w-7 bg-transparent items-end justify-end text-white/90 ">
+            <span
+              className={cn(
+                "w-full h-0.5 bg-black/90 rounded-full transition-all duration-300  rotate-0 translate-y-0 ",
+                isMenuOpen && "w-4/5 rotate-45 translate-y-2"
+              )}
+            />
+            <span
+              className={cn(
+                "w-4/5 h-0.5 bg-black/90 rounded-full  rotate-0 transition-all duration-300 ",
+                isMenuOpen && " w-4/5 -rotate-45"
+              )}
+            />
+            <span
+              className={cn(
+                "w-[60%] h-0.5 bg-black/90 rounded-full transition-all duration-300",
+                isMenuOpen && "w-0"
+              )}
+            />
+          </span>
         </button>
 
         <div className="hidden md:flex gap-7 items-center">
-         <Button  className="rounded-full" asChild>
-
-          <Link
-            href="/#contact-us"
-            onClick={handleNavClick}
-          
-           >
-            Contact Us
-            <ArrowUpRight className="size-4" />
-          </Link>
-         </Button>
-
-        </div>
-      </div>
-
-     
-        <div className={cn("absolute top-[70px] left-0 mx-1.5 h-0 rounded-4xl right-0 bg-indigo-50 border-b-0  shadow-lg shadow-black/5 rounded-b-2xl overflow-hidden md:hidden z-50 transition-all duration-300 ease-in-out", isMenuOpen && "h-90 border-b")}>
-          <div className="max-h-[80vh] overflow-y-auto py-4 px-6 flex flex-col gap-4">
-            {navItems.map((item) => {
-              const isActive = isNavItemActive(item.path);
-              return (
-                <Link
-                  key={item.name}
-                  href={item.path}
-                  className={`text-base py-2  font-inter leading-normal transition-colors duration-300 border-b /10 ${
-                    isActive
-                      ? " font-extrabold"
-                      : " font-normal"
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}>
-                  {item.name}
-                </Link>
-              );
-            })}
-            <Link
-              href="/#contact-us"
-              className="py-3 transition-colors duration-300  font-normal text-base flex items-center gap-1 border-b border-white/10"
-              onClick={(e) => {
-                handleNavClick(e);
-                setIsMenuOpen(false);
-              }}>
+          <Button className="rounded-full" asChild>
+            <Link href="/#contact-us" onClick={handleNavClick}>
               Contact Us
               <ArrowUpRight className="size-4" />
             </Link>
-          </div>
+          </Button>
         </div>
-    
+      </div>
+
+      <div
+        className={cn(
+          "absolute top-[70px] left-0 mx-1.5 h-0 rounded-4xl right-0 bg-background3 border-0  shadow-lg shadow-black/5 rounded-b-2xl overflow-hidden md:hidden z-50 transition-all duration-300 ease-in-out",
+          isMenuOpen && "h-90 border"
+        )}
+      >
+        <div className="max-h-[80vh] overflow-y-auto py-4 px-6 flex flex-col gap-4">
+          {navItems.map((item) => {
+            const isActive = isNavItemActive(item.path);
+            return (
+              <Link
+                key={item.name}
+                href={item.path}
+                className={`text-base py-2  font-inter leading-normal transition-colors duration-300 border-b /10 ${
+                  isActive ? " font-extrabold" : " font-normal"
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.name}
+              </Link>
+            );
+          })}
+          <Link
+            href="/#contact-us"
+            className="py-3 transition-colors duration-300  font-normal text-base flex items-center gap-1 border-b border-white/10"
+            onClick={(e) => {
+              handleNavClick(e);
+              setIsMenuOpen(false);
+            }}
+          >
+            Contact Us
+            <ArrowUpRight className="size-4" />
+          </Link>
+        </div>
+      </div>
     </nav>
   );
 }

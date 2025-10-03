@@ -10,6 +10,7 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-gilroy: var(--font-gilroy);
+  --font-clashgrotesk: var(--font-clashgrotesk);
   --font-inter: var(--font-inter);
 
   /* ClashGrotesk.ttf */
@@ -374,4 +375,19 @@
   background: inherit;
   border-radius: 9999px; /* Large radius for outer curve */
   z-index: -1;
+}
+
+@theme inline {
+  --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
+}
+
+@keyframes spotlight {
+  0% {
+    opacity: 0;
+    transform: translate(-72%, -62%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -40%) scale(1);
+  }
 }

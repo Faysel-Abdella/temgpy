@@ -44,20 +44,44 @@ export function InfiniteMovingPartners() {
             className="flex animate-infinite-scroll gap-8"
             style={{
               animationDuration: `${dupe * 8}s`,
-            }}>
+            }}
+          >
             {Array(dupe)
               .fill(services)
               .flat()
               .map((service, index) => (
                 <div
                   className="flex gap-7 items-center md:gap-12 h-full"
-                  key={index}>
+                  key={index}
+                >
                   <Separator
                     orientation="vertical"
                     className="min-h-3 md:min-h-6  bg-[#b1b5bb]"
                   />
                   <Image
                     src="/partners/taza.png"
+                    width={150}
+                    height={150}
+                    alt="partner"
+                    className="max-w-[80px] sm:max-w-[120px] lg:max-w-[150px] w-auto"
+                  />
+                  <Separator
+                    orientation="vertical"
+                    className="min-h-3 md:min-h-6  bg-[#b1b5bb]"
+                  />
+                  <Image
+                    src="/partners/doxiverse.png"
+                    width={150}
+                    height={150}
+                    alt="partner"
+                    className="max-w-[80px] sm:max-w-[120px] lg:max-w-[150px] w-auto"
+                  />
+                  <Separator
+                    orientation="vertical"
+                    className="min-h-3 md:min-h-6  bg-[#b1b5bb]"
+                  />
+                  <Image
+                    src="/partners/time.png"
                     width={150}
                     height={150}
                     alt="partner"
