@@ -27,8 +27,7 @@ const FAQ = () => {
         </div>
         <div
           data-aos="fade-up"
-          data-aos-duration="500"
-          data-aos-delay="700"
+          data-aos-duration="800"
           className="max-w-4xl mx-auto"
         >
           <FaqAccordion />

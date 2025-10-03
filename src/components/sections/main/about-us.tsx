@@ -37,7 +37,7 @@ export default function AboutUs() {
             </Button>
           </div>
 
-          <div className="flex flex-col w-full lg:w-1/2 gap-3 md:gap-5 px-4 lg:px-0">
+          <div className="flex flex-col w-full lg:w-1/2 gap-3 md:gap-5 ">
             <p
               data-aos="fade-up"
               data-aos-duration="500"

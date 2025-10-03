@@ -85,8 +85,8 @@ export default function Navbar() {
   return (
     <nav
       className={cn(
-        `fixed w-screen  z-[2350]  h-24 top-0 flex  justify-center border-b border-transparent transition-all duration-300 ease-in-out bg-gradient-to-b from-background3 via-background3 to-transparent   `,
-        isScrolled && "to-background3 h-16 border-border "
+        `fixed w-screen  z-[2350]  h-24 top-0 flex  justify-center border-b-0 border-transparent  transition-all duration-300 ease-in-out bg-gradient-to-b from-background3 via-background3 to-transparent   `,
+        isScrolled && "to-background3 h-16 border-border  border-b"
       )}
     >
       <div
