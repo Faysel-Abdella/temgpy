@@ -26,7 +26,6 @@ export default function page() {
       <Partners />
       <AboutUs />
       <FAQ />
-      <ContactUs />
     </main>
   );
 }

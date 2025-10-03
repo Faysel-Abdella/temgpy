@@ -26,9 +26,10 @@ const FAQ = () => {
           </p>
         </div>
         <div
-          className="max-w-4xl mx-auto"
           data-aos="fade-up"
-          data-aos-duration="800"
+          data-aos-duration="500"
+          data-aos-delay="700"
+          className="max-w-4xl mx-auto"
         >
           <FaqAccordion />
         </div>

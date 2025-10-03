@@ -11,7 +11,7 @@ export type FaqItem = {
 
 export const faqContent: FaqItem[] = [
   {
-    value: "item-1",
+    value: "01",
     question: "Who is Growztech?",
     answer: (
       <p className="leading-relaxed">
@@ -23,7 +23,7 @@ export const faqContent: FaqItem[] = [
     ),
   },
   {
-    value: "item-2",
+    value: "02",
     question: "What services does Growztech offer?",
     answer: (
       <div className="space-y-2 leading-relaxed">
@@ -60,7 +60,7 @@ export const faqContent: FaqItem[] = [
     ),
   },
   {
-    value: "item-3",
+    value: "03",
     question: "Where does Growztech provide services?",
     answer: (
       <p className="leading-relaxed">
@@ -72,7 +72,7 @@ export const faqContent: FaqItem[] = [
     ),
   },
   {
-    value: "item-4",
+    value: "04",
     question: "Why choose Growztech for custom software development?",
     answer: (
       <div className="space-y-2 leading-relaxed">
@@ -87,7 +87,7 @@ export const faqContent: FaqItem[] = [
     ),
   },
   {
-    value: "item-5",
+    value: "05",
     question: "What industries does Growztech serve?",
     answer: (
       <div className="space-y-2 leading-relaxed">
@@ -105,7 +105,7 @@ export const faqContent: FaqItem[] = [
     ),
   },
   {
-    value: "item-6",
+    value: "06",
     question: "Does Growztech provide AI solutions?",
     answer: (
       <div className="space-y-2 leading-relaxed">
@@ -119,7 +119,7 @@ export const faqContent: FaqItem[] = [
     ),
   },
   {
-    value: "item-7",
+    value: "07",
     question: "Is Growztech only serving clients in Ethiopia?",
     answer: (
       <p className="leading-relaxed">
@@ -131,7 +131,7 @@ export const faqContent: FaqItem[] = [
     ),
   },
   {
-    value: "item-8",
+    value: "08",
     question: "How can I contact Growztech?",
     answer: (
       <div className="space-y-3 leading-relaxed">
@@ -160,7 +160,7 @@ export const faqContent: FaqItem[] = [
     ),
   },
   {
-    value: "item-9",
+    value: "09",
     question:
       "How long does it take to develop custom software with Growztech?",
     answer: (
@@ -186,7 +186,7 @@ export const faqContent: FaqItem[] = [
     ),
   },
   {
-    value: "item-10",
+    value: "10",
     question: "What custom software development services does Growztech offer?",
     answer: (
       <div className="space-y-2 leading-relaxed">
@@ -211,7 +211,7 @@ export const faqContent: FaqItem[] = [
 const FaqAccordion = () => {
   return (
     <Accordion type="single" collapsible className="w-full space-y-3">
-      {faqContent.map((faq) => {
+      {faqContent.slice(0, 3).map((faq) => {
         return <FaqAccordionItem key={faq.value} faqItem={faq} />;
       })}
     </Accordion>
