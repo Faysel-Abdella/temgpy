@@ -30,36 +30,30 @@ export const faqContent: FaqItem[] = [
         <p>We provide a full range of IT and software services, including:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>
-            <strong className="font-semibold text-foreground">
+            <strong className="font-semibold ">
               Custom Software Development
             </strong>{" "}
             - tailored applications that solve unique business needs.
           </li>
           <li>
-            <strong className="font-semibold text-foreground">
-              AI Solutions
-            </strong>{" "}
-            - intelligent systems that improve automation, decision-making, and
+            <strong className="font-semibold ">AI Solutions</strong> -
+            intelligent systems that improve automation, decision-making, and
             customer experience.
           </li>
           <li>
-            <strong className="font-semibold text-foreground">
-              Cloud Solutions
-            </strong>{" "}
-            - secure, scalable cloud computing services for businesses of all
+            <strong className="font-semibold ">Cloud Solutions</strong> -
+            secure, scalable cloud computing services for businesses of all
             sizes.
           </li>
           <li>
-            <strong className="font-semibold text-foreground">
+            <strong className="font-semibold ">
               Mobile & Web App Development
             </strong>{" "}
             - user-friendly applications that enhance engagement.
           </li>
           <li>
-            <strong className="font-semibold text-foreground">
-              IT Consulting
-            </strong>{" "}
-            - expert guidance to align technology with business goals.
+            <strong className="font-semibold ">IT Consulting</strong> - expert
+            guidance to align technology with business goals.
           </li>
         </ul>
       </div>
@@ -148,7 +142,7 @@ export const faqContent: FaqItem[] = [
         >
           <Mail className="h-5 w-5 flex-shrink-0" />
           <div className="flex flex-col">
-            <span className="font-semibold text-foreground">Email:</span>
+            <span className="font-semibold ">Email:</span>
             <span>info@growztech.com</span>
           </div>
         </a>
@@ -158,7 +152,7 @@ export const faqContent: FaqItem[] = [
         >
           <Phone className="h-5 w-5 flex-shrink-0" />
           <div className="flex flex-col">
-            <span className="font-semibold text-foreground">Phone:</span>
+            <span className="font-semibold ">Phone:</span>
             <span>+251 947 344 248 | +251 954 624 638</span>
           </div>
         </a>
@@ -174,13 +168,11 @@ export const faqContent: FaqItem[] = [
         <p>Project timelines vary depending on complexity. Generally:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>
-            <strong className="font-semibold text-foreground">
-              Small projects:
-            </strong>{" "}
-            a few weeks.
+            <strong className="font-semibold ">Small projects:</strong> a few
+            weeks.
           </li>
           <li>
-            <strong className="font-semibold text-foreground">
+            <strong className="font-semibold ">
               Large enterprise solutions:
             </strong>{" "}
             several months.

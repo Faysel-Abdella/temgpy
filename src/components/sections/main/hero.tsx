@@ -65,7 +65,7 @@ export default function Hero() {
           <p
             data-aos="fade-up"
             data-aos-duration="700"
-            className="text-sm sm:text-base text-center mt-6 lg:max-w-[823px] text-muted-foreground md:text-lg font-normal font-inter leading-normal md:leading-relaxed lg:w-[85%]"
+            className="text-sm sm:text-base text-center mt-6 lg:max-w-[823px] text-description md:text-lg font-normal font-inter leading-normal md:leading-relaxed lg:w-[85%]"
           >
             As a leading software company, we deliver powerful custom software
             solutions, high performance websites, and the top tech talent to
