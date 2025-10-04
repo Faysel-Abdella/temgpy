@@ -19,19 +19,22 @@ export default function Expertise() {
   return (
     <section
       id="services"
-      className="flex flex-col gap-10 items-center justify-center w-screen h-fit md:py-7 mb-10 relative">
+      className="flex flex-col gap-10 items-center justify-center w-screen h-fit py-7 md:py-10 lg:py-20  relative"
+    >
       <div className="w-full md:max-w-[591px] lg:max-w-[711px] inline-flex flex-col justify-center items-center gap-4 md:gap-6 px-4">
         <SectionShow title="Services" />
         <p
           data-aos="fade-up"
           data-aos-duration="600"
-          className="text-center md:mt-4 text-3xl md:text-4xl lg:text-5xl font-extrabold font-gilroy md:leading-[57.60px]">
+          className="text-center md:mt-4 text-3xl md:text-4xl lg:text-5xl font-extrabold font-gilroy md:leading-[57.60px]"
+        >
           Our Expertise, Your Growth
         </p>
         <p
           data-aos="fade-up"
           data-aos-duration="700"
-          className="self-stretch md:px-10 text-center text-description text-base md:text-lg font-normal font-inter leading-relaxed">
+          className="self-stretch md:px-10 text-center text-description text-base md:text-lg font-normal font-inter leading-relaxed"
+        >
           From software development to IT consultation, we deliver solutions
           that drive results.
         </p>
@@ -47,7 +50,8 @@ export default function Expertise() {
           <div
             data-aos="fade-up"
             data-aos-duration="600"
-            className="flex w-full flex-col gap-4 md:gap-6 rounded-3xl md:rounded-4xl pt-6 border-[1px] border-[#E2E2E3] bg-background3">
+            className="flex w-full flex-col gap-4 md:gap-6 rounded-3xl md:rounded-4xl pt-6 border-[1px] border-[#E2E2E3] bg-background3"
+          >
             <div className="flex w-full px-6 gap-4 md:gap-6 items-center">
               <div className="flex bg-white size-fit p-3 rounded-[12px] items-center justify-center flex-shrink-0">
                 <Icons.Peoples2 className="size-7" />
@@ -65,7 +69,8 @@ export default function Expertise() {
           <div
             data-aos="fade-up"
             data-aos-duration="900"
-            className="flex lg:hidden w-full flex-col gap-4 md:gap-6 rounded-3xl md:rounded-4xl pt-6 border-[1px] border-[#E2E2E3] bg-background3">
+            className="flex lg:hidden w-full flex-col gap-4 md:gap-6 rounded-3xl md:rounded-4xl pt-6 border-[1px] border-[#E2E2E3] bg-background3"
+          >
             <div className="flex w-full px-6 gap-4 md:gap-6 items-center">
               <div className="flex bg-white size-fit rounded-[12px] p-3 items-center justify-center flex-shrink-0">
                 <Icons.Bulb className="size-7" />
@@ -97,7 +102,8 @@ export default function Expertise() {
           <div
             data-aos="fade-up"
             data-aos-duration="500"
-            className="flex w-full flex-col gap-4 md:gap-6 rounded-3xl md:rounded-4xl pt-6 border-[1px] border-[#E2E2E3] bg-background3">
+            className="flex w-full flex-col gap-4 md:gap-6 rounded-3xl md:rounded-4xl pt-6 border-[1px] border-[#E2E2E3] bg-background3"
+          >
             <div className="flex w-full px-6 gap-4 md:gap-6 items-center">
               <div className="flex bg-white size-fit rounded-[12px] p-3 items-center justify-center flex-shrink-0">
                 <Icons.Code className="size-7" />
@@ -116,7 +122,8 @@ export default function Expertise() {
           <div
             data-aos="fade-up"
             data-aos-duration="800"
-            className="flex w-full flex-col gap-4 md:gap-6 rounded-3xl md:rounded-4xl pt-6 border-[1px] border-[#E2E2E3] bg-background3">
+            className="flex w-full flex-col gap-4 md:gap-6 rounded-3xl md:rounded-4xl pt-6 border-[1px] border-[#E2E2E3] bg-background3"
+          >
             <div className="flex w-full px-6 gap-4 md:gap-6 items-center">
               <div className="flex bg-white size-fit rounded-[12px] p-3 items-center justify-center flex-shrink-0">
                 <Icons.CloudConnection className="size-7" />
@@ -148,7 +155,8 @@ export default function Expertise() {
           <div
             data-aos="fade-up"
             data-aos-duration="600"
-            className="flex w-full flex-col gap-4 md:gap-6 rounded-3xl md:rounded-4xl pt-6 border-[1px] border-[#E2E2E3] bg-background3">
+            className="flex w-full flex-col gap-4 md:gap-6 rounded-3xl md:rounded-4xl pt-6 border-[1px] border-[#E2E2E3] bg-background3"
+          >
             <div className="flex w-full px-6 gap-4 md:gap-6 items-center">
               <div className="flex bg-white size-fit rounded-[12px] p-3 items-center justify-center flex-shrink-0">
                 <Icons.Bulb className="size-7" />
