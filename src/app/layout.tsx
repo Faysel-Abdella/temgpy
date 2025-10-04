@@ -14,6 +14,11 @@ const gilroy = localFont({
   variable: "--font-gilroy",
   display: "swap",
 });
+const clashgrotesk = localFont({
+  src: "/fonts/ClashGrotesk.ttf",
+  variable: "--font-clashgrotesk",
+  display: "swap",
+});
 
 const inter = localFont({
   src: "/fonts/InterUpdated.otf",
@@ -71,7 +76,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${gilroy.variable} scroll-smooth`}
+      className={`${inter.variable} ${gilroy.variable} ${clashgrotesk.variable} scroll-smooth`}
     >
       {/* Inject GTM scripts automatically  */}
       <GoogleTagManager gtmId="G-JNNFWWMV78" />

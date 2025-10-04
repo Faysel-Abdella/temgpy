@@ -14,19 +14,18 @@ export default function page() {
   return (
     <main className="max-w-screen overflow-x-hidden">
       <Hero />
-      <FeaturesCarousel
+      {/* <FeaturesCarousel
         RightEdgeColor="from-white"
         LeftEdgeColor="from-white"
         className=""
-      />
+      /> */}
       <Expertise />
       <WhyChooseUs />
       <SelectedWorks />
       {/*       <Testimonials /> */}
       <Partners />
-      <FAQ />
       <AboutUs />
-      <ContactUs />
+      <FAQ />
     </main>
   );
 }
