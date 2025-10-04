@@ -210,7 +210,12 @@ export const faqContent: FaqItem[] = [
 ];
 const FaqAccordion = () => {
   return (
-    <Accordion type="single" collapsible className="w-full space-y-3">
+    <Accordion
+      type="single"
+      collapsible
+      defaultValue="01"
+      className="w-full space-y-3"
+    >
       {faqContent.slice(0, 3).map((faq) => {
         return <FaqAccordionItem key={faq.value} faqItem={faq} />;
       })}
