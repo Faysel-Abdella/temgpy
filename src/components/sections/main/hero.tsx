@@ -68,28 +68,36 @@ export default function Hero() {
             className=" w-full flex flex-col gap-4 items-center justify-center mt-6"
           >
             <p className="text-sm sm:text-base text-center  lg:max-w-[823px] text-description md:text-lg font-normal font-inter leading-normal md:leading-relaxed lg:w-[85%]">
-              As a leading software company, we deliver powerful custom software
+              {/* As a leading software company, we deliver powerful custom software
               solutions, high performance websites, and the top tech talent to
-              drive your business forward
+              drive your business forward */}
+              Custom software, scalable platforms, and top tech talent
+              <br />
+              guided by advisors from{" "}
+              <span className="font-semibold text-foreground">
+                Bloomberg
+              </span>{" "}
+              and{" "}
+              <span className="font-semibold text-foreground">Uber</span>{" "}
             </p>
-            <p className="text-sm sm:text-base text-center  lg:max-w-[823px] text-description md:text-lg font-normal font-inter leading-normal md:leading-relaxed lg:w-[85%]">
+            {/* <p className="text-sm sm:text-base text-center  lg:max-w-[823px] text-description md:text-lg font-normal font-inter leading-normal md:leading-relaxed lg:w-[85%]">
               Services guided by advisors from{" "}
               <span className="font-semibold text-foreground">Bloomberg</span>{" "}
               and{" "}
               <span className="font-semibold text-foreground">Uber</span>{" "}
-            </p>
+            </p> */}
           </div>
 
           <div
             data-aos="fade-up"
             data-aos-duration="800"
-            className="z-30 mt-8 md:mt-12 justify-start items-center gap-2 md:gap-5 flex"
+            className="z-30 mt-8 md:mt-12 justify-start items-center gap-2 md:gap-5 flex max-md:flex-col max-md:w-full"
           >
-            <Button className="rounded-full  p-4 md:p-7 text-base font-semibold">
+            <Button className="rounded-full p-5 md:p-7 text-base font-semibold max-md:w-full">
               Book A Free Call
             </Button>
             <Button
-              className="rounded-full  p-4 md:p-7 text-base font-semibold border-primary"
+              className="rounded-full  p-5 md:p-7 text-base font-semibold border-primary max-md:w-full"
               variant={"outline"}
             >
               Explore Services

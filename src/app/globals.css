@@ -358,6 +358,10 @@
   }
 }
 
+button {
+  cursor: pointer;
+}
+
 /* Ensure existing styles don’t conflict */
 .overflow-hidden {
   -ms-overflow-style: none; /* IE and Edge */
