@@ -53,24 +53,33 @@ export default function Hero() {
       ></div>
       <div className="w-full pt-28 pb-10 px-6   lg:px-14    h-fit flex items-center justify-center ">
         <div className="w-full  lg:max-w-6xl items-center h-fit flex flex-col bg-purple-40  ">
-          <HeroSectionShow title="Quality. Speed. Trust." />
+          {/* <HeroSectionShow title="Quality. Speed. Trust." /> */}
 
           <p
             data-aos="fade-up"
             data-aos-duration="600"
-            className="font-clashgrotesk mt-5 flex flex-wrap font-semibold text-3xl md:text-5xl  lg:text-6xl xl:text-7xl text-center"
+            className="font-clashgrotesk mt-8  flex flex-wrap font-semibold text-3xl md:text-5xl  lg:text-6xl xl:text-7xl text-center"
           >
             Grow your Business with Advanced Software Solutions
           </p>
-          <p
+          <div
             data-aos="fade-up"
             data-aos-duration="700"
-            className="text-sm sm:text-base text-center mt-6 lg:max-w-[823px] text-description md:text-lg font-normal font-inter leading-normal md:leading-relaxed lg:w-[85%]"
+            className=" w-full flex flex-col gap-4 items-center justify-center mt-6"
           >
-            As a leading software company, we deliver powerful custom software
-            solutions, high performance websites, and the top tech talent to
-            drive your business forward
-          </p>
+            <p className="text-sm sm:text-base text-center  lg:max-w-[823px] text-description md:text-lg font-normal font-inter leading-normal md:leading-relaxed lg:w-[85%]">
+              As a leading software company, we deliver powerful custom software
+              solutions, high performance websites, and the top tech talent to
+              drive your business forward
+            </p>
+            <p className="text-sm sm:text-base text-center  lg:max-w-[823px] text-description md:text-lg font-normal font-inter leading-normal md:leading-relaxed lg:w-[85%]">
+              Services guided by advisors from{" "}
+              <span className="font-semibold text-foreground">Bloomberg</span>{" "}
+              and{" "}
+              <span className="font-semibold text-foreground">Uber</span>{" "}
+            </p>
+          </div>
+
           <div
             data-aos="fade-up"
             data-aos-duration="800"

@@ -67,7 +67,7 @@ export function InfiniteMovingPartners() {
   }, []);
 
   return (
-    <div className="relative w-full py-3 flex items-center justify-center overflow-hidden">
+    <div className="relative w-full  flex items-center justify-center overflow-hidden">
       <div className="relative w-fit">
         {isMobile && (
           <>
@@ -76,7 +76,7 @@ export function InfiniteMovingPartners() {
           </>
         )}
 
-        <div className="w-screen mx-auto flex items-center justify-center gap-2 md:gap-3 py-4 px-6 lg:py-14 lg:px-20 overflow-hidden relative">
+        <div className="w-screen mx-auto flex items-center justify-center gap-2 md:gap-3  lg:px-20 overflow-hidden relative">
           <div
             className={`flex items-center justify-center gap-8 ${
               isMobile ? "animate-infinite-scroll" : "flex-wrap"
