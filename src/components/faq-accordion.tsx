@@ -216,8 +216,17 @@ const FaqAccordion = () => {
       defaultValue="01"
       className="w-full space-y-3"
     >
-      {faqContent.slice(0, 3).map((faq) => {
-        return <FaqAccordionItem key={faq.value} faqItem={faq} />;
+      {faqContent.slice(0, 3).map((faq, index) => {
+        return (
+          <div
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-delay={`${index * 100}`}
+            key={faq.value}
+          >
+            <FaqAccordionItem faqItem={faq} />
+          </div>
+        );
       })}
     </Accordion>
   );

@@ -3,7 +3,7 @@ import SectionShow from "@/components/section-show";
 
 const FAQ = () => {
   return (
-    <section className=" px-4 py-16 md:py-28 bg-background2">
+    <section className=" px-4 py-16 md:py-28 bg-background2 overflow-hidden">
       <div className="container mx-auto max-w-7xl">
         <div className="mx-auto mb-12 max-w-3xl text-center">
           <SectionShow
@@ -25,11 +25,7 @@ const FAQ = () => {
             Find answers to the most common questions about our services.
           </p>
         </div>
-        <div
-          data-aos="fade-up"
-          data-aos-duration="800"
-          className="max-w-4xl mx-auto"
-        >
+        <div className="max-w-4xl mx-auto">
           <FaqAccordion />
         </div>
       </div>
