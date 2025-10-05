@@ -166,8 +166,8 @@ export default function Navbar() {
         <div className="hidden md:flex gap-7 items-center">
           <Button className="rounded-full" asChild>
             <Link href="/#contact-us" onClick={handleNavClick}>
-              Contact Us
-              <ArrowUpRight className="size-4" />
+              <span className="font-bold">Contact Us</span>
+              {/* <ArrowUpRight className="size-4" /> */}
             </Link>
           </Button>
         </div>
