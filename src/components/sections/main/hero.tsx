@@ -68,24 +68,17 @@ export default function Hero() {
             className=" w-full flex flex-col gap-4 items-center justify-center mt-6"
           >
             <p className="text-sm sm:text-base text-center  lg:max-w-[823px] text-description md:text-lg font-normal font-inter leading-normal md:leading-relaxed lg:w-[85%]">
-              {/* As a leading software company, we deliver powerful custom software
-              solutions, high performance websites, and the top tech talent to
-              drive your business forward */}
-              Custom software, scalable platforms, and top tech talent
-              <br />
+              Venas Technology is a global software company specialized in
+              building custom software solutions, scalable digital platforms,
+              and providing top tech talent.
+              {/* <br />
               guided by advisors from{" "}
               <span className="font-semibold text-foreground">
                 Bloomberg
               </span>{" "}
               and{" "}
-              <span className="font-semibold text-foreground">Uber</span>{" "}
+              <span className="font-semibold text-foreground">Uber</span>{" "} */}
             </p>
-            {/* <p className="text-sm sm:text-base text-center  lg:max-w-[823px] text-description md:text-lg font-normal font-inter leading-normal md:leading-relaxed lg:w-[85%]">
-              Services guided by advisors from{" "}
-              <span className="font-semibold text-foreground">Bloomberg</span>{" "}
-              and{" "}
-              <span className="font-semibold text-foreground">Uber</span>{" "}
-            </p> */}
           </div>
 
           <div

@@ -16,9 +16,9 @@ const partners = [
     maxW: "max-w-[80px] sm:max-w-[120px] lg:max-w-[150px]",
   },
   {
-    src: "/partners/doxiverse.png",
-    alt: "Doxiverse",
-    maxW: "max-w-[80px] sm:max-w-[120px] lg:max-w-[150px]",
+    src: "/partners/sure-drive.svg",
+    alt: "Sure Drive",
+    maxW: "max-w-[120px] sm:max-w-[120px] lg:max-w-[196px]",
   },
   {
     src: "/partners/time.png",
@@ -26,9 +26,9 @@ const partners = [
     maxW: "max-w-[80px] sm:max-w-[120px] lg:max-w-[150px]",
   },
   {
-    src: "/partners/sure-drive.svg",
-    alt: "Sure Drive",
-    maxW: "max-w-[120px] sm:max-w-[120px] lg:max-w-[196px]",
+    src: "/partners/doxiverse.png",
+    alt: "Doxiverse",
+    maxW: "max-w-[80px] sm:max-w-[120px] lg:max-w-[150px]",
   },
   {
     src: "/partners/change-hub.png",
