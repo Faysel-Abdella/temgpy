@@ -81,6 +81,12 @@ export default function RootLayout({
       {/* Inject GTM scripts automatically  */}
       <GoogleTagManager gtmId="G-JNNFWWMV78" />
 
+      {/* Tidio chatbot integration */}
+      <script
+        src="//code.tidio.co/kyscoags40euuepmjavawnse7la5cewi.js"
+        async
+      ></script>
+
       <body className="flex flex-col overflow-x-hidden max-w-screen">
         {/* Favicon */}
         <link rel="icon" href="/tab-icon.svg" type="image/svg+xml" />

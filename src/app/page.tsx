@@ -21,7 +21,8 @@ export default function page() {
       /> */}
       <Expertise />
       <WhyChooseUs />
-      <SelectedWorks />
+      {/* Temporary hide the projects (portfolio) page */}
+      {/* <SelectedWorks /> */}
       {/*       <Testimonials /> */}
       <Partners />
       <AboutUs />
