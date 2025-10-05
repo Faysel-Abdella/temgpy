@@ -10,7 +10,7 @@ const FAQPage = () => {
     <section className="  pt-28 md:pt-32 lg:pt-40 bg-gradient-to-b from-background3 to-white min-h-dvh overflow-hidden">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="mx-auto  max-w-3xl text-center">
-          <SectionShow title="FAQs" />
+          <SectionShow title="FAQs" className="bg-white" />
           <h2
             data-aos="fade-up"
             data-aos-duration="600"

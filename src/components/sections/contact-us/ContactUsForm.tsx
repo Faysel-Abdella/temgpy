@@ -53,10 +53,10 @@ const ContactUsForm = () => {
     <Form {...form}>
       <form
         onSubmit={form.handleSubmit(onSubmit)}
-        className="bg-background relative max-w-xl rounded-3xl p-6 border"
+        className="lg:bg-background relative mx-auto bg-transparent lg:max-w-xl rounded-3xl p-6 lg:border"
       >
         <div className="flex flex-col gap-8">
-          <div className="flex w-full gap-6">
+          <div className="flex w-full gap-6 max-sm:flex-col">
             <FormField
               control={form.control}
               name="first_name"
