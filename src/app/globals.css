@@ -10,6 +10,7 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-gilroy: var(--font-gilroy);
+  --font-clashgrotesk: var(--font-clashgrotesk);
   --font-inter: var(--font-inter);
 
   /* ClashGrotesk.ttf */
@@ -45,7 +46,7 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.145 0 0);
 
-  --primary: oklch(51.44% 0.217974 260.6747);
+  --primary: oklch(57.84% 0.2182 258.47);
   --primary-foreground: oklch(100% 0 0);
   --primary-faded: oklch(63.56% 0.1823 284.63);
 
@@ -65,6 +66,7 @@
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
   --border: oklch(86.4% 0.0085 271.32);
+  --border-secondary: oklch(0.4532 0 129.63);
   --input: oklch(52.52% 0.268 276.48);
   --ring: oklch(0.708 0 0);
   --chart-1: oklch(0.646 0.222 41.116);
@@ -151,6 +153,7 @@
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
+  --color-border-secondary: var(--border-secondary);
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-chart-1: var(--chart-1);
@@ -177,7 +180,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter;
     /* overflow-x: hidden; */
   }
 }
@@ -222,6 +225,12 @@
 .animate-scroll {
   animation: scroll var(--animation-duration, 40s)
     var(--animation-direction, forwards) linear infinite;
+}
+@media (min-width: 768px) {
+  .animate-infinite-scroll {
+    animation: none !important;
+    transform: none !important;
+  }
 }
 
 .features-div {
@@ -349,6 +358,10 @@
   }
 }
 
+button {
+  cursor: pointer;
+}
+
 /* Ensure existing styles don’t conflict */
 .overflow-hidden {
   -ms-overflow-style: none; /* IE and Edge */
@@ -374,4 +387,19 @@
   background: inherit;
   border-radius: 9999px; /* Large radius for outer curve */
   z-index: -1;
+}
+
+@theme inline {
+  --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
+}
+
+@keyframes spotlight {
+  0% {
+    opacity: 0;
+    transform: translate(-72%, -62%) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -40%) scale(1);
+  }
 }

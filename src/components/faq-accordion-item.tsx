@@ -16,39 +16,32 @@ const FaqAccordionItem = ({ faqItem }: FaqAccordionItemProps) => {
     <AccordionItem
       value={faqItem.value}
       key={faqItem.value}
-      className="w-full border rounded-4xl overflow-hidden  transition-all group"
+      className="w-full border rounded-3xl overflow-hidden  transition-all group data-[state=open]:bg-primary data-[state=open]:border-primary  border-border-secondary bg-[#29314D] group-data-[state=open]:text-white"
     >
-      <div
-        className={cn(
-          "mx-auto h-full w-full rounded-4xl p-0 duration-300 ease-in-out group-data-[state=open]:from-primary/40 group-data-[state=open]:via-primary/5 group-data-[state=open]:to-background group-data-[state=open]:bg-gradient-to-r group-data-[state=open]:p-2"
-        )}
-      >
-        <div
-          className={cn(
-            "bg-background border-background flex h-full flex-col rounded-3xl border p-4 group-data-[state=open]:border-border group-data-[state=open]:p-2"
-          )}
-        >
-          <AccordionTrigger className="flex w-full items-center justify-between p-0 px-3 hover:no-underline cursor-pointer">
-            <div className="font-outfit flex items-start gap-4">
-              <p
-                className={cn(
-                  "mt-1 text-xl hover:underline group-data-[state=open]:font-medium"
-                )}
-              >
-                {faqItem.question}
-              </p>
-            </div>
-            <div className="relative flex-shrink-0">
-              <Plus className="h-5 w-5 text-blue-600 transition-all duration-200 group-data-[state=open]:rotate-45 group-data-[state=open]:opacity-0" />
-              <Minus className="absolute inset-0 h-5 w-5 text-blue-600 transition-all duration-200 opacity-0 -rotate-45 group-data-[state=open]:opacity-100 group-data-[state=open]:rotate-0" />
-            </div>
-          </AccordionTrigger>
-
-          <AccordionContent className="flex flex-col  px-3 pt-4 text-start">
-            {faqItem.answer}
-          </AccordionContent>
+      <AccordionTrigger className="flex text-white w-full font-gilroy items-center justify-between p-4 hover:no-underline cursor-pointer group-data-[state=open]:text-white">
+        <div className="flex  gap-4 ">
+          <div className="relative flex-shrink-0 aspect-square size-8 flex items-center justify-center  outline outline-border-secondary rounded-full group-data-[state=open]:outline-white">
+            <Plus className="h-5 w-5  transition-all duration-200 group-data-[state=open]:rotate-45 group-data-[state=open]:opacity-0" />
+            <Minus className="absolute inset-1.5 h-5 w-5 text-white transition-all duration-200 opacity-0 -rotate-45 group-data-[state=open]:opacity-100 group-data-[state=open]:rotate-0" />
+          </div>
+          <div className="font-outfit flex items-start gap-4 ">
+            <p
+              className={cn(
+                "mt-1 text-xl hover:underline group-data-[state=open]:font-medium"
+              )}
+            >
+              {faqItem.question}
+            </p>
+          </div>
         </div>
-      </div>
+        <p className="font-semibold    text-lg  tracking-wider">
+          {faqItem.value}
+        </p>
+      </AccordionTrigger>
+
+      <AccordionContent className="flex flex-col  px-16  text-start text-white text-base font-light">
+        {faqItem.answer}
+      </AccordionContent>
     </AccordionItem>
   );
 };

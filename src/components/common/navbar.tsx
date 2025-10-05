@@ -5,25 +5,22 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { ArrowUpRight, Menu, X } from "lucide-react";
+import { Button } from "../ui/button";
+import { cn } from "@/lib/utils";
 
 export default function Navbar() {
   const pathname = usePathname();
   const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isSticky, setIsSticky] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  const navItems1 = [
+  const navItems = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about-us" },
-  ];
-
-  const navItems2 = [
-    // Temporary hide the projects (portfolio) page
     // { name: "Projects", path: "/projects" },
+    { name: "Services", path: "/#" },
     { name: "Blogs", path: "/blogs" },
   ];
-
-  const allNavItems = [...navItems1, ...navItems2];
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -42,6 +39,14 @@ export default function Navbar() {
       }
     }
   };
+  useEffect(() => {
+    const handleScroll = () => setIsScrolled(window.scrollY > 10);
+
+    requestAnimationFrame(handleScroll);
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const handleHashScroll = () => {
@@ -59,16 +64,6 @@ export default function Navbar() {
     return () => window.removeEventListener("hashchange", handleHashScroll);
   }, [pathname]);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      setIsSticky(scrollPosition >= 40);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   // Helper function to determine if a nav item is active
   const isNavItemActive = (itemPath: string) => {
     // Exact match for root, startsWith for nested routes
@@ -80,14 +75,13 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed w-screen px-1.5 z-[2350] flex items-center justify-center transition-all duration-300 ease-in-out ${
-        isSticky ? "top-3" : "top-10"
-      }`}
+      className={cn(
+        `fixed w-screen  z-[2350]  h-24 top-0 flex  justify-center border-b-0 border-transparent  transition-all duration-200 ease-in-out bg-gradient-to-b from-background3 via-background3 to-transparent   `,
+        isScrolled && "to-background3 h-16 border-border  border-b"
+      )}
     >
       <div
-        className={`w-full max-w-[1384px] h-16 font-inter px-6 py-5 md:pl-14 md:pr-10 bg-background2 border-b border-white/10 shadow-lg shadow-black/5 rounded-full flex items-center justify-between ${
-          isSticky ? "mt-0" : ""
-        }`}
+        className={`w-full   font-inter px-6   lg:pl-14 lg:pr-10  max-w-[1400px] flex items-center justify-between `}
       >
         <div
           className="md:hidden hover:cursor-pointer"
@@ -100,33 +94,6 @@ export default function Navbar() {
             height={40}
             className="h-fit w-fit"
           />
-        </div>
-
-        <div className="hidden md:flex gap-7">
-          {navItems1.map((item) => {
-            const isActive = isNavItemActive(item.path);
-            return (
-              <div key={item.name} className="relative group">
-                <Link
-                  href={item.path}
-                  className={`text-base py-2.5 h-full text-white font-inter leading-normal transition-colors duration-300 ${
-                    isActive
-                      ? "text-white font-extrabold"
-                      : "text-white font-normal hover:text-[#dadada]"
-                  }`}
-                >
-                  {item.name}
-                  <span
-                    className={`self-center translate-x-1/4 w-2/3 absolute -bottom-2 left-0 right-0 h-[1px] bg-gradient-to-r from-white/30 via-white to-white/30 transition-opacity duration-500 ${
-                      isActive
-                        ? "opacity-100"
-                        : "opacity-0 group-hover:opacity-100"
-                    }`}
-                  />
-                </Link>
-              </div>
-            );
-          })}
         </div>
 
         <div
@@ -142,38 +109,22 @@ export default function Navbar() {
           />
         </div>
 
-        <button
-          onClick={toggleMenu}
-          className="md:hidden text-white"
-          aria-label="Toggle menu"
-        >
-          {isMenuOpen ? (
-            <X className="h-6 w-6" />
-          ) : (
-            <span className="flex flex-col px-0 space-y-1.5 py-0 h-5 w-7 bg-transparent items-end justify-end text-white/90">
-              <span className="w-full h-0.5 bg-white/90 rounded-full" />
-              <span className="w-4/5 h-0.5 bg-white/90 rounded-full" />
-              <span className="w-[60%] h-0.5 bg-white/90 rounded-full" />
-            </span>
-          )}
-        </button>
-
-        <div className="hidden md:flex gap-7 items-center">
-          {navItems2.map((item) => {
+        <div className="hidden md:flex gap-5 ">
+          {navItems.map((item) => {
             const isActive = isNavItemActive(item.path);
             return (
               <div key={item.name} className="relative group">
                 <Link
                   href={item.path}
-                  className={`text-base py-2.5 h-full text-white font-inter leading-normal transition-colors duration-300 ${
+                  className={`text-base py-2.5 h-full   font-inter leading-normal transition-all duration-300 ${
                     isActive
-                      ? "text-white font-extrabold"
-                      : "text-white font-normal hover:text-[#dadada]"
+                      ? " font-semibold"
+                      : " font-normal hover:font-semibold"
                   }`}
                 >
                   {item.name}
                   <span
-                    className={`self-center translate-x-1/4 w-2/3 absolute -bottom-2 left-0 right-0 h-[1px] bg-gradient-to-r from-white/30 via-white to-white/30 transition-opacity duration-300 ${
+                    className={`self-center  w-full absolute -bottom-1 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-black to-transparent transition-opacity duration-500 ${
                       isActive
                         ? "opacity-100"
                         : "opacity-0 group-hover:opacity-100"
@@ -183,52 +134,80 @@ export default function Navbar() {
               </div>
             );
           })}
-          <span className="text-muted min-h-6 bg-muted/70 w-[1px]" />
+        </div>
+
+        <button
+          onClick={toggleMenu}
+          className="md:hidden text-black"
+          aria-label="Toggle menu"
+        >
+          <span className="flex flex-col px-0 space-y-1.5 py-0 h-5 w-7 bg-transparent items-end justify-end text-white/90 ">
+            <span
+              className={cn(
+                "w-full h-0.5 bg-black/90 rounded-full transition-all duration-300  rotate-0 translate-y-0 ",
+                isMenuOpen && "w-4/5 rotate-45 translate-y-2"
+              )}
+            />
+            <span
+              className={cn(
+                "w-4/5 h-0.5 bg-black/90 rounded-full  rotate-0 transition-all duration-300 ",
+                isMenuOpen && " w-4/5 -rotate-45"
+              )}
+            />
+            <span
+              className={cn(
+                "w-[60%] h-0.5 bg-black/90 rounded-full transition-all duration-300",
+                isMenuOpen && "w-0"
+              )}
+            />
+          </span>
+        </button>
+
+        <div className="hidden md:flex gap-7 items-center">
+          <Button className="rounded-full" asChild>
+            <Link href="/#contact-us" onClick={handleNavClick}>
+              <span className="font-bold">Contact Us</span>
+              {/* <ArrowUpRight className="size-4" /> */}
+            </Link>
+          </Button>
+        </div>
+      </div>
+
+      <div
+        className={cn(
+          "absolute top-[70px] left-0 mx-1.5 h-0 rounded-4xl right-0 bg-background3 border-0  shadow-lg shadow-black/5 rounded-b-2xl overflow-hidden md:hidden z-50 transition-all duration-300 ease-in-out",
+          isMenuOpen && "h-90 border"
+        )}
+      >
+        <div className="max-h-[80vh] overflow-y-auto py-4 px-6 flex flex-col gap-4">
+          {navItems.map((item) => {
+            const isActive = isNavItemActive(item.path);
+            return (
+              <Link
+                key={item.name}
+                href={item.path}
+                className={`text-base py-2  font-inter leading-normal transition-colors duration-300 border-b /10 ${
+                  isActive ? " font-extrabold" : " font-normal"
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item.name}
+              </Link>
+            );
+          })}
           <Link
             href="/#contact-us"
-            onClick={handleNavClick}
-            className="h-12 transition-colors duration-300 text-white font-normal hover:text-[#dadada] text-base justify-center items-center gap-1 flex"
+            className="py-3 transition-colors duration-300  font-normal text-base flex items-center gap-1 border-b border-white/10"
+            onClick={(e) => {
+              handleNavClick(e);
+              setIsMenuOpen(false);
+            }}
           >
             Contact Us
             <ArrowUpRight className="size-4" />
           </Link>
         </div>
       </div>
-
-      {isMenuOpen && (
-        <div className="absolute top-[70px] left-0 mx-1.5 rounded-4xl right-0 bg-background2 border-b border-white/10 shadow-lg shadow-black/5 rounded-b-2xl overflow-hidden md:hidden z-50 transition-all duration-300 ease-in-out">
-          <div className="max-h-[80vh] overflow-y-auto py-4 px-6 flex flex-col gap-4">
-            {allNavItems.map((item) => {
-              const isActive = isNavItemActive(item.path);
-              return (
-                <Link
-                  key={item.name}
-                  href={item.path}
-                  className={`text-base py-2 text-white font-inter leading-normal transition-colors duration-300 border-b border-white/10 ${
-                    isActive
-                      ? "text-white font-extrabold"
-                      : "text-white font-normal"
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.name}
-                </Link>
-              );
-            })}
-            <Link
-              href="/#contact-us"
-              className="py-3 transition-colors duration-300 text-white font-normal text-base flex items-center gap-1 border-b border-white/10"
-              onClick={(e) => {
-                handleNavClick(e);
-                setIsMenuOpen(false);
-              }}
-            >
-              Contact Us
-              <ArrowUpRight className="size-4" />
-            </Link>
-          </div>
-        </div>
-      )}
     </nav>
   );
 }

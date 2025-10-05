@@ -31,7 +31,7 @@ export default function FooterSocials() {
 
     //   url: "https://instagram.com",
     // },
-   {
+    {
       name: "LinkedIn",
       icon: <Linkedin className="h-5 w-5" />,
       url: "https://www.linkedin.com/company/106809924",
@@ -77,7 +77,8 @@ export default function FooterSocials() {
               transition={{
                 duration: 0.5,
                 ease: [0.25, 0.1, 0.25, 1], // Custom cubic bezier for smooth motion
-              }}>
+              }}
+            >
               <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center text-white">
                 {link.icon}
               </div>
@@ -88,12 +89,14 @@ export default function FooterSocials() {
                   width: isActive ? "auto" : 0,
                   opacity: isActive ? 1 : 0,
                   transition: "opacity 0.2s ease-in-out",
-                }}>
+                }}
+              >
                 <span
                   ref={(el) => {
                     nameRefs.current[index] = el;
                   }}
-                  className="whitespace-nowrap pr-4 text-sm font-medium text-white/80">
+                  className="whitespace-nowrap pr-4 text-sm font-medium text-white/80"
+                >
                   {link.name}
                 </span>
               </div>
@@ -112,7 +115,8 @@ export default function FooterSocials() {
                 nameRefs.current[index] = el;
               }
             }}
-            className="whitespace-nowrap pr-4 text-sm font-medium">
+            className="whitespace-nowrap pr-4 text-sm font-medium"
+          >
             {link.name}
           </span>
         ))}

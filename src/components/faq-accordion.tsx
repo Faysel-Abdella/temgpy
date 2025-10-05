@@ -11,7 +11,7 @@ export type FaqItem = {
 
 export const faqContent: FaqItem[] = [
   {
-    value: "item-1",
+    value: "01",
     question: "Who is Growztech?",
     answer: (
       <p className="leading-relaxed">
@@ -23,50 +23,44 @@ export const faqContent: FaqItem[] = [
     ),
   },
   {
-    value: "item-2",
+    value: "02",
     question: "What services does Growztech offer?",
     answer: (
       <div className="space-y-2 leading-relaxed">
         <p>We provide a full range of IT and software services, including:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>
-            <strong className="font-semibold text-foreground">
+            <strong className="font-semibold ">
               Custom Software Development
             </strong>{" "}
             - tailored applications that solve unique business needs.
           </li>
           <li>
-            <strong className="font-semibold text-foreground">
-              AI Solutions
-            </strong>{" "}
-            - intelligent systems that improve automation, decision-making, and
+            <strong className="font-semibold ">AI Solutions</strong> -
+            intelligent systems that improve automation, decision-making, and
             customer experience.
           </li>
           <li>
-            <strong className="font-semibold text-foreground">
-              Cloud Solutions
-            </strong>{" "}
-            - secure, scalable cloud computing services for businesses of all
+            <strong className="font-semibold ">Cloud Solutions</strong> -
+            secure, scalable cloud computing services for businesses of all
             sizes.
           </li>
           <li>
-            <strong className="font-semibold text-foreground">
+            <strong className="font-semibold ">
               Mobile & Web App Development
             </strong>{" "}
             - user-friendly applications that enhance engagement.
           </li>
           <li>
-            <strong className="font-semibold text-foreground">
-              IT Consulting
-            </strong>{" "}
-            - expert guidance to align technology with business goals.
+            <strong className="font-semibold ">IT Consulting</strong> - expert
+            guidance to align technology with business goals.
           </li>
         </ul>
       </div>
     ),
   },
   {
-    value: "item-3",
+    value: "03",
     question: "Where does Growztech provide services?",
     answer: (
       <p className="leading-relaxed">
@@ -78,7 +72,7 @@ export const faqContent: FaqItem[] = [
     ),
   },
   {
-    value: "item-4",
+    value: "04",
     question: "Why choose Growztech for custom software development?",
     answer: (
       <div className="space-y-2 leading-relaxed">
@@ -93,7 +87,7 @@ export const faqContent: FaqItem[] = [
     ),
   },
   {
-    value: "item-5",
+    value: "05",
     question: "What industries does Growztech serve?",
     answer: (
       <div className="space-y-2 leading-relaxed">
@@ -111,7 +105,7 @@ export const faqContent: FaqItem[] = [
     ),
   },
   {
-    value: "item-6",
+    value: "06",
     question: "Does Growztech provide AI solutions?",
     answer: (
       <div className="space-y-2 leading-relaxed">
@@ -125,7 +119,7 @@ export const faqContent: FaqItem[] = [
     ),
   },
   {
-    value: "item-7",
+    value: "07",
     question: "Is Growztech only serving clients in Ethiopia?",
     answer: (
       <p className="leading-relaxed">
@@ -137,7 +131,7 @@ export const faqContent: FaqItem[] = [
     ),
   },
   {
-    value: "item-8",
+    value: "08",
     question: "How can I contact Growztech?",
     answer: (
       <div className="space-y-3 leading-relaxed">
@@ -148,7 +142,7 @@ export const faqContent: FaqItem[] = [
         >
           <Mail className="h-5 w-5 flex-shrink-0" />
           <div className="flex flex-col">
-            <span className="font-semibold text-foreground">Email:</span>
+            <span className="font-semibold ">Email:</span>
             <span>info@growztech.com</span>
           </div>
         </a>
@@ -158,7 +152,7 @@ export const faqContent: FaqItem[] = [
         >
           <Phone className="h-5 w-5 flex-shrink-0" />
           <div className="flex flex-col">
-            <span className="font-semibold text-foreground">Phone:</span>
+            <span className="font-semibold ">Phone:</span>
             <span>+251 947 344 248 | +251 954 624 638</span>
           </div>
         </a>
@@ -166,7 +160,7 @@ export const faqContent: FaqItem[] = [
     ),
   },
   {
-    value: "item-9",
+    value: "09",
     question:
       "How long does it take to develop custom software with Growztech?",
     answer: (
@@ -174,13 +168,11 @@ export const faqContent: FaqItem[] = [
         <p>Project timelines vary depending on complexity. Generally:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>
-            <strong className="font-semibold text-foreground">
-              Small projects:
-            </strong>{" "}
-            a few weeks.
+            <strong className="font-semibold ">Small projects:</strong> a few
+            weeks.
           </li>
           <li>
-            <strong className="font-semibold text-foreground">
+            <strong className="font-semibold ">
               Large enterprise solutions:
             </strong>{" "}
             several months.
@@ -194,7 +186,7 @@ export const faqContent: FaqItem[] = [
     ),
   },
   {
-    value: "item-10",
+    value: "10",
     question: "What custom software development services does Growztech offer?",
     answer: (
       <div className="space-y-2 leading-relaxed">
@@ -218,9 +210,23 @@ export const faqContent: FaqItem[] = [
 ];
 const FaqAccordion = () => {
   return (
-    <Accordion type="single" collapsible className="w-full space-y-3">
-      {faqContent.map((faq) => {
-        return <FaqAccordionItem key={faq.value} faqItem={faq} />;
+    <Accordion
+      type="single"
+      collapsible
+      defaultValue="01"
+      className="w-full space-y-3"
+    >
+      {faqContent.slice(0, 3).map((faq, index) => {
+        return (
+          <div
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-delay={`${index * 100}`}
+            key={faq.value}
+          >
+            <FaqAccordionItem faqItem={faq} />
+          </div>
+        );
       })}
     </Accordion>
   );
