@@ -54,25 +54,27 @@ const ContactUsPage = () => {
           <ContactUsForm />
         </div>
       </div>
-      <div className="bg-muted mt-24 flex items-center flex-col justify-center w-full py-24 px-4">
-        <h2
-          data-aos="fade-up"
-          data-aos-duration="600"
-          className="mt-6  text-2xl  font-extrabold text-center font-gilroy text-foreground md:text-4xl lg:text-5xl"
-        >
-          Need Expert Advice?
-        </h2>
-        <p
-          data-aos="fade-up"
-          data-aos-duration="700"
-          className="mt-4 text-base text-description md:text-lg max-w-md text-center "
-        >
-          From custom software development to IT consultation, we provide
-          solutions that drive real business results.
-        </p>
-        <Button className="rounded-full mt-8 text-base py-6 px-8" size={"lg"}>
-          Book A Free Call
-        </Button>
+      <div className="w-full px-2.5">
+        <div className="bg-muted mt-24 flex items-center flex-col justify-center w-full py-24 px-4 rounded-t-4xl">
+          <h2
+            data-aos="fade-up"
+            data-aos-duration="600"
+            className="mt-6  text-2xl  font-extrabold text-center font-gilroy text-foreground md:text-4xl lg:text-5xl"
+          >
+            Need Expert Advice?
+          </h2>
+          <p
+            data-aos="fade-up"
+            data-aos-duration="700"
+            className="mt-4 text-base text-description md:text-lg max-w-md text-center "
+          >
+            From custom software development to IT consultation, we provide
+            solutions that drive real business results.
+          </p>
+          <Button className="rounded-full mt-8 text-base py-6 px-8" size={"lg"}>
+            Book A Free Call
+          </Button>
+        </div>
       </div>
     </section>
   );
