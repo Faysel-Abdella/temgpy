@@ -21,26 +21,26 @@ export default function BlogSocials() {
 
   const socialLinks: SocialLink[] = [
     {
+      name: "LinkedIn",
+      icon: <Icons.LinkedIn />,
+      url: "https://linkedin.com",
+    },
+    {
       name: "Instagram",
       icon: <Icons.Instagram />,
 
       url: "https://instagram.com",
     },
     {
-      name: "LinkedIn",
-      icon: <Icons.LinkedIn />,
-      url: "https://linkedin.com",
-    },
-    {
       name: "Facebook",
       icon: <Icons.Facebook />,
       url: "https://facebook.com",
     },
-    {
-      name: "Upwork",
-      icon: <Icons.UpworkColord />,
-      url: "https://upwork.com",
-    },
+    // {
+    //   name: "Upwork",
+    //   icon: <Icons.UpworkColord />,
+    //   url: "https://upwork.com",
+    // },
     {
       name: "Twitter",
       icon: <Icons.XColord />,
@@ -77,7 +77,8 @@ export default function BlogSocials() {
               transition={{
                 duration: 0.5,
                 ease: [0.25, 0.1, 0.25, 1], // Custom cubic bezier for smooth motion
-              }}>
+              }}
+            >
               <div className="flex h-7 w-7 ml-1 flex-shrink-0 items-center justify-center text-white">
                 {link.icon}
               </div>
@@ -88,12 +89,14 @@ export default function BlogSocials() {
                   width: isActive ? "auto" : 0,
                   opacity: isActive ? 1 : 0,
                   transition: "opacity 0.2s ease-in-out",
-                }}>
+                }}
+              >
                 <span
                   ref={(el) => {
                     nameRefs.current[index] = el;
                   }}
-                  className="whitespace-nowrap pr-4 ml-1 text-sm md:text-md font-inter font-medium text-black/80">
+                  className="whitespace-nowrap pr-4 ml-1 text-sm md:text-md font-inter font-medium text-black/80"
+                >
                   {link.name}
                 </span>
               </div>
@@ -112,7 +115,8 @@ export default function BlogSocials() {
                 nameRefs.current[index] = el;
               }
             }}
-            className="whitespace-nowrap pr-4 text-sm font-medium">
+            className="whitespace-nowrap pr-4 text-sm font-medium"
+          >
             {link.name}
           </span>
         ))}

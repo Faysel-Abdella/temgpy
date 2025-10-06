@@ -28,7 +28,7 @@ const ContactUsPage = () => {
               <p className="font-gilroy text-lg font-medium">Email Support</p>
               <div className="flex items-center gap-1">
                 <Send size={16} />
-                <p className="underline ">Support@Doxiverse.com</p>
+                <p className="underline ">info@venas.tech</p>
               </div>
             </div>
             <div className="flex flex-col gap-4 sm:gap-2 max-lg:items-center">
