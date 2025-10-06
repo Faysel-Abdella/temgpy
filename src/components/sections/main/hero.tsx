@@ -9,7 +9,22 @@ import { useEffect } from "react";
 import HeroPartners from "./hero-partners";
 import HeroSectionShow from "./hero-section-show";
 
+// cal.com calender integration for the booking button
+import { getCalApi } from "@calcom/embed-react";
+
 export default function Hero() {
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: "schedule-call" });
+      cal("ui", {
+        theme: "light",
+        cssVarsPerTheme: { light: { "cal-brand": "#0009ff" }, dark: {} },
+        hideEventTypeDetails: false,
+        layout: "month_view",
+      });
+    })();
+  }, []);
+
   useEffect(() => {
     AOS.init({
       once: false,
@@ -86,7 +101,12 @@ export default function Hero() {
             data-aos-duration="800"
             className="z-30 mt-8 md:mt-12 justify-start items-center gap-2 md:gap-5 flex max-md:flex-col max-md:w-full"
           >
-            <Button className="rounded-full p-5 md:p-7 text-base font-semibold max-md:w-full">
+            <Button
+              className="rounded-full p-5 md:p-7 text-base font-semibold max-md:w-full"
+              data-cal-namespace="schedule-call"
+              data-cal-link="venas/schedule-call"
+              data-cal-config='{"layout":"month_view","theme":"light"}'
+            >
               Book A Free Call
             </Button>
             <Button
