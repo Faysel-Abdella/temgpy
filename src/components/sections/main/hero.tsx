@@ -18,7 +18,7 @@ export default function Hero() {
       const cal = await getCalApi({ namespace: "schedule-call" });
       cal("ui", {
         theme: "light",
-        cssVarsPerTheme: { light: { "cal-brand": "#0009ff" } },
+        cssVarsPerTheme: { light: { "cal-brand": "#0009ff" }, dark: {} },
         hideEventTypeDetails: false,
         layout: "month_view",
       });
