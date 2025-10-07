@@ -4,19 +4,19 @@ import { Mail, Phone } from "lucide-react";
 export const faqContent: FaqItem[] = [
   {
     value: "01",
-    question: "Who is Growztech?",
+    question: "Who is Venas Technologies?",
     answer: (
       <p className="leading-relaxed">
-        Growztech is a trusted software company in Ethiopia specializing in
-        custom software development, AI solutions, and cloud services. We
-        partner with businesses worldwide to design and implement digital
-        solutions that drive growth, efficiency, and innovation.
+        Venas Technologies is a trusted software company in Ethiopia
+        specializing in custom software development, AI solutions, and cloud
+        services. We partner with businesses worldwide to design and implement
+        digital solutions that drive growth, efficiency, and innovation.
       </p>
     ),
   },
   {
     value: "02",
-    question: "What services does Growztech offer?",
+    question: "What services does Venas Technologies offer?",
     answer: (
       <div className="space-y-2 leading-relaxed">
         <p>We provide a full range of IT and software services, including:</p>
@@ -53,22 +53,22 @@ export const faqContent: FaqItem[] = [
   },
   {
     value: "03",
-    question: "Where does Growztech provide services?",
+    question: "Where does Venas Technologies provide services?",
     answer: (
       <p className="leading-relaxed">
-        While we are proudly based in Ethiopia, Growztech offers software and IT
-        solutions worldwide. We collaborate with startups, enterprises, and
-        global organizations to deliver scalable digital transformation
-        solutions.
+        While we are proudly based in Ethiopia, Venas Technologies offers
+        software and IT solutions worldwide. We collaborate with startups,
+        enterprises, and global organizations to deliver scalable digital
+        transformation solutions.
       </p>
     ),
   },
   {
     value: "04",
-    question: "Why choose Growztech for custom software development?",
+    question: "Why choose Venas Technologies for custom software development?",
     answer: (
       <div className="space-y-2 leading-relaxed">
-        <p>Businesses choose Growztech because we:</p>
+        <p>Businesses choose Venas Technologies because we:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>Build custom software tailored to your industry needs.</li>
           <li>Use the latest technologies in AI, cloud, and automation.</li>
@@ -80,7 +80,7 @@ export const faqContent: FaqItem[] = [
   },
   {
     value: "05",
-    question: "What industries does Growztech serve?",
+    question: "What industries does Venas Technologies serve?",
     answer: (
       <div className="space-y-2 leading-relaxed">
         <p>We design solutions for a wide range of industries, including:</p>
@@ -98,7 +98,7 @@ export const faqContent: FaqItem[] = [
   },
   {
     value: "06",
-    question: "Does Growztech provide AI solutions?",
+    question: "Does Venas Technologies provide AI solutions?",
     answer: (
       <div className="space-y-2 leading-relaxed">
         <p>Yes. We specialize in AI solutions such as:</p>
@@ -112,7 +112,7 @@ export const faqContent: FaqItem[] = [
   },
   {
     value: "07",
-    question: "Is Growztech only serving clients in Ethiopia?",
+    question: "Is Venas Technologies only serving clients in Ethiopia?",
     answer: (
       <p className="leading-relaxed">
         No. While we are a leading software company in Ethiopia, our expertise
@@ -124,18 +124,18 @@ export const faqContent: FaqItem[] = [
   },
   {
     value: "08",
-    question: "How can I contact Growztech?",
+    question: "How can I contact Venas Technologies?",
     answer: (
       <div className="space-y-3 leading-relaxed">
         <p>You can reach us via:</p>
         <a
-          href="mailto:info@growztech.com"
+          href="mailto:info@venas.tech"
           className="flex items-center gap-3 transition-colors hover:text-blue-500"
         >
           <Mail className="h-5 w-5 flex-shrink-0" />
           <div className="flex flex-col">
             <span className="font-semibold ">Email:</span>
-            <span>info@growztech.com</span>
+            <span>info@venas.tech</span>
           </div>
         </a>
         <a
@@ -154,7 +154,7 @@ export const faqContent: FaqItem[] = [
   {
     value: "09",
     question:
-      "How long does it take to develop custom software with Growztech?",
+      "How long does it take to develop custom software with Venas Technologies?",
     answer: (
       <div className="space-y-2 leading-relaxed">
         <p>Project timelines vary depending on complexity. Generally:</p>
@@ -179,12 +179,13 @@ export const faqContent: FaqItem[] = [
   },
   {
     value: "10",
-    question: "What custom software development services does Growztech offer?",
+    question:
+      "What custom software development services does Venas Technologies offer?",
     answer: (
       <div className="space-y-2 leading-relaxed">
         <p>
-          Growztech provides end-to-end custom software development services
-          including:
+          Venas Technologies provides end-to-end custom software development
+          services including:
         </p>
         <ul className="list-disc space-y-2 pl-5">
           <li>Web and mobile app development</li>

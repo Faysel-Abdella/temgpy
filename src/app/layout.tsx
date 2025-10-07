@@ -29,42 +29,49 @@ const inter = localFont({
 // Site-wide metadata with image for social previews
 export const metadata: Metadata = {
   title: {
-    default: "Best Software Company in Ethiopia | GrowzTech",
-    template: "%s | Growztech",
+    default:
+      "Best Software Development & Outsourcing Company | Venas Technologies",
+    template: "%s | Venas Technologies",
   },
   description:
-    "GrowzTech is a top software company in Ethiopia offering scalable custom software, AI, and cloud solutions to drive business growth globally",
+    "Venas Technologies is a leading software company offering scalable custom software, AI, cloud, and outsourcing solutions to drive business growth globally",
   keywords: [
-    "digital transformation",
-    "custom software",
+    "custom software development",
     "AI solutions",
     "cloud technology",
-    "Ethiopia tech",
-    "scalable IT",
+    "digital transformation",
+    "software outsourcing",
+    "tech talent solutions",
+    "digital platforms",
+    "AI automation",
+    "enterprise software solutions",
+    "scalable software solutions",
   ],
   robots: "index, follow",
   openGraph: {
-    title: "Best Software Company in Ethiopia | GrowzTech",
+    title:
+      "Best Software Development & Outsourcing Company | Venas Technologies",
     description:
-      "GrowzTech is a top software company in Ethiopia offering scalable custom software, AI, and cloud solutions to drive business growth globally",
-    url: "https://growztech.com",
+      "Venas Technologies is a leading software company offering scalable custom software, AI, cloud, and outsourcing solutions to drive business growth globally",
+    url: "https://venastechnology.com",
     type: "website",
     images: [
       {
-        url: "https://growztech.com/media-preview.png",
+        url: "https://venastechnology.com/media-preview.png",
         width: 1200,
         height: 630,
-        alt: "Growztech Homepage Preview",
+        alt: "Venas Technologies Homepage Preview",
         type: "image/png",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Best Software Company in Ethiopia | GrowzTech",
+    title:
+      "Best Software Development & Outsourcing Company | Venas Technologies",
     description:
-      "GrowzTech is a top software company in Ethiopia offering scalable custom software, AI, and cloud solutions to drive business growth globally",
-    images: ["https://growztech.com/media-preview.png"],
+      "Venas Technologies is a leading software company offering scalable custom software, AI, cloud, and outsourcing solutions to drive business growth globally",
+    images: ["https://venastechnology.com/media-preview.png"],
   },
 };
 

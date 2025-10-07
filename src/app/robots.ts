@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: ["/", "/about-us", "/projects", "/blogs"],
       disallow: "/private/",
     },
-    sitemap: "https://growztech.com/sitemap.xml",
+    sitemap: "https://venastechnology.com/sitemap.xml",
   };
 }

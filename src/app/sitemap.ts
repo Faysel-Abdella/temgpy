@@ -3,7 +3,8 @@ import type { MetadataRoute } from "next";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const client = createClient();
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://growztech.com";
+  const baseUrl =
+    process.env.NEXT_PUBLIC_BASE_URL || "https://venastechnology.com";
 
   const blogs = await client.getAllByType("blog");
   const postUrls = blogs.map((post) => ({
@@ -13,43 +14,43 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
   return [
     {
-      url: "https://growztech.com/",
+      url: "https://venastechnology.com/",
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 1,
     },
     {
-      url: "https://growztech.com/about-us",
+      url: "https://venastechnology.com/about-us",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: "https://growztech.com/projects",
+      url: "https://venastechnology.com/projects",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: "https://growztech.com/blogs",
+      url: "https://venastechnology.com/blogs",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: "https://www.growztech.com/projects/taza-house",
+      url: "https://www.venastechnology.com/projects/taza-house",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: "https://www.growztech.com/projects/billion-views-ai",
+      url: "https://www.venastechnology.com/projects/billion-views-ai",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: "https://www.growztech.com/projects/study-nest-app",
+      url: "https://www.venastechnology.com/projects/study-nest-app",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
