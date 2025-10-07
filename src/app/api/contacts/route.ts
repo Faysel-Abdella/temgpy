@@ -5,8 +5,6 @@ export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
 
-    console.log("This is body", body);
-
     if (!body.name) {
       return NextResponse.json(
         { success: false, message: "Name is required" },

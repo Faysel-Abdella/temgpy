@@ -5,9 +5,9 @@ import "./globals.css";
 import localFont from "next/font/local";
 import Navbar from "@/components/common/navbar";
 import Footer from "@/components/common/footer";
-import { Toaster } from "@/components/ui/toaster";
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
+import { Toaster } from "sonner";
 
 const gilroy = localFont({
   src: "/fonts/Gilroy.ttf",
@@ -101,7 +101,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
-        <Toaster />
+        <Toaster richColors />
         <PrismicPreview repositoryName={repositoryName} />
       </body>
     </html>
