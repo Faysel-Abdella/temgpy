@@ -395,8 +395,8 @@ export const Icons = {
         fill="#005AE1"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M18.6567 1L16.6567 2H13.75C13.2033 2 12.75 1.54667 12.75 1C12.75 0.453333 13.2033 0 13.75 0H17.6567C18.2033 0 18.6567 0.453333 18.6567 1Z"
         fill="#005AE1"
       />
