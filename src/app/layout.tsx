@@ -101,7 +101,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
-        <Toaster richColors />
+        <Toaster richColors position="top-center" />
         <PrismicPreview repositoryName={repositoryName} />
       </body>
     </html>
