@@ -110,7 +110,7 @@ export default function Hero() {
               Book A Free Call
             </Button>
             <Button
-              className="rounded-full  p-5 md:p-7 text-base font-semibold border-primary max-md:w-full"
+              className="rounded-full  p-5 md:p-7 text-base font-semibold border-primary max-md:w-full "
               variant={"outline"}
             >
               Explore Services

@@ -12,10 +12,11 @@ interface WriterAndShareProps {
 }
 
 export default function WriterAndShare({ blog }: WriterAndShareProps) {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://growztech.com";
+  const baseUrl =
+    process.env.NEXT_PUBLIC_BASE_URL || "https://venastechnology.com";
   const postUrl = `${baseUrl}/blogs/${blog.uid}`;
   const encodedUrl = encodeURIComponent(postUrl);
-  const title = "Check out this blog post by growztech";
+  const title = "Check out this blog post by Venas Technologies";
   const encodedTitle = blog.data.title
     ? encodeURIComponent(blog.data.title)
     : "";

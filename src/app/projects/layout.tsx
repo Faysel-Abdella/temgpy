@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "GrowzTech Projects | Leading Software Development Company Portfolio",
+  title:
+    "Venas Technologies Projects | Leading Software Development Company Portfolio",
   description:
-    "See how GrowzTech stands among leading software development companies with custom projects in AI, cloud, and scalable digital solutions",
+    "See how Venas Technologies stands among leading software development companies with custom projects in AI, cloud, and scalable digital solutions",
   keywords: [
-    "Growztech projects",
+    "Venas Technologies projects",
     "tech portfolio",
     "software development",
     "AI innovations",
@@ -15,27 +16,27 @@ export const metadata: Metadata = {
   robots: "index, follow",
   openGraph: {
     title:
-      "GrowzTech Projects | Leading Software Development Company Portfolio",
+      "Venas Technologies Projects | Leading Software Development Company Portfolio",
     description:
-      "See how GrowzTech stands among leading software development companies with custom projects in AI, cloud, and scalable digital solutions",
-    url: "https://growztech.com/projects",
+      "See how Venas Technologies stands among leading software development companies with custom projects in AI, cloud, and scalable digital solutions",
+    url: "https://venastechnology.com/projects",
     type: "website",
     images: [
       {
-        url: "https://growztech.com/media-preview.png",
+        url: "https://venastechnology.com/media-preview.png",
         width: 1200,
         height: 630,
-        alt: "Growztech Projects Preview",
+        alt: "Venas Technologies Projects Preview",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title:
-      "GrowzTech Projects | Leading Software Development Company Portfolio",
+      "Venas Technologies Projects | Leading Software Development Company Portfolio",
     description:
-      "See how GrowzTech stands among leading software development companies with custom projects in AI, cloud, and scalable digital solutions",
-    images: ["https://growztech.com/media-preview.png"],
+      "See how Venas Technologies stands among leading software development companies with custom projects in AI, cloud, and scalable digital solutions",
+    images: ["https://venastechnology.com/media-preview.png"],
   },
 };
 export default function RootLayout({

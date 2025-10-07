@@ -26,19 +26,6 @@ export default function Navbar() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const targetId = "#contact-us";
-
-    if (pathname !== "/") {
-      router.push(`/${targetId}`);
-    } else {
-      const section = document.querySelector(targetId);
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  };
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 10);
 
@@ -165,7 +152,7 @@ export default function Navbar() {
 
         <div className="hidden md:flex gap-7 items-center">
           <Button className="rounded-full" asChild>
-            <Link href="/#contact-us" onClick={handleNavClick}>
+            <Link href="/contact-us">
               <span className="font-bold">Contact Us</span>
               {/* <ArrowUpRight className="size-4" /> */}
             </Link>
@@ -196,10 +183,9 @@ export default function Navbar() {
             );
           })}
           <Link
-            href="/#contact-us"
+            href="/contact-us"
             className="py-3 transition-colors duration-300  font-normal text-base flex items-center gap-1 border-b border-white/10"
             onClick={(e) => {
-              handleNavClick(e);
               setIsMenuOpen(false);
             }}
           >

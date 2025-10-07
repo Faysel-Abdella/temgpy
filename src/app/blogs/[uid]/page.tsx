@@ -26,16 +26,17 @@ export async function generateMetadata({
     ? blog?.data.keywords.map((keyword) => keyword.keyword as string)
     : [];
 
-  const title = `${blog.data.meta_title || blog?.data.title} | Growztech`,
+  const title = `${blog.data.meta_title || blog?.data.title} | Venas Technologies`,
     description =
-      blog.data.meta_description || "Explore this Growztech blog post.";
+      blog.data.meta_description ||
+      "Explore this Venas Technologies blog post.";
 
   return {
     title,
     description,
     keywords: [
       blog?.data.title || "Default Blog Title",
-      "Growztech blog",
+      "Venas Technologies blog",
       "digital transformation",
       "AI solutions",
       ...keywords,
@@ -43,13 +44,13 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      url: `https://growztech.com/blogs/${blog.uid}`,
+      url: `https://venastechnology.com/blogs/${blog.uid}`,
       type: "article",
       images: [
         {
           url:
             blog.data.featured_image.url ||
-            "https://growztech.com/media-preview.png",
+            "https://venastechnology.com/media-preview.png",
           width: blog.data.featured_image.dimensions
             ? blog?.data.featured_image.dimensions.width
             : 1200,
@@ -66,7 +67,7 @@ export async function generateMetadata({
       description,
       images: [
         blog.data.featured_image.url ||
-          "https://growztech.com/media-preview.png",
+          "https://venastechnology.com/media-preview.png",
       ],
     },
   };

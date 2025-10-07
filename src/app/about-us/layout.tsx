@@ -2,39 +2,44 @@ import type { Metadata } from "next";
 import { ReactNode } from "react";
 
 export const metadata: Metadata = {
-  title: "About GrowzTech | Leading Tech Company in Ethiopia & AI Solutions",
+  title:
+    "About Venas Technologies | Software Development & Outsourcing Company",
   description:
-    "Discover GrowzTech, a trusted AI solutions company and one of the top tech companies in Ethiopia, delivering custom software and cloud solutions globally.",
+    "Discover Venas Technologies, a trusted software and AI solutions company delivering custom software, cloud platforms, and tech talent to empower businesses globally.",
   keywords: [
-    "about Growztech",
+    "about Venas Technologies",
     "digital transformation",
-    "Ethiopia tech company",
     "AI solutions",
-    "custom software",
-    "cloud IT",
+    "custom software development",
+    "cloud solutions",
+    "software outsourcing",
+    "tech talent solutions",
+    "scalable software platforms",
   ],
   robots: "index, follow",
   openGraph: {
-    title: "About GrowzTech | Leading Tech Company in Ethiopia & AI Solutions",
+    title:
+      "About Venas Technologies | Software Development & Outsourcing Company",
     description:
-      "Discover GrowzTech, a trusted AI solutions company and one of the top tech companies in Ethiopia, delivering custom software and cloud solutions globally.",
-    url: "https://growztech.com/about",
+      "Discover Venas Technologies, a trusted software and AI solutions company delivering custom software, cloud platforms, and tech talent to empower businesses globally.",
+    url: "https://venastechnology.com/about",
     type: "website",
     images: [
       {
-        url: "https://growztech.com/media-preview.png",
+        url: "https://venastechnology.com/media-preview.png",
         width: 1200,
         height: 630,
-        alt: "Growztech About Preview",
+        alt: "Venas Technologies About Preview",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "About GrowzTech | Leading Tech Company in Ethiopia & AI Solutions",
+    title:
+      "About Venas Technologies | Software Development & Outsourcing Company",
     description:
-      "Discover GrowzTech, a trusted AI solutions company and one of the top tech companies in Ethiopia, delivering custom software and cloud solutions globally.",
-    images: ["https://growztech.com/media-preview.png"],
+      "Discover Venas Technologies, a trusted software and AI solutions company delivering custom software, cloud platforms, and tech talent to empower businesses globally.",
+    images: ["https://venastechnology.com/media-preview.png"],
   },
 };
 

@@ -21,19 +21,19 @@ export async function generateMetadata({
 
   if (!project) {
     return {
-      title: "Project Not Found | Growztech",
-      description: "This project could not be found on Growztech.",
+      title: "Project Not Found | Venas Technologies",
+      description: "This project could not be found on Venas Technologies.",
     };
   }
 
   return {
-    title: `${project.title} | Growztech`,
+    title: `${project.title} | Venas Technologies`,
     description:
       project.description ||
-      "Explore this Growztech project showcasing custom software, AI, or cloud solutions for digital transformation.",
+      "Explore this Venas Technologies project showcasing custom software, AI, or cloud solutions for digital transformation.",
     keywords: [
       project.title,
-      "Growztech project",
+      "Venas Technologies project",
       "digital transformation",
       "custom software",
       "AI solutions",
@@ -43,12 +43,12 @@ export async function generateMetadata({
       title: project.title,
       description:
         project.description ||
-        "Check out this Growztech project delivering innovative tech solutions.",
-      url: `https://growztech.com/projects/${slug}`,
+        "Check out this Venas Technologies project delivering innovative tech solutions.",
+      url: `https://venastechnology.com/projects/${slug}`,
       type: "article",
       images: [
         {
-          url: "https://growztech.com/media-preview.png",
+          url: "https://venastechnology.com/media-preview.png",
           width: 1200,
           height: 630,
           alt: `${project.title} Preview`,
@@ -60,8 +60,8 @@ export async function generateMetadata({
       title: project.title,
       description:
         project.description ||
-        "Check out this Growztech project delivering innovative tech solutions.",
-      images: ["https://growztech.com/media-preview.png"],
+        "Check out this Venas Technologies project delivering innovative tech solutions.",
+      images: ["https://venastechnology.com/media-preview.png"],
     },
   };
 }

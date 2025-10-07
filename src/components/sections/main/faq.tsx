@@ -1,5 +1,7 @@
 import FaqAccordion from "@/components/faq-accordion";
 import SectionShow from "@/components/section-show";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const FAQ = () => {
   return (
@@ -27,6 +29,17 @@ const FAQ = () => {
         </div>
         <div className="max-w-4xl mx-auto">
           <FaqAccordion />
+        </div>
+        <div className="flex justify-center items-center flex-col">
+          <Button
+            data-aos="fade-up"
+            data-aos-duration="500"
+            data-aos-delay="700"
+            className=" rounded-full mt-6  md:mt-8 lg:mt-12 py-4 px-7"
+            size={"lg"}
+          >
+            <Link href={"/faq"}>Read More Questions</Link>
+          </Button>
         </div>
       </div>
     </section>
