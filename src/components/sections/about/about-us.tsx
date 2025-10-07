@@ -36,7 +36,7 @@ export default function AboutUs() {
           </div>
 
           <Link
-            href="/#contact-us"
+            href="/contact-us"
             data-aos="flip-up"
             data-aos-duration="400"
             className="w-fit text-base bg-[#373737] font-medium font-gilroy gap-1 md:gap-2.5 leading-normal pl-[1px] pr-1 shadow-sm drop-shadow-lg min-h-13 rounded-full flex items-center"
