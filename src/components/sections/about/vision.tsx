@@ -7,46 +7,47 @@ import React from "react";
 
 export default function Vision() {
   return (
-    <main className="w-screen h-fit flex items-center justify-center py-20 ">
-      <div className="w-full p-4 md:p-0 lg:max-w-[1232px] items-start h-fit flex flex-col lg:flex-row gap-7 md:gap-10 lg:gap-16">
-        <div className="flex flex-col w-full lg:w-[43%] gap-8 md:gap-12 lg:gap-16">
+    <main className="w-screen h-fit flex items-center justify-center py-20 max-md:py-2 ">
+      <div className="w-full p-4  lg:max-w-[1232px] items-start h-fit flex flex-col  ">
+        <div className="flex flex-col w-full items-center gap-8 md:gap-12 lg:gap-16">
           <SectionShow title="Our Vision" />
-          <p className="w-full lg:hidden text-3xl  justify-start  md:text-4xl font-extrabold font-gilroy leading-[40px]">
-            We believe in transforming ideas into powerful digital experience
+          <p className="w-full text-center  text-3xl  justify-start  md:text-4xl font-extrabold font-gilroy leading-[40px]">
+            To be global leaders in delivering innovative technology solutions
+            that help businesses grow.{" "}
           </p>
-          <Image
-            src={"/images/vision.png"}
-            width={456}
-            height={320}
-            alt="about us image"
-            className=" rounded-2xl w-full mt-2 lg:mt-0"
-          />
         </div>
-        <div className="flex flex-col gap-12 w-full justify-between h-full items-start lg:w-[57%] ">
-          <p className="w-full hidden lg:block justify-start  text-4xl font-extrabold font-gilroy leading-[48px]">
-            We believe in transforming ideas into powerful digital experience
-          </p>
-          <Separator className="w-full hidden md:block" />
-          <div className="flex flex-col md:flex-row gap-12 mt-10">
-            <div className="flex md:w-[43%] flex-col gap-4">
-              <Icons.Chart className="" />
+        <Separator className="w-full hidden md:block my-12" />
+        <div className="flex flex-col gap-12 w-full justify-between h-full items-start max-md:pt-12  ">
+          <div className="grid md:grid-cols-3 w-full gap-8  md:gap-10 lg:gap-12 ">
+            <div className="flex max-md:items-center flex-col gap-4">
+              <Icons.MedalStar className="" />
               <div className=" mt-5 justify-start  text-xl font-semibold font-gilroy ">
-                Empowering Digital Growth
+                Global Excellence{" "}
               </div>
-              <div className="md:w-80 justify-start text-description text-base font-medium font-inter leading-normal">
-                We aim to enable Businesses to thrive online by delivering
-                tailored software solutions that lead to measurable results
+              <div className="max-md:max-w-xs max-md:mx-auto justify-start max-md:text-center text-description text-base font-medium font-inter leading-normal">
+                Our aim is to be a worldwide technology leader, ensuring you get
+                software built on the highest global standards.
               </div>
             </div>
 
-            <div className="flex md:w-[57%] flex-col gap-4">
-              <Icons.ConvertShape className="" />
+            <div className="flex max-md:items-center  flex-col gap-4">
+              <Icons.Bulb className="" />
               <div className=" justify-start mt-5 text-xl font-semibold font-gilroy ">
-                Driving Innovation
+                Innovation-focused{" "}
               </div>
-              <div className=" justify-start text-description text-base font-medium font-inter leading-normal">
-                We Integrate latest technologies and innovative strategies to
-                ensure our clients stays ahead of competition in digital world.
+              <div className="max-md:max-w-xs max-md:mx-auto justify-start max-md:text-center text-description text-base font-medium font-inter leading-normal">
+                We pioneer new solutions and apply forward-thinking technology
+                to solve your toughest business challenges.
+              </div>
+            </div>
+            <div className="flex  max-md:items-center flex-col gap-4">
+              <Icons.Chart className="" />
+              <div className=" justify-start mt-5 text-xl font-semibold font-gilroy ">
+                Helping businesses grow{" "}
+              </div>
+              <div className="max-md:max-w-xs max-md:mx-auto justify-start max-md:text-center text-description text-base font-medium font-inter leading-normal">
+                We focus on a clear plan to support our clients in achieving
+                meaningful, long-term growth and success.
               </div>
             </div>
           </div>

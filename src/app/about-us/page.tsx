@@ -18,14 +18,14 @@ export default function page() {
       <FeaturesCarousel
         LeftEdgeColor="from-white"
         RightEdgeColor="from-white"
-        className="py-20"
+        className="py-12  md:py-16 "
       />
       <OurStory />
       <Mission />
       <Vision />
       {/* <TeamSection /> */}
       <CoreValues />
-      <div className=" hidden lg:flex">
+      <div className=" ">
         <Partners />
       </div>
       <AboutUs />
