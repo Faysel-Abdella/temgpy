@@ -7,8 +7,8 @@ export const faqContent: FaqItem[] = [
     question: "Who is Venas Technologies?",
     answer: (
       <p className="leading-relaxed">
-        Venas Technologies is a trusted software company in Ethiopia
-        specializing in custom software development, AI solutions, and cloud
+        Venas Technologies is a trusted software company specializing in custom
+        software development, AI solutions, cloud platforms, and tech talent
         services. We partner with businesses worldwide to design and implement
         digital solutions that drive growth, efficiency, and innovation.
       </p>
