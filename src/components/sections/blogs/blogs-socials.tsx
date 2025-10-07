@@ -23,29 +23,29 @@ export default function BlogSocials() {
     {
       name: "LinkedIn",
       icon: <Icons.LinkedIn />,
-      url: "https://linkedin.com",
+      url: "https://www.linkedin.com/company/venastechnologies",
     },
-    {
-      name: "Instagram",
-      icon: <Icons.Instagram />,
+    // {
+    //   name: "Instagram",
+    //   icon: <Icons.Instagram />,
 
-      url: "https://instagram.com",
-    },
-    {
-      name: "Facebook",
-      icon: <Icons.Facebook />,
-      url: "https://facebook.com",
-    },
+    //   url: "https://instagram.com",
+    // },
+    // {
+    //   name: "Facebook",
+    //   icon: <Icons.Facebook />,
+    //   url: "https://facebook.com",
+    // },
     // {
     //   name: "Upwork",
     //   icon: <Icons.UpworkColord />,
     //   url: "https://upwork.com",
     // },
-    {
-      name: "Twitter",
-      icon: <Icons.XColord />,
-      url: "https://x.com",
-    },
+    // {
+    //   name: "Twitter",
+    //   icon: <Icons.XColord />,
+    //   url: "https://x.com",
+    // },
   ];
 
   // Measure text widths on mount
