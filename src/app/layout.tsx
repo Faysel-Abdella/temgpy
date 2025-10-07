@@ -86,7 +86,7 @@ export default function RootLayout({
       className={`${inter.variable} ${gilroy.variable} ${clashgrotesk.variable} scroll-smooth`}
     >
       {/* Inject GTM scripts automatically  */}
-      <GoogleTagManager gtmId="G-JNNFWWMV78" />
+      <GoogleTagManager gtmId="G-EWPVM392NT" />
 
       {/* Tidio chatbot integration */}
       <script
