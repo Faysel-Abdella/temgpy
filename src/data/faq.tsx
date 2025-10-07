@@ -47,6 +47,13 @@ export const faqContent: FaqItem[] = [
             <strong className="font-semibold ">IT Consulting</strong> - expert
             guidance to align technology with business goals.
           </li>
+          <li>
+            <strong className="font-semibold ">
+              Staff Augmentation & Talent Outsourcing
+            </strong>{" "}
+            - provide skilled tech professionals to complement your team and
+            accelerate project delivery.
+          </li>
         </ul>
       </div>
     ),
