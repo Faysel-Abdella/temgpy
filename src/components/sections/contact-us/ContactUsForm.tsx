@@ -1,9 +1,7 @@
 "use client";
 
-import { zodResolver } from "@hookform/resolvers/zod";
 import { Loader } from "lucide-react";
-import { useEffect } from "react";
-import { useForm } from "react-hook-form";
+import { useState } from "react";
 import { toast } from "sonner";
 
 import { Button } from "@/components/ui/button";
@@ -18,35 +16,36 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
-import useContact from "@/hooks/useContact";
-import { ContactFormData, contactSchema } from "@/lib/contact-us.schema";
-
 const ContactUsForm = () => {
-  const { sendContactData, isLoading, error, success } = useContact();
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const form = useForm<ContactFormData>({
-    resolver: zodResolver(contactSchema),
-    defaultValues: {
-      first_name: "",
-      last_name: "",
-      email: "",
-      subject: "",
-      description: "",
-    },
-  });
+  const defaultValues = {
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  };
 
-  useEffect(() => {
-    if (success) {
-      form.reset();
-      toast.success("Message sent successfully");
+  const onSubmit = async (values: typeof defaultValues) => {
+    setIsLoading(true);
+    try {
+      const res = await fetch("/api/contacts", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+      if (res.ok) {
+        toast.success("Message sent successfully");
+      } else {
+        const data = await res.json();
+        toast.error(data.message || "Something went wrong.");
+      }
+    } finally {
+      setIsLoading(false);
     }
-    if (error) {
-      toast.error("Error", { description: error });
-    }
-  }, [success, error, form]);
-
-  const onSubmit = async (values: ContactFormData) => {
-    await sendContactData(values);
   };
 
   return (
@@ -57,7 +56,7 @@ const ContactUsForm = () => {
       >
         <div className="flex flex-col gap-8">
           <div className="flex w-full gap-6 max-sm:flex-col">
-            <FormField
+            {/* <FormField
               control={form.control}
               name="first_name"
               render={({ field }) => (
@@ -75,14 +74,13 @@ const ContactUsForm = () => {
                   <FormMessage />
                 </FormItem>
               )}
-            />
+            /> */}
             <FormField
-              control={form.control}
-              name="last_name"
+              name="name"
               render={({ field }) => (
                 <FormItem className="w-full">
                   <FormLabel>
-                    Last Name <span className="text-primary">*</span>
+                    Your Name <span className="text-primary">*</span>
                   </FormLabel>
                   <FormControl>
                     <Input
@@ -98,7 +96,6 @@ const ContactUsForm = () => {
           </div>
 
           <FormField
-            control={form.control}
             name="email"
             render={({ field }) => (
               <FormItem>
@@ -120,7 +117,6 @@ const ContactUsForm = () => {
 
           {/* Subject as simple input */}
           <FormField
-            control={form.control}
             name="subject"
             render={({ field }) => (
               <FormItem>
@@ -140,12 +136,11 @@ const ContactUsForm = () => {
           />
 
           <FormField
-            control={form.control}
-            name="description"
+            name="message"
             render={({ field }) => (
               <FormItem>
                 <FormLabel>
-                  Description <span className="text-primary">*</span>
+                  Message <span className="text-primary">*</span>
                 </FormLabel>
                 <FormControl>
                   <Textarea
@@ -165,7 +160,7 @@ const ContactUsForm = () => {
           disabled={isLoading}
           size={"lg"}
         >
-          {isLoading ? <Loader className="animate-spin" /> : "Send A Message"}
+          {isLoading ? <Loader className="animate-spin" /> : "Send"}
         </Button>
       </form>
     </Form>

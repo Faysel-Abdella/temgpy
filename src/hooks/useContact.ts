@@ -27,7 +27,6 @@ const useContact = () => {
         setError(data.message || "Something went wrong.");
       }
     } catch (err: unknown) {
-      console.error(err);
       setError("An unexpected error occurred. Please try again.");
       setSuccess(false);
     } finally {

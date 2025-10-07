@@ -3,12 +3,10 @@ import { transporter, mailOptions } from "@/config/nodemailer";
 
 export async function POST(request: NextRequest) {
   try {
-    // 1. Parse the request body as JSON
     const body = await request.json();
 
     console.log("This is body", body);
 
-    // 2. Validate incoming data with Zod
     if (!body.name) {
       return NextResponse.json(
         { success: false, message: "Name is required" },
@@ -55,11 +53,8 @@ export async function POST(request: NextRequest) {
   `.trim(),
     };
 
-    // 4. Send the email
     const info = await transporter.sendMail(emailOptions);
-    console.log("Email sent successfully:", info);
 
-    // 5. Return a success response
     return NextResponse.json(
       { success: true, message: "Email sent successfully" },
       { status: 200 }
