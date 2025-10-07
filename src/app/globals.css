@@ -226,12 +226,6 @@
   animation: scroll var(--animation-duration, 40s)
     var(--animation-direction, forwards) linear infinite;
 }
-@media (min-width: 768px) {
-  .animate-infinite-scroll {
-    animation: none !important;
-    transform: none !important;
-  }
-}
 
 .features-div {
   border: 1px solid #ffffff;

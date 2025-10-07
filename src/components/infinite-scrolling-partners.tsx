@@ -78,8 +78,10 @@ export function InfiniteMovingPartners() {
 
         <div className="w-screen mx-auto flex items-center justify-center gap-2 md:gap-3  lg:px-20 overflow-hidden relative">
           <div
-            className={`flex items-center justify-center gap-8 ${
-              isMobile ? "animate-infinite-scroll" : "flex-wrap"
+            className={`flex items-center justify-center gap-8   ${
+              isMobile
+                ? "animate-infinite-scroll"
+                : "flex-wrap md:animation-none md:transform-none"
             }`}
             style={{ animationDuration: `${dupe * 8}s` }}
           >
