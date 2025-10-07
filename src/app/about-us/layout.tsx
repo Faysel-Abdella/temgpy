@@ -3,23 +3,25 @@ import { ReactNode } from "react";
 
 export const metadata: Metadata = {
   title:
-    "About Venas Technologies | Leading Tech Company in Ethiopia & AI Solutions",
+    "About Venas Technologies | Software Development & Outsourcing Company",
   description:
-    "Discover Venas Technologies, a trusted AI solutions company and one of the top tech companies in Ethiopia, delivering custom software and cloud solutions globally.",
+    "Discover Venas Technologies, a trusted software and AI solutions company delivering custom software, cloud platforms, and tech talent to empower businesses globally.",
   keywords: [
     "about Venas Technologies",
     "digital transformation",
-    "Ethiopia tech company",
     "AI solutions",
-    "custom software",
-    "cloud IT",
+    "custom software development",
+    "cloud solutions",
+    "software outsourcing",
+    "tech talent solutions",
+    "scalable software platforms",
   ],
   robots: "index, follow",
   openGraph: {
     title:
-      "About Venas Technologies | Leading Tech Company in Ethiopia & AI Solutions",
+      "About Venas Technologies | Software Development & Outsourcing Company",
     description:
-      "Discover Venas Technologies, a trusted AI solutions company and one of the top tech companies in Ethiopia, delivering custom software and cloud solutions globally.",
+      "Discover Venas Technologies, a trusted software and AI solutions company delivering custom software, cloud platforms, and tech talent to empower businesses globally.",
     url: "https://venastechnology.com/about",
     type: "website",
     images: [
@@ -34,9 +36,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "About Venas Technologies | Leading Tech Company in Ethiopia & AI Solutions",
+      "About Venas Technologies | Software Development & Outsourcing Company",
     description:
-      "Discover Venas Technologies, a trusted AI solutions company and one of the top tech companies in Ethiopia, delivering custom software and cloud solutions globally.",
+      "Discover Venas Technologies, a trusted software and AI solutions company delivering custom software, cloud platforms, and tech talent to empower businesses globally.",
     images: ["https://venastechnology.com/media-preview.png"],
   },
 };
