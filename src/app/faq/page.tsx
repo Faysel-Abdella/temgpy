@@ -1,3 +1,5 @@
+"use client";
+
 import FaqAccordionItem from "@/components/faq-accordion-item";
 import SectionShow from "@/components/section-show";
 import { Accordion } from "@/components/ui/accordion";
