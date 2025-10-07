@@ -3,9 +3,24 @@ import SectionShow from "@/components/section-show";
 import { Accordion } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { faqContent } from "@/data/faq";
-import React from "react";
+import { useEffect } from "react";
+
+// cal.com calender integration for the booking button
+import { getCalApi } from "@calcom/embed-react";
 
 const FAQPage = () => {
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: "schedule-call" });
+      cal("ui", {
+        theme: "light",
+        cssVarsPerTheme: { light: { "cal-brand": "#0009ff" }, dark: {} },
+        hideEventTypeDetails: false,
+        layout: "month_view",
+      });
+    })();
+  }, []);
+
   return (
     <section className="  pt-28 md:pt-32 lg:pt-40 bg-gradient-to-b from-background3 to-white min-h-dvh overflow-hidden">
       <div className="container mx-auto max-w-7xl px-4">
@@ -64,7 +79,13 @@ const FAQPage = () => {
           >
             Don&apos;t Hesitate to contact us with your enquiry or statement.
           </p>
-          <Button className="rounded-full mt-8 text-base py-6 px-8" size={"lg"}>
+          <Button
+            className="rounded-full mt-8 text-base py-6 px-8"
+            size={"lg"}
+            data-cal-namespace="schedule-call"
+            data-cal-link="venas/schedule-call"
+            data-cal-config='{"layout":"month_view","theme":"light"}'
+          >
             Book A Free Call
           </Button>
         </div>

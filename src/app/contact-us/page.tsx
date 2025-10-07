@@ -1,11 +1,29 @@
+"use client";
+
 import SectionShow from "@/components/section-show";
 import BlogSocials from "@/components/sections/blogs/blogs-socials";
 import ContactUsForm from "@/components/sections/contact-us/ContactUsForm";
 import { Button } from "@/components/ui/button";
 import { Phone, Send } from "lucide-react";
-import React from "react";
+
+import { useEffect } from "react";
+
+// cal.com calender integration for the booking button
+import { getCalApi } from "@calcom/embed-react";
 
 const ContactUsPage = () => {
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({ namespace: "schedule-call" });
+      cal("ui", {
+        theme: "light",
+        cssVarsPerTheme: { light: { "cal-brand": "#0009ff" }, dark: {} },
+        hideEventTypeDetails: false,
+        layout: "month_view",
+      });
+    })();
+  }, []);
+
   return (
     <section className=" pt-28 md:pt-32 lg:pt-40   min-h-dvh bg-gradient-to-b from-background3 via-white to-white">
       <div className="max-w-7xl container  mx-auto gap-16 lg:flex-row  flex flex-col ">
@@ -71,7 +89,13 @@ const ContactUsPage = () => {
             From custom software development to IT consultation, we provide
             solutions that drive real business results.
           </p>
-          <Button className="rounded-full mt-8 text-base py-6 px-8" size={"lg"}>
+          <Button
+            className="rounded-full mt-8 text-base py-6 px-8"
+            size={"lg"}
+            data-cal-namespace="schedule-call"
+            data-cal-link="venas/schedule-call"
+            data-cal-config='{"layout":"month_view","theme":"light"}'
+          >
             Book A Free Call
           </Button>
         </div>
