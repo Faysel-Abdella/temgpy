@@ -60,11 +60,13 @@ export default function Navbar() {
     return pathname.startsWith(itemPath);
   };
 
+  const isOnBlogs = pathname.startsWith("/blogs");
   return (
     <nav
       className={cn(
         `fixed w-screen  z-[2350]  h-24 top-0 flex  justify-center border-b-0 border-transparent  transition-all duration-200 ease-in-out bg-gradient-to-b from-background3 via-background3 to-transparent   `,
-        isScrolled && "to-background3 h-16 border-border  border-b"
+        (isScrolled || isOnBlogs) &&
+          "to-background3 h-16 border-border  border-b"
       )}
     >
       <div
@@ -127,6 +129,8 @@ export default function Navbar() {
           onClick={toggleMenu}
           className="md:hidden text-black"
           aria-label="Toggle menu"
+          aria-expanded={isMenuOpen}
+          aria-controls="mobile-menu"
         >
           <span className="flex flex-col px-0 space-y-1.5 py-0 h-5 w-7 bg-transparent items-end justify-end text-white/90 ">
             <span
@@ -160,10 +164,13 @@ export default function Navbar() {
         </div>
       </div>
 
+      {}
       <div
         className={cn(
-          "absolute top-[70px] left-0 mx-1.5 h-0 rounded-4xl right-0 bg-background3 border-0  shadow-lg shadow-black/5 rounded-b-2xl overflow-hidden md:hidden z-50 transition-all duration-300 ease-in-out",
-          isMenuOpen && "h-90 border"
+          "absolute top-[70px] left-0 right-0 mx-1.5 bg-background3 border-0 shadow-lg shadow-black/5 rounded-4xl overflow-hidden md:hidden z-50 transition-all duration-300 ease-in-out",
+          isMenuOpen
+            ? "max-h-[400px] border" // enough space for all items
+            : "max-h-0"
         )}
       >
         <div className="max-h-[80vh] overflow-y-auto py-4 px-6 flex flex-col gap-4">
