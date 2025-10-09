@@ -57,7 +57,7 @@ const HowWeWork = () => {
         <div
           data-aos="fade-up"
           data-aos-duration="700"
-          className=" w-full  grid md:grid-cols-4 flex-wrap gap-0 mx-auto"
+          className=" w-full  grid md:grid-cols-4 flex-wrap gap-0 mx-auto justify-center items-center"
         >
           {developmentSteps.map((step) => (
             <div

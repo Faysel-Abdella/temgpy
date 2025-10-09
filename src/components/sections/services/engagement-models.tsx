@@ -4,6 +4,12 @@ import React from "react";
 
 const coreValuesData = [
   {
+    title: "Managed Project Team",
+    description:
+      "Hand off your project - we handle everything from start to finish.",
+    icon: <Icons.Ranking className="size-10 shrink-0" />,
+  },
+  {
     title: "Dedicated Developer",
     description:
       "Add an expert to your team you manage the work, we ensure quality & fit.",
@@ -14,12 +20,6 @@ const coreValuesData = [
     description:
       "Scale fast with skilled engineers who fill gaps and speed up delivery.",
     icon: <Icons.Peoples2 className="size-10 shrink-0" />,
-  },
-  {
-    title: "Managed Project Team",
-    description:
-      "Hand off your project - we handle everything from start to finish.",
-    icon: <Icons.Ranking className="size-10 shrink-0" />,
   },
 ];
 const EngagementModels = () => {
