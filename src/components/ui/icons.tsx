@@ -851,16 +851,16 @@ export const Icons = {
       <path
         d="M35.1625 29.0513C35.1625 34.3587 30.8699 38.6513 25.5625 38.6513L27.0025 36.2513"
         stroke="#0171F7"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M3.80078 19.7709C3.80078 14.4635 8.09335 10.1709 13.4008 10.1709L11.9608 12.5709"
         stroke="#0171F7"
-        stroke-width="2.4"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M45.4008 6.68876V6.97864C45.4008 7.71653 44.8376 8.29629 44.1208 8.29629H21.0808C20.364 8.29629 19.8008 7.71653 19.8008 6.97864V6.68876C19.8008 2.05064 20.9272 0.891113 25.484 0.891113H39.7176C44.2744 0.891113 45.4008 2.05064 45.4008 6.68876Z"
