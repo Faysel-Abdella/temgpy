@@ -1,7 +1,7 @@
+import { getHeadingId } from "@/lib/utils";
 import { Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
-import { components } from "..";
-import { getHeadingId } from "@/lib/utils";
+import React from "react";
 
 export type RichTextContentProps =
   SliceComponentProps<Content.RichTextContentSlice>;
@@ -56,14 +56,41 @@ export const BlogContentComponents = {
       {children}
     </h4>
   ),
+  heading5: ({ children, text }: RichTextStandardProps) => (
+    <h5
+      id={getHeadingId(text)}
+      className="font-inter font-medium text-base md:text-lg text-gray-900 mb-2 mt-5"
+    >
+      {children}
+    </h5>
+  ),
+  heading6: ({ children, text }: RichTextStandardProps) => (
+    <h6
+      id={getHeadingId(text)}
+      className="font-inter font-medium text-sm md:text-base text-gray-800 mb-2 mt-4 uppercase tracking-wide"
+    >
+      {children}
+    </h6>
+  ),
+
   paragraph: ({ children }: RichTextStandardProps) => (
     <p className="font-inter text-md md:text-lg leading-relaxed font-normal text-description mb-4">
       {children}
     </p>
   ),
 
+  preformatted: ({ text }: RichTextStandardProps) => (
+    <pre className="bg-gray-100 text-gray-800 text-sm md:text-base font-mono rounded-lg p-4 overflow-x-auto my-5 border border-gray-200">
+      {text}
+    </pre>
+  ),
+
   strong: ({ children }: RichTextStandardProps) => (
-    <span className="text-black font-semibold">{children}</span>
+    <strong className="text-black font-semibold">{children}</strong>
+  ),
+
+  em: ({ children }: RichTextStandardProps) => (
+    <em className="italic text-gray-800">{children}</em>
   ),
 
   list: ({ children }: RichTextStandardProps) => (
@@ -72,6 +99,16 @@ export const BlogContentComponents = {
     </ul>
   ),
   listItem: ({ children }: RichTextStandardProps) => (
+    <li className="font-inter text-md md:text-lg leading-relaxed font-normal text-description">
+      {children}
+    </li>
+  ),
+  oList: ({ children }: RichTextStandardProps) => (
+    <ol className="list-decimal pl-8 font-normal text-description flex flex-col gap-2.5 md:gap-3 my-5">
+      {children}
+    </ol>
+  ),
+  oListItem: ({ children }: RichTextStandardProps) => (
     <li className="font-inter text-md md:text-lg leading-relaxed font-normal text-description">
       {children}
     </li>
@@ -92,6 +129,27 @@ export const BlogContentComponents = {
     return <span>{children}</span>;
   },
 
+  label: ({
+    children,
+    node,
+  }: {
+    children: React.ReactNode;
+    node: { data: { label: string } };
+  }) => (
+    <span
+      className={`${
+        node.data.label === "highlight"
+          ? "bg-yellow-100 text-gray-900 px-1 rounded"
+          : "text-gray-900"
+      }`}
+    >
+      {children}
+    </span>
+  ),
+
+  span: ({ text }: RichTextStandardProps) => <>{text}</>,
+
+  // Table Elements
   table: ({ children }: RichTextStandardProps) => (
     <div className="overflow-x-auto my-6">
       <table className="w-full border-collapse border-2 border-gray-500 rounded-lg">
@@ -133,8 +191,6 @@ const RichTextContent = ({ slice }: RichTextContentProps) => {
           components={BlogContentComponents}
         />
       )}
-      {/* <div className=" prose-zinc  prose sm:prose-sm lg:prose-lg ">
-      </div> */}
     </section>
   );
 };
