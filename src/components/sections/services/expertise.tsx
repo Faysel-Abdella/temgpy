@@ -96,7 +96,7 @@ const SpecializedExpertise = () => {
                   </p>
                   <ArrowUpRight className="size-5" />
                 </div>
-                <div className="mt-4 max-md:max-w-xs max-md:mx-auto  line-clamp-2 text-description text-base font-medium font-inter leading-normal">
+                <div className="mt-4   line-clamp-2 text-description text-base font-medium font-inter leading-normal">
                   {item.description}
                 </div>
               </div>
