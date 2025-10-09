@@ -1,6 +1,7 @@
 import SectionShow from "@/components/section-show";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 import React from "react";
 
 const developmentSteps = [
@@ -99,8 +100,8 @@ const HowWeWork = () => {
           data-aos-duration="700"
           className="flex max-md:justify-center w-full"
         >
-          <Button className="!h-12 rounded-full px-8">
-            Let&apos;s Work Together
+          <Button className="!h-12 rounded-full px-8" asChild>
+            <Link href={"/contact-us"}>Let&apos;s Work Together</Link>
           </Button>
         </div>
       </div>
