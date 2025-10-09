@@ -35,17 +35,29 @@ const HowWeWork = () => {
         <div className=" flex-col  gap-6 max-md:items-center  flex">
           <SectionShow title="How We Work" className="bg-background3" />
           <div className="flex flex-col  gap-5 justify-between ">
-            <p className=" md:max-w-2xl text-foreground text-3xl md:text-4xl max-md:text-center lg:text-5xl font-extrabold font-gilroy leading-10 md:leading-[60px]">
+            <p
+              data-aos="fade-up"
+              data-aos-duration="700"
+              className=" md:max-w-2xl text-foreground text-3xl md:text-4xl max-md:text-center lg:text-5xl font-extrabold font-gilroy leading-10 md:leading-[60px]"
+            >
               Our proven process: Built fast, built right
             </p>
-            <div className="max-w-4xl justify-start text-description max-md:text-center text-md md:text-lg font-normal font-inter leading-relaxed">
+            <div
+              data-aos="fade-up"
+              data-aos-duration="700"
+              className="max-w-4xl justify-start text-description max-md:text-center text-md md:text-lg font-normal font-inter leading-relaxed"
+            >
               We transform industry knowledge into exceptional digital
               platforms. We don&apos;t just deliver solutions; we establish a
               foundation for innovation ensuring accelerated market leadership
             </div>
           </div>
         </div>
-        <div className=" w-full  grid md:grid-cols-4 flex-wrap gap-0 mx-auto">
+        <div
+          data-aos="fade-up"
+          data-aos-duration="700"
+          className=" w-full  grid md:grid-cols-4 flex-wrap gap-0 mx-auto"
+        >
           {developmentSteps.map((step) => (
             <div
               key={step.step}
@@ -82,7 +94,11 @@ const HowWeWork = () => {
             </div>
           ))}
         </div>
-        <div className="flex max-md:justify-center w-full">
+        <div
+          data-aos="fade-up"
+          data-aos-duration="700"
+          className="flex max-md:justify-center w-full"
+        >
           <Button className="!h-12 rounded-full px-8">
             Let&apos;s Work Together
           </Button>

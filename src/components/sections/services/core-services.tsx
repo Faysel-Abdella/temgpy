@@ -55,13 +55,23 @@ export default function CoreServices() {
       <div className="w-full p-4  lg:max-w-[1232px] items-start h-fit flex flex-col  ">
         <div className="flex flex-col w-full items-center gap-8 md:gap-12 lg:gap-16">
           <SectionShow title="Our Core Services" />
-          <p className="w-full text-center  text-3xl  justify-start  md:text-4xl font-extrabold font-gilroy leading-[40px]">
+          <p
+            data-aos="fade-up"
+            data-aos-duration="700"
+            className="w-full text-center  text-3xl  justify-start  md:text-4xl font-extrabold font-gilroy leading-[40px]"
+          >
             We deliver impactful, strategy-driven solutions that redefine how
             businesses work
           </p>
         </div>
-        <Separator className="w-full hidden md:block my-12" />
-        <div className="flex flex-col gap-12 w-full justify-between h-full items-start max-md:pt-12  px-4 ">
+        <div data-aos="flip-right" data-aos-duration="700" className="w-full">
+          <Separator className="w-full hidden md:block my-12" />
+        </div>
+        <div
+          data-aos="fade-up"
+          data-aos-duration="700"
+          className="flex flex-col gap-12 w-full justify-between h-full items-start max-md:pt-12  px-4 "
+        >
           <div className="grid md:grid-cols-2 lg:grid-cols-3 w-full gap-8  md:gap-10 lg:gap-12 ">
             {coreServicesData.map((service) => (
               <div

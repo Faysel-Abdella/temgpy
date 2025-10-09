@@ -31,7 +31,11 @@ const EngagementModels = () => {
             title="Our Engagement Models"
             className="bg-white w-fit"
           />
-          <div className="flex flex-col lg:flex-row gap-5 justify-between max-md:items-center lg:items-center">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="700"
+            className="flex flex-col lg:flex-row gap-5 justify-between max-md:items-center lg:items-center"
+          >
             <p className=" md:max-w-[610px] text-foreground max-md:text-center text-3xl md:text-4xl lg:text-5xl font-extrabold font-gilroy leading-10 md:leading-[60px]">
               Our Flexible Models: Built for Your Success
             </p>
@@ -42,7 +46,11 @@ const EngagementModels = () => {
             </div>
           </div>
         </div>
-        <div className=" w-full max-w-[1212px] grid md:grid-cols-3 flex-wrap gap-4 md:gap-5 mx-auto">
+        <div
+          data-aos="fade-up"
+          data-aos-duration="700"
+          className=" w-full max-w-[1212px] grid md:grid-cols-3 flex-wrap gap-4 md:gap-5 mx-auto"
+        >
           {coreValuesData.map((item) => (
             <div
               key={item.title}

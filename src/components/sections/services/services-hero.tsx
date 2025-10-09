@@ -65,11 +65,13 @@ export default function ServicesHero() {
           </p>
         </div>
       </div>
-      <FeaturesCarousel
-        LeftEdgeColor="from-white"
-        RightEdgeColor="from-white"
-        className="min-h-40 py-0 md:py-10 "
-      />
+      <div data-aos="fade-up" data-aos-duration="800">
+        <FeaturesCarousel
+          LeftEdgeColor="from-white"
+          RightEdgeColor="from-white"
+          className="min-h-40 py-0 md:py-10 "
+        />
+      </div>
     </main>
   );
 }
