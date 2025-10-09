@@ -2,7 +2,7 @@
 
 import type React from "react";
 
-import { InfiniteMovingCards } from "../../features-infinity-moving-cards";
+import { InfiniteMovingCards } from "../features-infinity-moving-cards";
 import Image from "next/image";
 import { ArrowDown } from "lucide-react";
 import { Icons } from "@/components/ui/icons";
@@ -23,7 +23,8 @@ export default function FeaturesCarousel({
       className={cn(
         "w-screen py-28 md:py-32 flex items-center justify-center min-h-60",
         className
-      )}>
+      )}
+    >
       <div className="w-full relative max-w-[1079px]  flex flex-col items-center justify-center  md:px-4 gap-5   ">
         <p className="text-xl font-extrabold  text-center font-gilroy">
           Our Top Features
