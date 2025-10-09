@@ -50,7 +50,7 @@ export default function ServicesHero() {
           data-aos-duration="600"
           className="font-clashgrotesk mt-8  flex flex-wrap font-semibold text-3xl md:text-5xl  lg:text-6xl xl:text-7xl text-center"
         >
-          Transformation thats Bespoke, Brilliant, and Beyond{" "}
+          We Build What Moves You Forward.{" "}
         </p>
         <div
           data-aos="fade-up"
