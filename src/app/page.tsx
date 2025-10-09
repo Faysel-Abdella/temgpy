@@ -1,5 +1,5 @@
 import Expertise from "@/components/sections/main/services";
-import FeaturesCarousel from "@/components/sections/main/features";
+import FeaturesCarousel from "@/components/common/features";
 import Hero from "@/components/sections/main/hero";
 import React from "react";
 import SelectedWorks from "@/components/sections/main/selected-works";

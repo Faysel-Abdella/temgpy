@@ -43,7 +43,7 @@ export default function CoreValues() {
           {coreValuesData.map((item) => (
             <div
               key={item.title}
-              className="w-full  h-64 p-7 rounded-[32px] shadow-[0px_0px_10px_0px_rgba(0,0,0,0.05)] outline outline-1 flex bg-white flex-col gap-4 justify-between outline-offset-[-0.50px] outline-neutral-200"
+              className="w-full  h-64 p-7 rounded-[32px] shadow-[0px_0px_10px_0px_rgba(0,0,0,0.05)]  outline-1 flex bg-white flex-col gap-4 justify-between outline-offset-[-0.50px] outline-neutral-200"
             >
               {item.icon}
               <div className="flex flex-col gap-3 md:gap-4">

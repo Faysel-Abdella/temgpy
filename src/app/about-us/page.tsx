@@ -6,10 +6,11 @@ import OurStory from "@/components/sections/about/our-story";
 import TeamSection from "@/components/sections/about/our-team";
 import OurTeam from "@/components/sections/about/our-team";
 import Vision from "@/components/sections/about/vision";
-import FeaturesCarousel from "@/components/sections/main/features";
+import FeaturesCarousel from "@/components/common/features";
 import Partners from "@/components/sections/main/partners";
 
 import React from "react";
+import ContactFooter from "@/components/common/contact-footer";
 
 export default function page() {
   return (
@@ -28,7 +29,7 @@ export default function page() {
       <div className=" ">
         <Partners />
       </div>
-      <AboutUs />
+      <ContactFooter />
     </main>
   );
 }
