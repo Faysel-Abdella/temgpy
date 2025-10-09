@@ -10,6 +10,7 @@ import FeaturesCarousel from "@/components/common/features";
 import Partners from "@/components/sections/main/partners";
 
 import React from "react";
+import ContactFooter from "@/components/common/contact-footer";
 
 export default function page() {
   return (
@@ -28,7 +29,7 @@ export default function page() {
       <div className=" ">
         <Partners />
       </div>
-      <AboutUs />
+      <ContactFooter />
     </main>
   );
 }
