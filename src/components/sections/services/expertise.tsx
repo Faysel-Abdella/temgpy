@@ -1,54 +1,16 @@
+"use client";
 import SectionShow from "@/components/section-show";
-import { ArrowUpRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { services } from "@/data/services";
+import { cn } from "@/lib/utils";
+import { ArrowUpRight, ChevronsDown, ChevronsUp } from "lucide-react";
 import Image from "next/image";
-import React from "react";
-
-const expertiseContent = [
-  {
-    id: 1,
-    image: "/services/delivery-system.webp",
-    title: "Delivery System Platforms",
-    description:
-      "Deliver convenience easily. We design smooth, reliable apps with fast orders, real-time tracking, and secure payment systems.",
-  },
-  {
-    id: 2,
-    image: "/services/booking-system.webp",
-    title: "Booking Platforms",
-    description:
-      "Manage hotel, event, and transportation bookings with seamless customer experience.",
-  },
-  {
-    id: 3,
-    image: "/services/restaurant-order.webp",
-    title: "Restaurant Ordering System",
-    description:
-      "Online ordering, table reservations, kitchen management, and delivery coordination—all in one platform.",
-  },
-  {
-    id: 4,
-    image: "/services/lms.webp",
-    title: "Learning Management (LMS)",
-    description:
-      "Track courses, students, progress, and assessments with user-friendly learning platforms.",
-  },
-  {
-    id: 5,
-    image: "/services/finance-and-billing.webp",
-    title: "Finance & Billing Solutions",
-    description:
-      "Simplify invoicing, subscription management, and payment tracking with secure, scalable systems.",
-  },
-  {
-    id: 6,
-    image: "/services/ecom.webp",
-    title: "E-Commerce Platforms",
-    description:
-      "Multi-vendor marketplaces with inventory, payment, and order management features designed for growth.",
-  },
-];
+import React, { useState } from "react";
 
 const SpecializedExpertise = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const filteredServices = isExpanded ? services : services.slice(0, 6);
   return (
     <section className=" px-2.5 ">
       <div className=" py-20  bg-muted rounded-4xl">
@@ -73,8 +35,12 @@ const SpecializedExpertise = () => {
             </p>
           </div>
 
-          <div className="grid mt-16 md:grid-cols-2 lg:grid-cols-3 w-full gap-8  md:gap-10 lg:gap-12 ">
-            {expertiseContent.map((item) => (
+          <div
+            className={cn(
+              "grid mt-16 md:grid-cols-2 lg:grid-cols-3 w-full gap-8  md:gap-10 lg:gap-12 transition-all "
+            )}
+          >
+            {filteredServices.map((item) => (
               <div
                 key={item.id}
                 className="flex  flex-col "
@@ -101,6 +67,22 @@ const SpecializedExpertise = () => {
                 </div>
               </div>
             ))}
+          </div>
+          <div className="w-full items-center justify-center  mt-20  flex">
+            <Button
+              onClick={() => setIsExpanded((prev) => !prev)}
+              className="!h-12 !px-8 rounded-full"
+            >
+              {isExpanded ? (
+                <>
+                  See Less Services <ChevronsUp />
+                </>
+              ) : (
+                <>
+                  See More Services <ChevronsDown />
+                </>
+              )}
+            </Button>
           </div>
         </div>
       </div>
