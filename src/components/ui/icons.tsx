@@ -1,5 +1,9 @@
+interface IconsProps {
+  className?: string;
+}
+
 export const Icons = {
-  VideoPlay: ({ className }: { className?: string }) => (
+  VideoPlay: ({ className }: IconsProps) => (
     <svg
       width="40"
       className={className}
@@ -14,7 +18,7 @@ export const Icons = {
       />
     </svg>
   ),
-  XColord: ({ className }: { className?: string }) => (
+  XColord: ({ className }: IconsProps) => (
     <svg
       width="25"
       height="25"
@@ -29,7 +33,7 @@ export const Icons = {
       />
     </svg>
   ),
-  UpworkColord: ({ className }: { className?: string }) => (
+  UpworkColord: ({ className }: IconsProps) => (
     <svg
       width="37"
       className={className}
@@ -44,7 +48,7 @@ export const Icons = {
       />
     </svg>
   ),
-  Instagram: ({ className }: { className?: string }) => (
+  Instagram: ({ className }: IconsProps) => (
     <svg
       width="30"
       height="31"
@@ -114,7 +118,7 @@ export const Icons = {
       </defs>
     </svg>
   ),
-  Facebook: ({ className }: { className?: string }) => (
+  Facebook: ({ className }: IconsProps) => (
     <svg
       width="37"
       height="37"
@@ -131,7 +135,7 @@ export const Icons = {
       />
     </svg>
   ),
-  LinkedIn: ({ className }: { className?: string }) => (
+  LinkedIn: ({ className }: IconsProps) => (
     <svg
       width="33"
       height="33"
@@ -148,7 +152,7 @@ export const Icons = {
       />
     </svg>
   ),
-  Flutter: ({ className }: { className?: string }) => (
+  Flutter: ({ className }: IconsProps) => (
     <svg
       width="31"
       height="31"
@@ -213,7 +217,7 @@ export const Icons = {
       </defs>
     </svg>
   ),
-  FlutterFlow: ({ className }: { className?: string }) => (
+  FlutterFlow: ({ className }: IconsProps) => (
     <svg
       width="31"
       className={className}
@@ -233,7 +237,7 @@ export const Icons = {
       </g>
     </svg>
   ),
-  Django: ({ className }: { className?: string }) => (
+  Django: ({ className }: IconsProps) => (
     <svg
       width="30"
       height="31"
@@ -258,7 +262,7 @@ export const Icons = {
       </g>
     </svg>
   ),
-  Next: ({ className }: { className?: string }) => (
+  Next: ({ className }: IconsProps) => (
     <svg
       className={className}
       width="45"
@@ -315,7 +319,7 @@ export const Icons = {
       </defs>
     </svg>
   ),
-  MedalStar: ({ className }: { className?: string }) => (
+  MedalStar: ({ className }: IconsProps) => (
     <svg
       width="32"
       className={className}
@@ -338,7 +342,7 @@ export const Icons = {
       />
     </svg>
   ),
-  ConvertShape: ({ className }: { className?: string }) => (
+  ConvertShape: ({ className }: IconsProps) => (
     <svg
       width="32"
       className={className}
@@ -365,7 +369,7 @@ export const Icons = {
       />
     </svg>
   ),
-  Chart: ({ className }: { className?: string }) => (
+  Chart: ({ className }: IconsProps) => (
     <svg
       width="32"
       height="32"
@@ -402,7 +406,7 @@ export const Icons = {
       />
     </svg>
   ),
-  Peoples2: ({ className }: { className?: string }) => (
+  Peoples2: ({ className }: IconsProps) => (
     <svg
       className={className}
       width="28"
@@ -437,12 +441,12 @@ export const Icons = {
       />
     </svg>
   ),
-  Code: ({ className }: { className?: string }) => (
+  Code: ({ className }: IconsProps) => (
     <svg
       className={className}
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
+      width="28"
+      height="28"
+      viewBox="0 0 28 28"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -452,7 +456,7 @@ export const Icons = {
       />
     </svg>
   ),
-  CloudConnection: ({ className }: { className?: string }) => (
+  CloudConnection: ({ className }: IconsProps) => (
     <svg
       className={className}
       width="28"
@@ -471,7 +475,7 @@ export const Icons = {
       />
     </svg>
   ),
-  Bulb: ({ className }: { className?: string }) => (
+  Bulb: ({ className }: IconsProps) => (
     <svg
       width="32"
       className={className}
@@ -505,7 +509,7 @@ export const Icons = {
       />
     </svg>
   ),
-  Upwork: ({ className }: { className?: string }) => (
+  Upwork: ({ className }: IconsProps) => (
     <svg
       className={className}
       width="22"
@@ -520,7 +524,7 @@ export const Icons = {
       />
     </svg>
   ),
-  BgShadow: ({ className }: { className?: string }) => (
+  BgShadow: ({ className }: IconsProps) => (
     <svg
       className={className}
       width="1234"
@@ -572,7 +576,7 @@ export const Icons = {
       </defs>
     </svg>
   ),
-  Peoples: ({ className }: { className?: string }) => (
+  Peoples: ({ className }: IconsProps) => (
     <svg
       className={className}
       width="20"
@@ -607,7 +611,7 @@ export const Icons = {
       />
     </svg>
   ),
-  projects: ({ className }: { className?: string }) => (
+  projects: ({ className }: IconsProps) => (
     <svg
       className={className}
       width="20"
@@ -639,7 +643,7 @@ export const Icons = {
       </g>
     </svg>
   ),
-  react: ({ className }: { className?: string }) => (
+  react: ({ className }: IconsProps) => (
     <svg className={className} viewBox="0 0 128 128">
       <g fill="#61DAFB">
         <circle cx="64" cy="64" r="11.4"></circle>
@@ -648,7 +652,7 @@ export const Icons = {
     </svg>
   ),
 
-  tailwindcss: ({ className }: { className?: string }) => (
+  tailwindcss: ({ className }: IconsProps) => (
     <svg className={className} viewBox="0 0 128 128">
       <path
         d="M64.004 25.602c-17.067 0-27.73 8.53-32 25.597 6.398-8.531 13.867-11.73 22.398-9.597 4.871 1.214 8.352 4.746 12.207 8.66C72.883 56.629 80.145 64 96.004 64c17.066 0 27.73-8.531 32-25.602-6.399 8.536-13.867 11.735-22.399 9.602-4.87-1.215-8.347-4.746-12.207-8.66-6.27-6.367-13.53-13.738-29.394-13.738zM32.004 64c-17.066 0-27.73 8.531-32 25.602C6.402 81.066 13.87 77.867 22.402 80c4.871 1.215 8.352 4.746 12.207 8.66 6.274 6.367 13.536 13.738 29.395 13.738 17.066 0 27.73-8.53 32-25.597-6.399 8.531-13.867 11.73-22.399 9.597-4.87-1.214-8.347-4.746-12.207-8.66C55.128 71.371 47.868 64 32.004 64zm0 0"
@@ -656,7 +660,7 @@ export const Icons = {
       ></path>
     </svg>
   ),
-  node: ({ className }: { className?: string }) => (
+  node: ({ className }: IconsProps) => (
     <svg viewBox="0 0 128 128">
       <path
         fill="url(#a)"
@@ -717,7 +721,7 @@ export const Icons = {
       </defs>
     </svg>
   ),
-  firebase: ({ className }: { className?: string }) => (
+  firebase: ({ className }: IconsProps) => (
     <svg className={className} viewBox="0 0 128 128">
       <path
         fill="#ffa000"
@@ -743,7 +747,7 @@ export const Icons = {
       ></path>
     </svg>
   ),
-  figma: ({ className }: { className?: string }) => (
+  figma: ({ className }: IconsProps) => (
     <svg className={className} viewBox="0 0 128 128">
       <path
         fill="#0acf83"
@@ -767,7 +771,7 @@ export const Icons = {
       ></path>
     </svg>
   ),
-  Search: ({ className }: { className?: string }) => (
+  Search: ({ className }: IconsProps) => (
     <svg
       className={className}
       width="40"
@@ -783,6 +787,142 @@ export const Icons = {
       <path
         d="M35.4988 36.6666C35.1988 36.6666 34.8988 36.5499 34.6822 36.3333L29.1654 30.8166C28.7154 30.3666 28.7154 29.6333 29.1654 29.1666C29.6154 28.7166 30.3488 28.7166 30.8154 29.1666L36.3322 34.6833C36.7822 35.1333 36.7822 35.8666 36.3322 36.3333C36.0988 36.5499 35.7988 36.6666 35.4988 36.6666Z"
         fill="#005AE1"
+      />
+    </svg>
+  ),
+  Console: ({ className }: IconsProps) => (
+    <svg
+      className={className}
+      width="32"
+      height="32"
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M22.6693 30.3345H9.33594C8.78927 30.3345 8.33594 29.8811 8.33594 29.3345C8.33594 28.7878 8.78927 28.3345 9.33594 28.3345H22.6693C23.2159 28.3345 23.6693 28.7878 23.6693 29.3345C23.6693 29.8811 23.2159 30.3345 22.6693 30.3345Z"
+        fill="#0171F7"
+      />
+      <path
+        d="M23.9974 2.66553H7.9974C5.05073 2.66553 2.66406 5.05219 2.66406 7.99886V19.9989C2.66406 22.9455 5.05073 25.3322 7.9974 25.3322H23.9974C26.9441 25.3322 29.3307 22.9455 29.3307 19.9989V7.99886C29.3307 5.05219 26.9441 2.66553 23.9974 2.66553ZM13.3174 9.75886C14.0641 9.75886 14.6641 10.3589 14.6641 11.0922C14.6641 11.8255 14.0641 12.4255 13.3307 12.4255C12.5974 12.4255 11.9974 11.8255 11.9974 11.0922C11.9974 10.3589 12.5841 9.75886 13.3174 9.75886ZM9.1174 9.75886C9.86406 9.75886 10.4641 10.3589 10.4641 11.0922C10.4641 11.8255 9.86406 12.4255 9.13073 12.4255C8.3974 12.4255 7.7974 11.8255 7.7974 11.0922C7.7974 10.3589 8.37073 9.75886 9.1174 9.75886ZM23.0107 19.8122H9.01073C8.45073 19.8122 7.9974 19.3589 7.9974 18.8122C7.9974 18.2655 8.4374 17.8122 8.98406 17.8122H23.0241C23.5707 17.8122 24.0241 18.2655 24.0241 18.8122C24.0241 19.3589 23.5707 19.8122 23.0107 19.8122ZM23.0107 12.0922H18.1041C17.5574 12.0922 17.1041 11.6389 17.1041 11.0922C17.1041 10.5455 17.5574 10.0922 18.1041 10.0922H23.0107C23.5574 10.0922 24.0107 10.5455 24.0107 11.0922C24.0107 11.6389 23.5707 12.0922 23.0107 12.0922Z"
+        fill="#0171F7"
+      />
+    </svg>
+  ),
+  Ai: ({ className }: IconsProps) => (
+    <svg
+      className={className}
+      width="32"
+      height="32"
+      viewBox="0 0 32 32"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M32 16.032C27.8484 16.2868 23.9332 18.0509 20.9921 20.9921C18.0509 23.9332 16.2868 27.8484 16.032 32H15.968C15.7136 27.8482 13.9497 23.9328 11.0084 20.9916C8.06716 18.0503 4.15176 16.2864 0 16.032L0 15.968C4.15176 15.7136 8.06716 13.9497 11.0084 11.0084C13.9497 8.06716 15.7136 4.15176 15.968 0L16.032 0C16.2868 4.15162 18.0509 8.06677 20.9921 11.0079C23.9332 13.9491 27.8484 15.7132 32 15.968V16.032Z"
+        fill="#2280FE"
+      />
+    </svg>
+  ),
+  Security: ({ className }: IconsProps) => (
+    <svg
+      className={className}
+      width="48"
+      height="49"
+      viewBox="0 0 48 49"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M41.8197 23.0863V14.3063C41.8197 12.6663 40.5797 10.8063 39.0397 10.1863L27.8997 5.62633C25.3997 4.60633 22.5797 4.60633 20.0797 5.62633L8.93969 10.1863C7.41969 10.8063 6.17969 12.6663 6.17969 14.3063V23.0863C6.17969 32.8663 13.2797 42.0263 22.9797 44.7063C23.6397 44.8863 24.3597 44.8863 25.0197 44.7063C34.7197 42.0263 41.8197 32.8663 41.8197 23.0863ZM25.4997 26.5863V31.8463C25.4997 32.6663 24.8197 33.3463 23.9997 33.3463C23.1797 33.3463 22.4997 32.6663 22.4997 31.8463V26.5863C20.4797 25.9463 18.9997 24.0663 18.9997 21.8463C18.9997 19.0863 21.2397 16.8463 23.9997 16.8463C26.7597 16.8463 28.9997 19.0863 28.9997 21.8463C28.9997 24.0863 27.5197 25.9463 25.4997 26.5863Z"
+        fill="#0171F7"
+      />
+    </svg>
+  ),
+  Scale: ({ className }: IconsProps) => (
+    <svg
+      className={className}
+      width="46"
+      height="42"
+      viewBox="0 0 46 42"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M35.1625 29.0513C35.1625 34.3587 30.8699 38.6513 25.5625 38.6513L27.0025 36.2513"
+        stroke="#0171F7"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M3.80078 19.7709C3.80078 14.4635 8.09335 10.1709 13.4008 10.1709L11.9608 12.5709"
+        stroke="#0171F7"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M45.4008 6.68876V6.97864C45.4008 7.71653 44.8376 8.29629 44.1208 8.29629H21.0808C20.364 8.29629 19.8008 7.71653 19.8008 6.97864V6.68876C19.8008 2.05064 20.9272 0.891113 25.484 0.891113H39.7176C44.2744 0.891113 45.4008 2.05064 45.4008 6.68876Z"
+        fill="#0171F7"
+      />
+      <path
+        d="M21.0808 5.66099C20.364 5.66099 19.8008 6.24076 19.8008 6.97864V17.4935C19.8008 22.1316 20.9272 23.2911 25.484 23.2911H39.7176C44.2744 23.2911 45.4008 22.1316 45.4008 17.4935V6.97864C45.4008 6.24076 44.8376 5.66099 44.1208 5.66099H21.0808Z"
+        fill="#0171F7"
+      />
+      <path
+        d="M19.8008 28.5713V28.7473C19.8008 29.1953 19.4488 29.5473 19.0008 29.5473H4.60078C4.15278 29.5473 3.80078 29.1953 3.80078 28.7473V28.5713C3.80078 25.7553 4.50478 25.0513 7.35278 25.0513H16.2488C19.0968 25.0513 19.8008 25.7553 19.8008 28.5713Z"
+        fill="#0171F7"
+      />
+      <path
+        d="M4.60078 27.9473C4.15278 27.9473 3.80078 28.2993 3.80078 28.7473V35.1313C3.80078 37.9473 4.50478 38.6513 7.35278 38.6513H16.2488C19.0968 38.6513 19.8008 37.9473 19.8008 35.1313V28.7473C19.8008 28.2993 19.4488 27.9473 19.0008 27.9473H4.60078Z"
+        fill="#0171F7"
+      />
+    </svg>
+  ),
+  User: ({ className }: IconsProps) => (
+    <svg
+      className={className}
+      width="40"
+      height="41"
+      viewBox="0 0 40 41"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M20.0013 20.0243C24.6037 20.0243 28.3346 16.2934 28.3346 11.691C28.3346 7.08863 24.6037 3.35767 20.0013 3.35767C15.3989 3.35767 11.668 7.08863 11.668 11.691C11.668 16.2934 15.3989 20.0243 20.0013 20.0243Z"
+        fill="#0171F7"
+      />
+      <path
+        d="M20.0016 24.1912C11.6516 24.1912 4.85156 29.7912 4.85156 36.6912C4.85156 37.1578 5.21823 37.5245 5.6849 37.5245H34.3182C34.7849 37.5245 35.1516 37.1578 35.1516 36.6912C35.1516 29.7912 28.3516 24.1912 20.0016 24.1912Z"
+        fill="#0171F7"
+      />
+    </svg>
+  ),
+  Ranking: ({ className }: IconsProps) => (
+    <svg
+      className={className}
+      width="40"
+      height="41"
+      viewBox="0 0 40 41"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M11.1154 23.3577H6.66536C4.83203 23.3577 3.33203 24.8577 3.33203 26.691V35.0243C3.33203 35.941 4.08203 36.691 4.9987 36.691H11.1154C12.032 36.691 12.782 35.941 12.782 35.0243V25.0243C12.782 24.1077 12.032 23.3577 11.1154 23.3577Z"
+        fill="#0171F7"
+      />
+      <path
+        d="M22.2169 16.6912H17.7669C15.9336 16.6912 14.4336 18.1912 14.4336 20.0245V35.0245C14.4336 35.9412 15.1836 36.6912 16.1003 36.6912H23.8836C24.8003 36.6912 25.5503 35.9412 25.5503 35.0245V20.0245C25.5503 18.1912 24.0669 16.6912 22.2169 16.6912Z"
+        fill="#0171F7"
+      />
+      <path
+        d="M33.3315 28.3577H28.8815C27.9648 28.3577 27.2148 29.1077 27.2148 30.0243V35.0243C27.2148 35.941 27.9648 36.691 28.8815 36.691H34.9982C35.9148 36.691 36.6648 35.941 36.6648 35.0243V31.691C36.6648 29.8577 35.1648 28.3577 33.3315 28.3577Z"
+        fill="#0171F7"
+      />
+      <path
+        d="M25.0158 8.10763C25.5324 7.59097 25.7324 6.9743 25.5658 6.44097C25.3991 5.90763 24.8824 5.5243 24.1491 5.40763L22.5491 5.14097C22.4824 5.14097 22.3324 5.0243 22.2991 4.95763L21.4158 3.19097C20.7491 1.84097 19.2324 1.84097 18.5658 3.19097L17.6824 4.95763C17.6658 5.0243 17.5158 5.14097 17.4491 5.14097L15.8491 5.40763C15.1158 5.5243 14.6158 5.90763 14.4324 6.44097C14.2658 6.9743 14.4658 7.59097 14.9824 8.10763L16.2158 9.35763C16.2824 9.40763 16.3324 9.60763 16.3158 9.6743L15.9658 11.2076C15.6991 12.3576 16.1324 12.8743 16.4158 13.0743C16.6991 13.2743 17.3158 13.541 18.3324 12.941L19.8324 12.0576C19.8991 12.0076 20.1158 12.0076 20.1824 12.0576L21.6658 12.941C22.1324 13.2243 22.5158 13.3076 22.8158 13.3076C23.1658 13.3076 23.4158 13.1743 23.5658 13.0743C23.8491 12.8743 24.2824 12.3576 24.0158 11.2076L23.6658 9.6743C23.6491 9.59097 23.6991 9.40763 23.7658 9.35763L25.0158 8.10763Z"
+        fill="#0171F7"
       />
     </svg>
   ),
