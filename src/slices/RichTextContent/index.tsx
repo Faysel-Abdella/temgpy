@@ -1,7 +1,9 @@
-import { Content } from "@prismicio/client";
+import { Content, ImageFieldImage, RTImageNode } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import { components } from "..";
 import { getHeadingId } from "@/lib/utils";
+import { PrismicNextImage } from "@prismicio/next";
+import React from "react";
 
 export type RichTextContentProps =
   SliceComponentProps<Content.RichTextContentSlice>;
@@ -21,6 +23,9 @@ interface RichTextLinkNode {
 
 interface RichTextLinkProps extends RichTextStandardProps {
   node: RichTextLinkNode;
+}
+interface RichTextImage extends RichTextStandardProps {
+  node: ImageFieldImage;
 }
 
 export const BlogContentComponents = {
@@ -116,6 +121,12 @@ export const BlogContentComponents = {
     <td className="border-2 border-gray-600 px-2 md:px-3 py-2 text-gray-900">
       {children}
     </td>
+  ),
+  image: ({ node }: RichTextImage) => (
+    <PrismicNextImage
+      field={node}
+      className="rounded-2xl aspect-video object-cover"
+    />
   ),
 };
 
