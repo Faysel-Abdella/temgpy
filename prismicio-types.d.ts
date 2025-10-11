@@ -335,10 +335,141 @@ export type FeaturedBlogDocument<Lang extends string = string> =
     Lang
   >;
 
+/**
+ * Item in *service → Banner images*
+ */
+export interface ServiceDocumentDataBannerImagesItem {
+  /**
+   * banner image field in *service → Banner images*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.banner_images[].banner_image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  banner_image: prismic.ImageField<never>;
+}
+
+/**
+ * Item in *service → Tech stack*
+ */
+export interface ServiceDocumentDataTechStackItem {
+  /**
+   * tech stack field in *service → Tech stack*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.tech_stack[].tech_stack
+   * - **Documentation**: https://prismic.io/docs/fields/content-relationship
+   */
+  tech_stack: prismic.ContentRelationshipField<"tech_stack">;
+}
+
+/**
+ * Content for service documents
+ */
+interface ServiceDocumentData {
+  /**
+   * Title field in *service*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Banner images field in *service*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.banner_images[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  banner_images: prismic.GroupField<
+    Simplify<ServiceDocumentDataBannerImagesItem>
+  >;
+
+  /**
+   * Tech stack field in *service*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.tech_stack[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  tech_stack: prismic.GroupField<Simplify<ServiceDocumentDataTechStackItem>>;
+}
+
+/**
+ * service document from Prismic
+ *
+ * - **API ID**: `service`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ServiceDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<ServiceDocumentData>,
+    "service",
+    Lang
+  >;
+
+/**
+ * Content for Tech Stack documents
+ */
+interface TechStackDocumentData {
+  /**
+   * Title field in *Tech Stack*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tech_stack.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Logo field in *Tech Stack*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: tech_stack.logo
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  logo: prismic.ImageField<never>;
+}
+
+/**
+ * Tech Stack document from Prismic
+ *
+ * - **API ID**: `tech_stack`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type TechStackDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<TechStackDocumentData>,
+    "tech_stack",
+    Lang
+  >;
+
 export type AllDocumentTypes =
   | AuthorDocument
   | BlogDocument
-  | FeaturedBlogDocument;
+  | FeaturedBlogDocument
+  | ServiceDocument
+  | TechStackDocument;
 
 /**
  * Primary content in *CallToAction → Default → Primary*
@@ -567,6 +698,61 @@ export type RichTextContentSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *ServiceAboutSolution → Default → Primary*
+ */
+export interface ServiceAboutSolutionSliceDefaultPrimary {
+  /**
+   * about solution field in *ServiceAboutSolution → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_about_solution.default.primary.about_solution
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  about_solution: prismic.RichTextField;
+
+  /**
+   * About solution image field in *ServiceAboutSolution → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service_about_solution.default.primary.about_solution_image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  about_solution_image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for ServiceAboutSolution Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ServiceAboutSolutionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ServiceAboutSolutionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ServiceAboutSolution*
+ */
+type ServiceAboutSolutionSliceVariation = ServiceAboutSolutionSliceDefault;
+
+/**
+ * ServiceAboutSolution Shared Slice
+ *
+ * - **API ID**: `service_about_solution`
+ * - **Description**: ServiceAboutSolution
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ServiceAboutSolutionSlice = prismic.SharedSlice<
+  "service_about_solution",
+  ServiceAboutSolutionSliceVariation
+>;
+
+/**
  * Primary content in *Table → Default → Primary*
  */
 export interface TableSliceDefaultPrimary {
@@ -638,6 +824,12 @@ declare module "@prismicio/client" {
       BlogDocumentDataKeywordsItem,
       FeaturedBlogDocument,
       FeaturedBlogDocumentData,
+      ServiceDocument,
+      ServiceDocumentData,
+      ServiceDocumentDataBannerImagesItem,
+      ServiceDocumentDataTechStackItem,
+      TechStackDocument,
+      TechStackDocumentData,
       AllDocumentTypes,
       CallToActionSlice,
       CallToActionSliceDefaultPrimary,
@@ -655,6 +847,10 @@ declare module "@prismicio/client" {
       RichTextContentSliceDefaultPrimary,
       RichTextContentSliceVariation,
       RichTextContentSliceDefault,
+      ServiceAboutSolutionSlice,
+      ServiceAboutSolutionSliceDefaultPrimary,
+      ServiceAboutSolutionSliceVariation,
+      ServiceAboutSolutionSliceDefault,
       TableSlice,
       TableSliceDefaultPrimary,
       TableSliceVariation,

@@ -28,7 +28,7 @@ interface RichTextImage extends RichTextStandardProps {
   node: ImageFieldImage;
 }
 
-export const BlogContentComponents = {
+export const RichTextContentComponents = {
   heading1: ({ children, text }: RichTextStandardProps) => (
     <h1
       id={getHeadingId(text)}
@@ -141,7 +141,7 @@ const RichTextContent = ({ slice }: RichTextContentProps) => {
       {richTextData && (
         <PrismicRichText
           field={richTextData}
-          components={BlogContentComponents}
+          components={RichTextContentComponents}
         />
       )}
       {/* <div className=" prose-zinc  prose sm:prose-sm lg:prose-lg ">
