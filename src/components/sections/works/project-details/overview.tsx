@@ -18,14 +18,23 @@ export default function ProjectOverview({ project }: { project: Project }) {
           <h1
             data-aos="fade-right"
             data-aos-duration="500"
-            className="text-2xl lg:text-3xl font-extrabold font-gilroy">
+            className="text-2xl lg:text-3xl font-extrabold font-gilroy"
+          >
             Project Overview
           </h1>
           <p
             data-aos="fade-right"
             data-aos-duration="1200"
-            className="text-description font-inter text-md lg:text-lg font-normal">
+            className="text-description font-inter text-md lg:text-lg font-normal"
+          >
             {project.overview}
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam
+            corrupti quaerat quis ipsam tempora repellendus eaque ut.
+            Dignissimos, nulla nisi minima cum quis placeat numquam saepe quos
+            possimus impedit nemo. Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Eligendi veniam corrupti obcaecati aliquam
+            provident, deleniti tenetur mollitia illum dolore minima, assumenda
+            natus rem a ex quam quisquam? Modi, ipsam autem.
           </p>
         </div>
         <div className="flex flex-col gap-5 w-full md:w-1/2">
@@ -33,7 +42,7 @@ export default function ProjectOverview({ project }: { project: Project }) {
             data-aos="fade-left"
             data-aos-duration="1200"
             className="w-full max-w-[524px]"
-            src={project.overviewImage}
+            src={"/services/ecom.webp"}
             width={1920}
             height={1080}
             alt={project.title}

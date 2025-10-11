@@ -1,0 +1,36 @@
+{
+  "id": "service_about_solution",
+  "type": "SharedSlice",
+  "name": "ServiceAboutSolution",
+  "description": "ServiceAboutSolution",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "about_solution": {
+          "type": "StructuredText",
+          "config": {
+            "label": "about solution",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em,hyperlink"
+          }
+        },
+        "about_solution_image": {
+          "type": "Image",
+          "config": {
+            "label": "About solution image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

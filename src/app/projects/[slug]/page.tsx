@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import Home from "@/components/sections/works/project-details/home";
 import ProjectOverview from "@/components/sections/works/project-details/overview";
 import RelatedProjects from "@/components/sections/works/project-details/related-projects";
-import TechStacks from "@/components/sections/works/project-details/tech-stacks";
 import {
   getManyProjects,
   getOneProject,
   Project,
 } from "@/components/sections/works/projects-data";
 import { Separator } from "@/components/ui/separator";
+import TechStacks from "@/components/sections/works/project-details/tech-stacks";
 
 // Generate metadata for each project dynamically
 export async function generateMetadata({

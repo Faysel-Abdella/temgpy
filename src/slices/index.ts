@@ -7,5 +7,6 @@ export const components = {
   code_block: dynamic(() => import("./CodeBlock")),
   image_block: dynamic(() => import("./ImageBlock")),
   rich_text_content: dynamic(() => import("./RichTextContent")),
+  service_about_solution: dynamic(() => import("./ServiceAboutSolution")),
   table: dynamic(() => import("./Table")),
 };
