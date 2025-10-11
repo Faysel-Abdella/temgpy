@@ -373,6 +373,21 @@ type ServiceDocumentDataSlicesSlice =
   | ServiceAboutSolutionSlice;
 
 /**
+ * Item in *service → Keywords*
+ */
+export interface ServiceDocumentDataKeywordsItem {
+  /**
+   * keyword field in *service → Keywords*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.keywords[].keyword
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  keyword: prismic.KeyTextField;
+}
+
+/**
  * Content for service documents
  */
 interface ServiceDocumentData {
@@ -420,7 +435,49 @@ interface ServiceDocumentData {
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/slices
    */
-  slices: prismic.SliceZone<ServiceDocumentDataSlicesSlice>;
+  slices: prismic.SliceZone<ServiceDocumentDataSlicesSlice> /**
+   * Meta Title field in *service*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.meta_title
+   * - **Tab**: SEO
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *service*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.meta_description
+   * - **Tab**: SEO
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Social Image field in *service*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.social_image
+   * - **Tab**: SEO
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  social_image: prismic.ImageField<never>;
+
+  /**
+   * Keywords field in *service*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.keywords[]
+   * - **Tab**: SEO
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  keywords: prismic.GroupField<Simplify<ServiceDocumentDataKeywordsItem>>;
 }
 
 /**
@@ -847,6 +904,7 @@ declare module "@prismicio/client" {
       ServiceDocumentDataBannerImagesItem,
       ServiceDocumentDataTechStackItem,
       ServiceDocumentDataSlicesSlice,
+      ServiceDocumentDataKeywordsItem,
       TechStackDocument,
       TechStackDocumentData,
       AllDocumentTypes,

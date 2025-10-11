@@ -5,11 +5,84 @@ import { Separator } from "@/components/ui/separator";
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 import { SliceZone } from "@prismicio/react";
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import React from "react";
 
 interface ServiceDetailPageProps {
   params: Promise<{ uid: string }>;
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ uid: string }>;
+}): Promise<Metadata> {
+  const { uid } = await params;
+
+  const client = createClient();
+  const service = await client.getByUID("service", uid).catch(() => {
+    return notFound();
+  });
+
+  const keywords = service.data.keywords
+    ? service?.data.keywords.map((keyword) => keyword.keyword as string)
+    : [];
+
+  const title = `${service.data.meta_title || service?.data.title} | Venas Technologies`,
+    description =
+      service.data.meta_description ||
+      "Explore this Venas Technologies service.";
+
+  return {
+    title,
+    description,
+    keywords: [
+      service?.data.title || "Default Service Title",
+      "Venas Technologies Service",
+      "digital transformation",
+      "AI solutions",
+      ...keywords,
+    ],
+    openGraph: {
+      title,
+      description,
+      url: `https://venastechnology.com/services/${service.uid}`,
+      type: "article",
+      images: [
+        {
+          url:
+            service.data.social_image.url ||
+            "https://venastechnology.com/media-preview.png",
+          width: service.data.social_image.dimensions
+            ? service?.data.social_image.dimensions.width
+            : 1200,
+          height: service.data.social_image.dimensions
+            ? service?.data.social_image.dimensions.height
+            : 630,
+          alt: `${service?.data.meta_title || service?.data.title} Preview`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [
+        service.data.social_image.url ||
+          "https://venastechnology.com/media-preview.png",
+      ],
+    },
+  };
+}
+
+export async function generateStaticParams() {
+  const client = createClient();
+  const pages = await client.getAllByType("service");
+
+  return pages.map((page) => {
+    return { uid: page.uid };
+  });
 }
 const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
   const { uid } = await params;
