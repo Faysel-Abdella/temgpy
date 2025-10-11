@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import Image from "next/image";
 import { Button } from "../../ui/button";
 import { cn } from "@/lib/utils";
@@ -113,7 +114,7 @@ export default function Hero() {
               className="rounded-full  p-5 md:p-7 text-base font-semibold border-primary max-md:w-full "
               variant={"outline"}
             >
-              Explore Services
+              <Link href="/services">Explore Services</Link>
             </Button>
           </div>
         </div>
