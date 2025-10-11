@@ -9,7 +9,8 @@ export default function TechStacks({ project }: { project: Project }) {
         <h1
           data-aos="fade-up"
           data-aos-duration="500"
-          className="text-2xl lg:text-3xl font-extrabold font-gilroy">
+          className="text-2xl lg:text-3xl font-extrabold font-gilroy"
+        >
           Tech Stack
         </h1>
         <div className="flex flex-wrap gap-3 items-center justify-center">
@@ -19,7 +20,8 @@ export default function TechStacks({ project }: { project: Project }) {
               data-aos-duration="500"
               data-aos-delay={index * 150}
               key={item.title}
-              className="px-4 py-1.5 border bg-secondary/55 rounded-full inline-flex justify-center items-center gap-2.5">
+              className="px-4 py-1.5 border bg-secondary/55 rounded-full inline-flex justify-center items-center gap-2.5"
+            >
               <div className="flex size-7">
                 {React.createElement(Icons[item.icon as keyof typeof Icons], {
                   className: "size-[27px]",

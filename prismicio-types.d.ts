@@ -362,8 +362,15 @@ export interface ServiceDocumentDataTechStackItem {
    * - **API ID Path**: service.tech_stack[].tech_stack
    * - **Documentation**: https://prismic.io/docs/fields/content-relationship
    */
-  tech_stack: prismic.ContentRelationshipField<"tech_stack">;
+  tech_stack: ContentRelationshipFieldWithData<
+    [{ id: "tech_stack"; fields: ["title", "logo"] }]
+  >;
 }
+
+type ServiceDocumentDataSlicesSlice =
+  | ImageBlockSlice
+  | RichTextContentSlice
+  | ServiceAboutSolutionSlice;
 
 /**
  * Content for service documents
@@ -403,6 +410,17 @@ interface ServiceDocumentData {
    * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
    */
   tech_stack: prismic.GroupField<Simplify<ServiceDocumentDataTechStackItem>>;
+
+  /**
+   * Slice Zone field in *service*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: service.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/slices
+   */
+  slices: prismic.SliceZone<ServiceDocumentDataSlicesSlice>;
 }
 
 /**
@@ -828,6 +846,7 @@ declare module "@prismicio/client" {
       ServiceDocumentData,
       ServiceDocumentDataBannerImagesItem,
       ServiceDocumentDataTechStackItem,
+      ServiceDocumentDataSlicesSlice,
       TechStackDocument,
       TechStackDocumentData,
       AllDocumentTypes,

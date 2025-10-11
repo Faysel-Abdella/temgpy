@@ -20,37 +20,35 @@ const ServiceAboutSolution: FC<ServiceAboutSolutionProps> = ({ slice }) => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className="flex items-center justify-center w-screen h-fit py-6 md:py-16 px-4  bg-background">
-        <div className="flex w-full max-w-[1112px] flex-col md:flex-row gap-7 md:gap-12 lg:gap-16 items-center justify-center">
-          <div className="flex  flex-col gap-3 md:gap-5 w-full md:w-1/2 mx-auto">
-            <h1
-              data-aos="fade-right"
-              data-aos-duration="500"
-              className="text-2xl lg:text-3xl font-extrabold font-gilroy"
-            >
-              About the Solution
-            </h1>
-            <div
-              data-aos="fade-right"
-              data-aos-duration="1200"
-              className="text-description font-inter text-md lg:text-lg font-normal"
-            >
-              <PrismicRichText
-                field={about_solution}
-                components={RichTextContentComponents}
-              />
-            </div>
-          </div>
-          <div className="flex flex-col gap-5 w-full md:w-1/2">
-            <PrismicNextImage
-              field={about_solution_image}
-              data-aos="fade-left"
-              data-aos-duration="1200"
-              className="w-full max-w-[524px] aspect-square rounded-2xl object-cover max-h-96"
-              width={1920}
-              height={1080}
+      <div className="flex w-full  flex-col md:flex-row gap-7 md:gap-12 lg:gap-16 items-center justify-center">
+        <div className="flex  flex-col gap-3 md:gap-5 w-full md:w-1/2 mx-auto">
+          <h1
+            data-aos="fade-right"
+            data-aos-duration="500"
+            className="text-2xl lg:text-3xl font-extrabold font-gilroy"
+          >
+            About the Solution
+          </h1>
+          <div
+            data-aos="fade-right"
+            data-aos-duration="1200"
+            className="text-description font-inter text-md lg:text-lg font-normal"
+          >
+            <PrismicRichText
+              field={about_solution}
+              components={RichTextContentComponents}
             />
           </div>
+        </div>
+        <div className="flex flex-col gap-5 w-full md:w-1/2">
+          <PrismicNextImage
+            field={about_solution_image}
+            data-aos="fade-left"
+            data-aos-duration="1200"
+            className="w-full max-w-[524px] aspect-square rounded-2xl object-cover max-h-96"
+            width={1920}
+            height={1080}
+          />
         </div>
       </div>
     </section>

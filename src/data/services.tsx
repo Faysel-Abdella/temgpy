@@ -1,4 +1,6 @@
-export const services = [
+import { Service } from "@/types/shared.types";
+
+export const services: Service[] = [
   {
     id: 1,
     image: "/services/delivery-system.webp",

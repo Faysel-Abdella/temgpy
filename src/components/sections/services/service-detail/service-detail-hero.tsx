@@ -1,9 +1,8 @@
 "use client";
-import Slideshow from "@/components/common/slideshow";
 import { cn } from "@/lib/utils";
 import Aos from "aos";
 import Image from "next/image";
-import React, { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 interface ServiceHeroDetailProps {
   images: string[];
@@ -38,13 +37,13 @@ const ServiceHeroDetail = ({ images, title }: ServiceHeroDetailProps) => {
   useEffect(() => {
     if (isPaused) return;
 
-    console.log("Setting up auto-rotation");
+    // console.log("Setting up auto-rotation");
     const interval = setInterval(() => {
       goToNextSlide();
     }, 3000); // Change image every 3 seconds
 
     return () => {
-      console.log("Clearing interval");
+      //   console.log("Clearing interval");
       clearInterval(interval);
     };
   }, [goToNextSlide, isPaused]);
@@ -65,7 +64,7 @@ const ServiceHeroDetail = ({ images, title }: ServiceHeroDetailProps) => {
     }, 1000);
   };
   return (
-    <section className="flex bg-background2 relative text-background2-foreground flex-col py-28">
+    <section className="flex bg-background2 relative text-background2-foreground flex-col pt-32 pb-12">
       <div className="absolute w-screen h-40 bg-background2 bottom-full" />
       <div className="absolute w-screen h-32 md:h-48 bg-background bottom-0" />
       <div className="w-full h-fit  flex flex-col items-center justify-center gap-8">
@@ -80,7 +79,7 @@ const ServiceHeroDetail = ({ images, title }: ServiceHeroDetailProps) => {
         </div>
 
         <div className="relative  px-4 lg:px-0 w-full lg:max-w-[1112px] mx-auto">
-          <div className="relative h-52 md:h-80 lg:h-[629px] w-full overflow-hidden rounded-xl md:rounded-3xl bg-[#111827]">
+          <div className="relative h-52 md:h-80 lg:h-[629px] w-full overflow-hidden  bg-[#111827]">
             <div
               className={cn(
                 "absolute inset-0 transition-all duration-1000",
@@ -107,7 +106,6 @@ const ServiceHeroDetail = ({ images, title }: ServiceHeroDetailProps) => {
                     : "opacity-0 scale-80 blur-md rotate-0 z-0"
                 )}
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-background2 to-background2 mix-blend-overlay z-20 transition-opacity duration-2000" />
                 <Image
                   src={src || "/placeholder.svg"}
                   alt={`Carousel image ${index + 1}`}

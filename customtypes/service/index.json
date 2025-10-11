@@ -48,8 +48,30 @@
                 "label": "tech stack",
                 "select": "document",
                 "repeat": false,
-                "customtypes": ["tech_stack"]
+                "customtypes": [
+                  {
+                    "id": "tech_stack",
+                    "fields": ["title", "logo"]
+                  }
+                ]
               }
+            }
+          }
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "image_block": {
+              "type": "SharedSlice"
+            },
+            "rich_text_content": {
+              "type": "SharedSlice"
+            },
+            "service_about_solution": {
+              "type": "SharedSlice"
             }
           }
         }

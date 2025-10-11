@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { ArrowUpRight, ChevronsDown, ChevronsUp } from "lucide-react";
 import Image from "next/image";
 import React, { useState } from "react";
+import ServiceCard from "./service-card";
 
 const SpecializedExpertise = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -41,31 +42,7 @@ const SpecializedExpertise = () => {
             )}
           >
             {filteredServices.map((item) => (
-              <div
-                key={item.id}
-                className="flex  flex-col "
-                data-aos="fade-up"
-                data-aos-duration="600"
-              >
-                <div className="relative  w-full h-60  ">
-                  <Image
-                    src={item.image}
-                    alt={item.title + " image"}
-                    fill
-                    className="object-cover rounded-t-3xl rounded-b-2xl"
-                  />
-                </div>
-
-                <div className="mt-5  flex items-center w-full justify-between   ">
-                  <p className="text-xl font-semibold font-gilroy">
-                    {item.title}
-                  </p>
-                  <ArrowUpRight className="size-5" />
-                </div>
-                <div className="mt-4   line-clamp-2 text-description text-base font-medium font-inter leading-normal">
-                  {item.description}
-                </div>
-              </div>
+              <ServiceCard key={item.id} service={item} />
             ))}
           </div>
           <div className="w-full items-center justify-center  mt-20  flex">
