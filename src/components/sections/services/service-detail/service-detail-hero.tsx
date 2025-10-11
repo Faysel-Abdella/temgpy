@@ -79,10 +79,10 @@ const ServiceHeroDetail = ({ images, title }: ServiceHeroDetailProps) => {
         </div>
 
         <div className="relative  px-4 lg:px-0 w-full lg:max-w-[1112px] mx-auto">
-          <div className="relative h-52 md:h-80 lg:h-[629px] w-full overflow-hidden  bg-[#111827]">
+          <div className="relative h-52 md:h-80 lg:h-[629px] w-full overflow-hidden rounded-xl  bg-[#111827]">
             <div
               className={cn(
-                "absolute inset-0 transition-all duration-1000",
+                "absolute inset-0 transition-all rounded-xl duration-1000",
                 transitioning
                   ? "opacity-0 scale-110 blur-sm rotate-3"
                   : "opacity-0"
@@ -92,7 +92,7 @@ const ServiceHeroDetail = ({ images, title }: ServiceHeroDetailProps) => {
                 src={images[prevIndex] || "/placeholder.svg"}
                 alt={`Previous carousel image`}
                 fill
-                className="object-cover"
+                className="object-cover rounded-xl"
               />
             </div>
 

@@ -35,7 +35,7 @@ const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
         </div>
 
         <div className="flex bg-white pt-12">
-          <Separator className="mx-auto max-w-[1112px]" />
+          <Separator className="mx-auto max-w-6xl max-h-px" />
         </div>
 
         <div className="flex items-center justify-center w-screen h-fit py-14 px-4 lg:px-0 bg-background ">
@@ -66,7 +66,7 @@ const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
           </div>
         </div>
         <div className="flex bg-white">
-          <Separator className="mx-auto max-w-6xl" />
+          <Separator className="mx-auto max-w-6xl " />
         </div>
         <div className="max-w-6xl mx-auto px-4">
           <OtherServices />
