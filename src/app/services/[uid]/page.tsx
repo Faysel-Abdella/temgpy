@@ -34,6 +34,11 @@ export async function generateMetadata({
       service.data.meta_description ||
       "Explore this Venas Technologies service.";
 
+  const socialImage: string =
+    service.data.social_image && service.data.social_image.url
+      ? service.data.social_image.url
+      : "https://venastechnology.com/media-preview.png";
+
   return {
     title,
     description,
@@ -51,15 +56,9 @@ export async function generateMetadata({
       type: "article",
       images: [
         {
-          url:
-            service.data.social_image.url ||
-            "https://venastechnology.com/media-preview.png",
-          width: service.data.social_image.dimensions
-            ? service?.data.social_image.dimensions.width
-            : 1200,
-          height: service.data.social_image.dimensions
-            ? service?.data.social_image.dimensions.height
-            : 630,
+          url: socialImage,
+          width: 1200,
+          height: 630,
           alt: `${service?.data.meta_title || service?.data.title} Preview`,
         },
       ],
@@ -68,10 +67,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title,
       description,
-      images: [
-        service.data.social_image.url ||
-          "https://venastechnology.com/media-preview.png",
-      ],
+      images: [socialImage],
     },
   };
 }
@@ -130,7 +126,13 @@ const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
                   // console.log(logo, title);
                   return (
                     logo &&
-                    title && <TechStackBadge logo={logo} title={title} />
+                    title && (
+                      <TechStackBadge
+                        key={techStack.tech_stack.uid}
+                        logo={logo}
+                        title={title}
+                      />
+                    )
                   );
                 }
               })}

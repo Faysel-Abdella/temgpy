@@ -71,9 +71,9 @@ export default function Navbar() {
       )}
     >
       <div
-        className={`w-full   font-inter px-6    lg:pl-14 lg:pr-10  max-w-[1400px]  flex `}
+        className={`w-full   font-inter px-6    lg:pl-14 lg:pr-10  max-w-[1400px]  justify-between flex `}
       >
-        <div className="flex items-center justify-start w-1/4 lg:w-1/3">
+        <div className="flex items-center justify-start w-1/2 md:w-1/4 lg:w-1/3">
           <div
             className="md:hidden hover:cursor-pointer"
             onClick={() => router.push("/")}
@@ -128,7 +128,7 @@ export default function Navbar() {
           })}
         </div>
 
-        <div className=" flex items-center justify-end w-1/4 lg:w-1/3">
+        <div className=" flex items-center justify-end w-1/2 md:w-1/4 lg:w-1/3">
           <button
             onClick={toggleMenu}
             className="md:hidden text-black"
