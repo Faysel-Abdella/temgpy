@@ -1,9 +1,8 @@
+import React from "react";
 import { getHeadingId } from "@/lib/utils";
 import { Content, ImageFieldImage, RTImageNode } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
-import React from "react";
 import { PrismicNextImage } from "@prismicio/next";
-import React from "react";
 
 export type RichTextContentProps =
   SliceComponentProps<Content.RichTextContentSlice>;

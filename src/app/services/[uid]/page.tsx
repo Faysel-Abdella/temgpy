@@ -118,12 +118,10 @@ const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
             <div className="flex flex-wrap gap-3 items-center justify-center">
               {service.data.tech_stack.map((techStack) => {
                 if (techStack.tech_stack.link_type == "Document") {
-                  console.log(techStack.tech_stack.data);
                 }
                 if (techStack.tech_stack.link_type == "Document") {
                   const logo = techStack.tech_stack.data?.logo;
                   const title = techStack.tech_stack.data?.title;
-                  // console.log(logo, title);
                   return (
                     logo &&
                     title && (
