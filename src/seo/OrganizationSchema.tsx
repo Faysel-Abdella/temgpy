@@ -1,4 +1,4 @@
-import { Organization, Service, Thing, WithContext } from "schema-dts";
+import { Organization, WithContext } from "schema-dts";
 
 const OrganizationSchema = () => {
   const organization: WithContext<Organization> = {
