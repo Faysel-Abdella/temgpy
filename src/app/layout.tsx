@@ -9,6 +9,8 @@ import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
 import { Toaster } from "sonner";
 
+import OrganizationSchema from "@/seo/OrganizationSchema";
+
 const gilroy = localFont({
   src: "/fonts/Gilroy.ttf",
   variable: "--font-gilroy",
@@ -85,7 +87,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${gilroy.variable} ${clashgrotesk.variable} scroll-smooth`}
     >
-      {/* Inject GTM scripts automatically  */}
+      {/* Inject GTM scripts automatically - Google Analytics  */}
       <GoogleTagManager gtmId="G-EWPVM392NT" />
 
       {/* Tidio chatbot integration */}
@@ -95,6 +97,9 @@ export default function RootLayout({
       ></script>
 
       <body className="flex flex-col overflow-x-hidden max-w-screen">
+        {/* SEO - Schema.org */}
+        <OrganizationSchema />
+
         {/* Favicon */}
         <link rel="icon" href="/tab-icon.svg" type="image/svg+xml" />
 
