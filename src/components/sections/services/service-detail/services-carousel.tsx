@@ -101,7 +101,7 @@ const ServicesCarousel = ({
       {/* Arrows */}
       <button
         onClick={scrollPrev}
-        className="absolute -left-2.5 sm:-left-10 top-1/2 -translate-y-1/2 z-10 p-2 bg-background3 border backdrop-blur-md rounded-full shadow transition-all hover:bg-muted"
+        className="absolute -left-2.5 sm:-left-10 top-1/3 -translate-y-1/2 z-10 p-2 bg-background3 border backdrop-blur-md rounded-full shadow transition-all hover:bg-muted"
       >
         <ChevronLeft className="size-5" />
       </button>
@@ -122,7 +122,7 @@ const ServicesCarousel = ({
 
       <button
         onClick={scrollNext}
-        className="absolute -right-2.5 sm:-right-9 md:-right-7 xl:-right-4 top-1/2 -translate-y-1/2 z-10 p-2 bg-background3 border backdrop-blur-md rounded-full shadow transition-all hover:bg-muted"
+        className="absolute -right-2.5 sm:-right-9 md:-right-7 xl:-right-4 top-1/3 -translate-y-1/2 z-10 p-2 bg-background3 border backdrop-blur-md rounded-full shadow transition-all hover:bg-muted"
       >
         <ChevronRight className="size-5" />
       </button>
