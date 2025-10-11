@@ -12,24 +12,31 @@ import Partners from "@/components/sections/main/partners";
 import React from "react";
 import ContactFooter from "@/components/common/contact-footer";
 
+// SEO - AboutPage Schema
+
+import AboutPageSchema from "@/seo/AboutPageSchema";
+
 export default function page() {
   return (
-    <main className="relative">
-      <Home />
-      <FeaturesCarousel
-        LeftEdgeColor="from-white"
-        RightEdgeColor="from-white"
-        className="py-12  md:py-16 "
-      />
-      <OurStory />
-      <Mission />
-      <Vision />
-      {/* <TeamSection /> */}
-      <CoreValues />
-      <div className=" ">
-        <Partners />
-      </div>
-      <ContactFooter />
-    </main>
+    <>
+      <AboutPageSchema />
+      <main className="relative">
+        <Home />
+        <FeaturesCarousel
+          LeftEdgeColor="from-white"
+          RightEdgeColor="from-white"
+          className="py-12  md:py-16 "
+        />
+        <OurStory />
+        <Mission />
+        <Vision />
+        {/* <TeamSection /> */}
+        <CoreValues />
+        <div className=" ">
+          <Partners />
+        </div>
+        <ContactFooter />
+      </main>
+    </>
   );
 }
