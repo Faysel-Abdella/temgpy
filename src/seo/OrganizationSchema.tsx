@@ -7,7 +7,6 @@ const OrganizationSchema = () => {
     "@id": " https://www.venastechnology.com/#organization",
     name: "Venas Technologies",
     legalName: "Venas Technologies PLC",
-    numberOfEmployees: "10-50",
     areaServed: [
       "Global",
       "Worldwide",
