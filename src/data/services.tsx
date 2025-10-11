@@ -1,10 +1,12 @@
-export const services = [
+import { Service } from "@/types/shared.types";
+
+export const services: Service[] = [
   {
     id: "service-01",
-    image: "/services/delivery-system.webp",
-    title: "Delivery System Platforms",
+    image: "/services/restaurant-order.webp",
+    title: "Restaurant Ordering System",
     description:
-      "Deliver convenience easily. We design smooth, reliable apps with fast orders, real-time tracking, and secure payment systems.",
+      "Online ordering, table reservations, kitchen management, and delivery coordination—all in one platform.",
   },
   {
     id: "service-02",
@@ -15,10 +17,10 @@ export const services = [
   },
   {
     id: "service-03",
-    image: "/services/restaurant-order.webp",
-    title: "Restaurant Ordering System",
+    image: "/services/delivery-system.webp",
+    title: "Delivery System Platforms",
     description:
-      "Online ordering, table reservations, kitchen management, and delivery coordination—all in one platform.",
+      "Deliver convenience easily. We design smooth, reliable apps with fast orders, real-time tracking, and secure payment systems.",
   },
   {
     id: "service-04",

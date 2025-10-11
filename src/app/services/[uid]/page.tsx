@@ -12,10 +12,9 @@ interface ServiceDetailPageProps {
   params: Promise<{ uid: string }>;
 }
 const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
-  const uid = "service-01";
+  const { uid } = await params;
   const client = createClient();
-  const service = await client.getByUID("service", uid).catch((error) => {
-    console.log(error);
+  const service = await client.getByUID("service", uid).catch(() => {
     return notFound();
   });
 
@@ -69,7 +68,7 @@ const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
           <Separator className="mx-auto max-w-6xl " />
         </div>
         <div className="max-w-6xl mx-auto px-4">
-          <OtherServices />
+          <OtherServices currentServiceId={uid} />
         </div>
       </div>
     );

@@ -5,7 +5,7 @@ export type FaqItem = {
 };
 
 export interface Service {
-  id: number;
+  id: string;
   image: string;
   title: string;
   description: string;

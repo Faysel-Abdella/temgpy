@@ -7,9 +7,16 @@ import ServiceCard from "../service-card";
 
 interface ServicesCarouselProps {
   services: Service[];
+  currentServiceId: string;
 }
 
-const ServicesCarousel = ({ services }: ServicesCarouselProps) => {
+const ServicesCarousel = ({
+  currentServiceId,
+  services,
+}: ServicesCarouselProps) => {
+  const filteredServices = services.filter(
+    (service) => service.id != currentServiceId
+  );
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scrollNext = () => {
@@ -43,7 +50,7 @@ const ServicesCarousel = ({ services }: ServicesCarouselProps) => {
           snap-x snap-mandatory pb-4 scrollbar-hide
         "
       >
-        {services.map((service) => (
+        {filteredServices.map((service) => (
           <div
             key={service.id}
             className="snap-start shrink-0 w-full sm:w-[45%]  lg:w-[30%]"
