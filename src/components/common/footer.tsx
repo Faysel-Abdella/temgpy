@@ -9,6 +9,7 @@ import FooterSocials from "./footer-socials";
 import Image from "next/image";
 import CopyButton from "./copy-button";
 import { usePathname, useRouter } from "next/navigation";
+import FooterNewsletter from "./footer-newsletter";
 
 const CustomLink: React.FC<{
   children: React.ReactNode;
@@ -72,8 +73,9 @@ export default function Footer() {
   return (
     <footer
       id="contact-us"
-      className="bg-background2 border-t-2 border-stone-600/40 w-full mx-auto items-center justify-center flex flex-col text-white pt-32 gap-8 pb-10 px-4"
+      className="bg-background2 border-t-2 border-stone-600/40 w-full mx-auto items-center justify-center flex flex-col text-white pt-16 md:pt-32 gap-8 pb-10 px-4"
     >
+      <FooterNewsletter />
       <div className="max-w-7xl w-full relative mx-auto flex flex-col lg:flex-row justify-between gap-14">
         <div className="flex flex-col gap-8">
           <Image
