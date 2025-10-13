@@ -100,7 +100,7 @@ export default function CarouselWithPagination({
               >
                 <div className="pr-2">
                   <p className="text-lg text-[#30323A] md:text-xl leading-relaxed font-medium italic">
-                    ❝{testimonial.quote}❞
+                    ❝ {testimonial.quote} ❞
                   </p>
                 </div>
                 <div className="flex justify-between items-end gap-5 w-full">
