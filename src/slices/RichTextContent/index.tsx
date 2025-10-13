@@ -1,7 +1,8 @@
-import { getHeadingId } from "@/lib/utils";
-import { Content } from "@prismicio/client";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import React from "react";
+import { getHeadingId } from "@/lib/utils";
+import { Content, ImageFieldImage, RTImageNode } from "@prismicio/client";
+import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { PrismicNextImage } from "@prismicio/next";
 
 export type RichTextContentProps =
   SliceComponentProps<Content.RichTextContentSlice>;
@@ -22,8 +23,11 @@ interface RichTextLinkNode {
 interface RichTextLinkProps extends RichTextStandardProps {
   node: RichTextLinkNode;
 }
+interface RichTextImage extends RichTextStandardProps {
+  node: ImageFieldImage;
+}
 
-export const BlogContentComponents = {
+export const RichTextContentComponents = {
   heading1: ({ children, text }: RichTextStandardProps) => (
     <h1
       id={getHeadingId(text)}
@@ -175,6 +179,12 @@ export const BlogContentComponents = {
       {children}
     </td>
   ),
+  image: ({ node }: RichTextImage) => (
+    <PrismicNextImage
+      field={node}
+      className="rounded-2xl aspect-video object-cover"
+    />
+  ),
 };
 
 const RichTextContent = ({ slice }: RichTextContentProps) => {
@@ -188,7 +198,7 @@ const RichTextContent = ({ slice }: RichTextContentProps) => {
       {richTextData && (
         <PrismicRichText
           field={richTextData}
-          components={BlogContentComponents}
+          components={RichTextContentComponents}
         />
       )}
     </section>

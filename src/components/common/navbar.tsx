@@ -60,19 +60,20 @@ export default function Navbar() {
     return pathname.startsWith(itemPath);
   };
 
-  const isOnBlogs = pathname.startsWith("/blogs");
+  const isOnDarkRoute =
+    pathname.startsWith("/blogs") || pathname.startsWith("/services/");
   return (
     <nav
       className={cn(
         `fixed w-screen  z-[2350]  h-24 top-0 flex  justify-center border-b-0 border-transparent  transition-all duration-200 ease-in-out bg-gradient-to-b from-background3 via-background3 to-transparent   `,
-        (isScrolled || isOnBlogs) &&
+        (isScrolled || isOnDarkRoute) &&
           "to-background3 h-16 border-border  border-b"
       )}
     >
       <div
-        className={`w-full   font-inter px-6    lg:pl-14 lg:pr-10  max-w-[1400px]  flex `}
+        className={`w-full   font-inter px-6    lg:pl-14 lg:pr-10  max-w-[1400px]  justify-between flex `}
       >
-        <div className="flex items-center justify-start w-1/4 lg:w-1/3">
+        <div className="flex items-center justify-start w-1/2 md:w-1/4 lg:w-1/3">
           <div
             className="md:hidden hover:cursor-pointer"
             onClick={() => router.push("/")}
@@ -127,7 +128,7 @@ export default function Navbar() {
           })}
         </div>
 
-        <div className=" flex items-center justify-end w-1/4 lg:w-1/3">
+        <div className=" flex items-center justify-end w-1/2 md:w-1/4 lg:w-1/3">
           <button
             onClick={toggleMenu}
             className="md:hidden text-black"
