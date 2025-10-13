@@ -18,7 +18,7 @@ const WhyUsContent: ContentItem[] = [
   {
     id: 1,
     isVideo: false,
-    icon: <Icons.Console />,
+    icon: <Icons.Messages />,
     title: "Smooth Communication",
     description:
       "Stay informed at every stage of your project, with clear updates and fast responses whenever you need them.",
@@ -26,12 +26,12 @@ const WhyUsContent: ContentItem[] = [
   {
     id: 2,
     isVideo: true,
-    src: "/whyus/uiux.webm",
+    src: "/whyus/why-us-1.webm",
   },
   {
     id: 3,
     isVideo: false,
-    icon: <Icons.Console />,
+    icon: <Icons.Messages />,
     title: "Speed / On-Time Delivery",
     description:
       "Deadlines matter. We plan carefully and use agile methods to deliver results when promised.",
@@ -39,12 +39,12 @@ const WhyUsContent: ContentItem[] = [
   {
     id: 4,
     isVideo: true,
-    src: "/whyus/uiux.webm",
+    src: "/whyus/why-us-2.webm",
   },
   {
     id: 5,
     isVideo: false,
-    icon: <Icons.Console />,
+    icon: <Icons.Messages />,
     title: "Consistent Quality",
     description:
       "We combine strong design principles and clean code to ensure reliability and scalability.",
@@ -52,20 +52,7 @@ const WhyUsContent: ContentItem[] = [
   {
     id: 6,
     isVideo: true,
-    src: "/whyus/uiux.webm",
-  },
-  {
-    id: 7,
-    isVideo: false,
-    icon: <Icons.Console />,
-    title: "Transparent Process",
-    description:
-      "You'll always know what's happening with your project and why.",
-  },
-  {
-    id: 8,
-    isVideo: true,
-    src: "/whyus/uiux.webm",
+    src: "/whyus/why-us-3.webm",
   },
 ];
 
