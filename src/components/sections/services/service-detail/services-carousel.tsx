@@ -8,6 +8,7 @@ import { cn } from "@/lib/utils";
 import {
   Carousel,
   CarouselContent,
+  CarouselDots,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
@@ -43,6 +44,7 @@ const ServicesCarousel = ({
       </CarouselContent>
       <CarouselPrevious className="-left-0 sm:-left-6 md:-left-9 lg:-left-10 xl:-left-12" />
       <CarouselNext className="-right-0 sm:-right-6 md:-right-9 lg:-right-10 xl:-right-12" />
+      <CarouselDots className="-bottom-10" />
     </Carousel>
   );
 };
