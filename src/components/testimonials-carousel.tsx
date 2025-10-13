@@ -28,8 +28,8 @@ export default function CarouselWithPagination({
       slidesToScroll: 1,
       containScroll: "trimSnaps",
       dragFree: false,
-    },
-    [autoplayPlugin.current]
+    }
+    // [autoplayPlugin.current]
   );
 
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -81,23 +81,23 @@ export default function CarouselWithPagination({
   return (
     <div className="w-full max-w-[1420px] mx-auto px-5 relative">
       {/* Gradient overlays */}
-      <div className="absolute w-44 h-full top-0 left-0 bg-gradient-to-r from-muted to-transparent z-10 pointer-events-none" />
+      {/* <div className="absolute w-44 h-full top-0 left-0 bg-gradient-to-r from-muted to-transparent z-10 pointer-events-none" /> */}
       <div className="absolute w-44 h-full top-0 right-0 bg-gradient-to-l from-muted to-transparent z-10 pointer-events-none" />
 
       {/* Carousel */}
-      <div
-        className="overflow-hidden relative z-0"
-        ref={emblaRef}>
+      <div className="overflow-hidden relative z-0" ref={emblaRef}>
         <div className="flex gap-4  md:gap-0 py-3">
           {testimonials.map((testimonial, idx) => (
             <div
               key={idx}
               className="flex-shrink px-4 w-full md:w-[calc(50%-0.5rem)] lg:w-[calc(33.333%-0.75rem)]  md:max-w-[450px]"
-              style={{ flex: "0 0 auto" }}>
+              style={{ flex: "0 0 auto" }}
+            >
               <div
                 className={cn(
                   "p-5 bg-background drop-shadow-md border border-neutral-200 mx-auto max-w-screen rounded-[20px] md:rounded-[24px] flex flex-col justify-between items-start gap-8 h-fit min-h-60  md:min-h-[300px] w-full"
-                )}>
+                )}
+              >
                 <div className="pr-2">
                   <p className="text-lg text-[#30323A] md:text-xl leading-relaxed font-medium italic">
                     ❝{testimonial.quote}❞
@@ -105,7 +105,7 @@ export default function CarouselWithPagination({
                 </div>
                 <div className="flex justify-between items-end gap-5 w-full">
                   <div className="flex gap-4 items-center">
-                    <Avatar className="size-9 md:size-12 object-cover rounded-md z-20 aspect-square">
+                    {/* <Avatar className="size-9 md:size-12 object-cover rounded-md z-20 aspect-square">
                       <AvatarImage
                         src={testimonial.image}
                         alt={testimonial.name}
@@ -116,9 +116,9 @@ export default function CarouselWithPagination({
                           .map((name) => name[0])
                           .join("")}
                       </AvatarFallback>
-                    </Avatar>
+                    </Avatar> */}
                     <div>
-                      <h3 className="text-lg md:text-2xl font-medium">
+                      <h3 className="text-lg md:text-xl font-medium">
                         {testimonial.name}
                       </h3>
                       <p className="text-sm text-[#30323A] font-normal opacity-95">
@@ -126,7 +126,7 @@ export default function CarouselWithPagination({
                       </p>
                     </div>
                   </div>
-                  <div className="flex flex-col gap-5 h-full">
+                  {/* <div className="flex flex-col gap-5 h-full">
                     <div className="flex items-start justify-between">
                       <div className="flex items-center gap-1.5">
                         <span className="text-sm font-normal">Via</span>
@@ -139,7 +139,7 @@ export default function CarouselWithPagination({
                         />
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
@@ -157,7 +157,8 @@ export default function CarouselWithPagination({
               "p-2 rounded-full hover:cursor-pointer border border-neutral-200 bg-background hover:bg-neutral-100 transition-colors",
               !canScrollPrev && "opacity-55"
             )}
-            aria-label="Previous slide">
+            aria-label="Previous slide"
+          >
             <ChevronLeft className="h-5 w-5" />
           </button>
 
@@ -184,7 +185,8 @@ export default function CarouselWithPagination({
               "p-2 rounded-full border hover:cursor-pointer border-neutral-200 bg-background hover:bg-neutral-100 transition-colors",
               !canScrollNext && "opacity-55"
             )}
-            aria-label="Next slide">
+            aria-label="Next slide"
+          >
             <ChevronRight className="h-5 w-5" />
           </button>
         </div>

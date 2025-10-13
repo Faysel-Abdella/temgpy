@@ -23,8 +23,9 @@ export default function page() {
       <WhyChooseUs />
       {/* Temporary hide the projects (portfolio) page */}
       {/* <SelectedWorks /> */}
-      {/*       <Testimonials /> */}
-      <Partners />
+      <Testimonials />
+      {/* Hide partners section since it's already mentioned in the above the fold section */}
+      {/* <Partners /> */}
       <AboutUs />
       <FAQ />
     </main>
