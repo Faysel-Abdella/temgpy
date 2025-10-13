@@ -10,15 +10,15 @@ const services = [
 ];
 
 const partners = [
-  {
-    src: "/partners/taza.png",
-    alt: "Taza",
-    maxW: "max-w-[80px] sm:max-w-[120px] lg:max-w-[150px]",
-  },
+  // {
+  //   src: "/partners/taza.png",
+  //   alt: "Taza",
+  //   maxW: "max-w-[80px] sm:max-w-[120px] lg:max-w-[150px]",
+  // },
   {
     src: "/partners/sure-drive.svg",
     alt: "Sure Drive",
-    maxW: "max-w-[120px] sm:max-w-[120px] lg:max-w-[196px]",
+    maxW: "max-w-[80px] sm:max-w-[120px] lg:max-w-[150px]",
   },
   {
     src: "/partners/time.png",
@@ -33,13 +33,13 @@ const partners = [
   {
     src: "/partners/change-hub.png",
     alt: "Change Hub",
-    maxW: "max-w-[120px] sm:max-w-[120px] lg:max-w-[196px]",
+    maxW: "max-w-[80px] sm:max-w-[120px] lg:max-w-[150px]",
   },
-  {
-    src: "/partners/billion-views.svg",
-    alt: "Billion Views",
-    maxW: "max-w-[100px] sm:max-w-[120px] lg:max-w-[150px] ",
-  },
+  // {
+  //   src: "/partners/billion-views.svg",
+  //   alt: "Billion Views",
+  //   maxW: "max-w-[100px] sm:max-w-[120px] lg:max-w-[150px] ",
+  // },
 ];
 
 export function InfiniteMovingPartners() {
