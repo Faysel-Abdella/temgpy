@@ -1,18 +1,14 @@
-import Expertise from "@/components/sections/main/services";
-import FeaturesCarousel from "@/components/common/features";
-import Hero from "@/components/sections/main/hero";
-import React from "react";
-import SelectedWorks from "@/components/sections/main/selected-works";
-import Testimonials from "@/components/sections/main/testimonials";
-import Partners from "@/components/sections/main/partners";
 import AboutUs from "@/components/sections/main/about-us";
-import ContactUs from "@/components/sections/main/contact-us";
-import WhyChooseUs from "@/components/sections/main/why-choose-us";
 import FAQ from "@/components/sections/main/faq";
+import Hero from "@/components/sections/main/hero";
+import Expertise from "@/components/sections/main/services";
+import Testimonials from "@/components/sections/main/testimonials";
+import WhyChooseUs from "@/components/sections/main/why-choose-us";
+import WhyUsCarousel from "@/components/sections/main/WhyUsCarousel";
 
 export default function page() {
   return (
-    <main className="max-w-screen overflow-x-hidden">
+    <main>
       <Hero />
       {/* <FeaturesCarousel
         RightEdgeColor="from-white"
@@ -20,10 +16,12 @@ export default function page() {
         className=""
       /> */}
       <Expertise />
-      <WhyChooseUs />
+      <WhyUsCarousel />
+
+      {/* <WhyChooseUs /> */}
       {/* Temporary hide the projects (portfolio) page */}
       {/* <SelectedWorks /> */}
-      <Testimonials />
+      {/* <Testimonials /> */}
       {/* Hide partners section since it's already mentioned in the above the fold section */}
       {/* <Partners /> */}
       <AboutUs />
