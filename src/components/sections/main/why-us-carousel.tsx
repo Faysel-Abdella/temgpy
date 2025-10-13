@@ -60,7 +60,7 @@ const WhyUsContent: ContentItem[] = [
     icon: <Icons.Console />,
     title: "Transparent Process",
     description:
-      "You’ll always know what’s happening with your project and why.",
+      "You'll always know what's happening with your project and why.",
   },
   {
     id: 8,
@@ -114,7 +114,7 @@ const WhyUsCarousel: React.FC = () => {
         <motion.div
           ref={containerRef}
           style={{ x: isMobile ? undefined : x }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-none lg:flex   gap-[3vw]    mt-10 md:mt-6 lg:mt-10 lg:pl-14 max-md:px-4 "
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-none lg:flex   gap-[8vw]    mt-10 md:mt-6 lg:mt-10 lg:pl-14 max-md:px-4 "
         >
           {WhyUsContent.map((content) =>
             content.isVideo && content.src ? (
@@ -130,9 +130,8 @@ const WhyUsCarousel: React.FC = () => {
             ) : (
               <div
                 key={content.id}
-                className="flex shrink-0 flex-col gap-4 max-md:max-w-sm lg:w-80"
+                className="flex shrink-0 flex-col gap-4 max-md:max-w-sm lg:w-80 justify-center"
               >
-                <p className="text-4xl font-bold">{content.id}</p>
                 {content.icon}
                 <div className="mt-5 text-xl font-semibold font-gilroy">
                   {content.title}

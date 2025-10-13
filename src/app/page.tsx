@@ -2,9 +2,7 @@ import AboutUs from "@/components/sections/main/about-us";
 import FAQ from "@/components/sections/main/faq";
 import Hero from "@/components/sections/main/hero";
 import Expertise from "@/components/sections/main/services";
-import Testimonials from "@/components/sections/main/testimonials";
-import WhyChooseUs from "@/components/sections/main/why-choose-us";
-import WhyUsCarousel from "@/components/sections/main/WhyUsCarousel";
+import WhyUsCarousel from "@/components/sections/main/why-us-carousel";
 
 export default function page() {
   return (
