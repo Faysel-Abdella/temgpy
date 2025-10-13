@@ -17,11 +17,11 @@ export default function Home() {
             </p>
 
             <div className=" lg:pr-6 justify-start max-lg:text-center text-description  md:text-lg lg:max-w-2xl xl:max-w-4xl font-normal font-inter leading-relaxed">
-              GrowzTech is a leading tech company serving clients worldwide. We
-              offer custom software, AI Automations, Cloud solutions, IT
-              Consultation, and Talent Outsourcing, delivering reliable support
-              and measurable results to help businesses maximize their digital
-              potential.
+              Venas Technologies is a leading tech company serving clients
+              worldwide. We offer custom software, AI Automations, Cloud
+              solutions, IT Consultation, and Talent Outsourcing, delivering
+              reliable support and measurable results to help businesses
+              maximize their digital potential.
             </div>
           </div>
           <div className="w-px bg-border " />
