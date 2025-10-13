@@ -87,62 +87,61 @@ const WhyUsCarousel: React.FC = () => {
   const x = useTransform(scrollYProgress, [0, 1], [0, -maxX]);
 
   return (
-    <section
-      ref={targetRef}
-      className="flex flex-col bg-muted gap-16   w-screen lg:h-[550vh] pt-24 pb-10 relative"
-    >
-      <div className="md:sticky top-0 flex flex-col   lg:h-screen w-screen  overflow-hidden md:px-12 lg:px-16">
-        <div className="mx-auto  max-w-4xl text-center px-4">
-          <SectionShow title="Why Choose Us?" className="bg-white" />
-          <h1
-            data-aos="fade-up"
-            data-aos-duration="600"
-            className="mt-8 text-3xl font-extrabold font-gilroy text-foreground md:text-4xl lg:text-5xl"
+    <section ref={targetRef} className="    px-2.5 ">
+      <div className="flex lg:h-[550vh] pt-24 pb-10 relative  flex-col bg-muted gap-16  rounded-4xl">
+        <div className="md:sticky top-0 flex flex-col   lg:h-screen   overflow-hidden md:px-12 lg:px-16">
+          <div className="mx-auto  max-w-4xl text-center px-4">
+            <SectionShow title="Why Choose Us?" className="bg-white" />
+            <h1
+              data-aos="fade-up"
+              data-aos-duration="600"
+              className="mt-8 text-3xl font-extrabold font-gilroy text-foreground md:text-4xl lg:text-5xl"
+            >
+              We Transform Your Ideas into Digital Reality!
+            </h1>
+            <p
+              data-aos="fade-up"
+              data-aos-duration="700"
+              className="mt-6 text-base text-description md:text-lg"
+            >
+              We bring deep experience in building platforms across key
+              industries. Our proven track record ensures solutions that are
+              scalable, reliable, and designed to accelerate your growth.
+            </p>
+          </div>
+          <motion.div
+            ref={containerRef}
+            style={{ x: isMobile ? undefined : x }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-none lg:flex   gap-[8vw]    mt-10 md:mt-6 lg:mt-10 lg:pl-14 max-md:px-4 "
           >
-            We Transform Your Ideas into Digital Reality!
-          </h1>
-          <p
-            data-aos="fade-up"
-            data-aos-duration="700"
-            className="mt-6 text-base text-description md:text-lg"
-          >
-            We bring deep experience in building platforms across key
-            industries. Our proven track record ensures solutions that are
-            scalable, reliable, and designed to accelerate your growth.
-          </p>
+            {WhyUsContent.map((content) =>
+              content.isVideo && content.src ? (
+                <video
+                  key={content.id}
+                  className="rounded-2xl w-full lg:w-xl shrink-0 my-auto"
+                  autoPlay
+                  muted
+                  loop
+                >
+                  <source src={content.src} />
+                </video>
+              ) : (
+                <div
+                  key={content.id}
+                  className="flex shrink-0 flex-col gap-4 max-md:max-w-sm lg:w-80 justify-center"
+                >
+                  {content.icon}
+                  <div className="mt-5 text-xl font-semibold font-gilroy">
+                    {content.title}
+                  </div>
+                  <div className="text-description text-base font-medium font-inter leading-normal">
+                    {content.description}
+                  </div>
+                </div>
+              )
+            )}
+          </motion.div>
         </div>
-        <motion.div
-          ref={containerRef}
-          style={{ x: isMobile ? undefined : x }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-none lg:flex   gap-[8vw]    mt-10 md:mt-6 lg:mt-10 lg:pl-14 max-md:px-4 "
-        >
-          {WhyUsContent.map((content) =>
-            content.isVideo && content.src ? (
-              <video
-                key={content.id}
-                className="rounded-2xl w-full lg:w-xl shrink-0 my-auto"
-                autoPlay
-                muted
-                loop
-              >
-                <source src={content.src} />
-              </video>
-            ) : (
-              <div
-                key={content.id}
-                className="flex shrink-0 flex-col gap-4 max-md:max-w-sm lg:w-80 justify-center"
-              >
-                {content.icon}
-                <div className="mt-5 text-xl font-semibold font-gilroy">
-                  {content.title}
-                </div>
-                <div className="text-description text-base font-medium font-inter leading-normal">
-                  {content.description}
-                </div>
-              </div>
-            )
-          )}
-        </motion.div>
       </div>
     </section>
   );

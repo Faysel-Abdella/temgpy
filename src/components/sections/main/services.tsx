@@ -9,7 +9,7 @@ import { Icons } from "@/components/ui/icons";
 import { User } from "lucide-react";
 import SectionShow from "@/components/section-show";
 
-export default function Expertise() {
+export default function Services() {
   useEffect(() => {
     AOS.init({
       once: true,

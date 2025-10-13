@@ -1,7 +1,8 @@
 import AboutUs from "@/components/sections/main/about-us";
+import ExpertiseServices from "@/components/sections/main/expertise-services";
 import FAQ from "@/components/sections/main/faq";
 import Hero from "@/components/sections/main/hero";
-import Expertise from "@/components/sections/main/services";
+import Services from "@/components/sections/main/services";
 import WhyUsCarousel from "@/components/sections/main/why-us-carousel";
 
 export default function page() {
@@ -13,9 +14,9 @@ export default function page() {
         LeftEdgeColor="from-white"
         className=""
       /> */}
-      <Expertise />
+      <Services />
       <WhyUsCarousel />
-
+      <ExpertiseServices />
       {/* <WhyChooseUs /> */}
       {/* Temporary hide the projects (portfolio) page */}
       {/* <SelectedWorks /> */}
