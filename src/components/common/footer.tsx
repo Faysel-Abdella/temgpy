@@ -152,8 +152,8 @@ export default function Footer() {
               Contact
             </p>
 
-            {footerData.CONTACT.map((contact) => (
-              <CopyButton key={contact} text={contact} />
+            {footerData.CONTACT.map((contact, index) => (
+              <CopyButton key={index} text={contact} />
             ))}
             <div className="relative group">
               <div className="text-white/70">Coming soon...</div>

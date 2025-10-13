@@ -103,18 +103,24 @@ const WhyUsCarousel: React.FC = () => {
           >
             {WhyUsContent.map((content) =>
               content.isVideo && content.src ? (
-                <video
+                <motion.video
                   key={content.id}
+                  initial={{ y: 150 }}
+                  whileInView={{ y: 0 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
                   className="rounded-2xl w-full lg:w-xl shrink-0 my-auto"
                   autoPlay
                   muted
                   loop
                 >
                   <source src={content.src} />
-                </video>
+                </motion.video>
               ) : (
-                <div
+                <motion.div
                   key={content.id}
+                  initial={{ y: 150 }}
+                  whileInView={{ y: 0 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
                   className="flex shrink-0 flex-col gap-4 max-md:max-w-sm lg:w-80 justify-center"
                 >
                   {content.icon}
@@ -124,7 +130,7 @@ const WhyUsCarousel: React.FC = () => {
                   <div className="text-description text-base font-medium font-inter leading-normal">
                     {content.description}
                   </div>
-                </div>
+                </motion.div>
               )
             )}
           </motion.div>
