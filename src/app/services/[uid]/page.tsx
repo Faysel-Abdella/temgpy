@@ -83,7 +83,8 @@ export async function generateStaticParams() {
 const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
   const { uid } = await params;
   const client = createClient();
-  const service = await client.getByUID("service", uid).catch(() => {
+  const service = await client.getByUID("service", uid).catch((error) => {
+    console.log(error);
     return notFound();
   });
 
