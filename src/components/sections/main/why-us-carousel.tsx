@@ -31,7 +31,7 @@ const WhyUsContent: ContentItem[] = [
   {
     id: 3,
     isVideo: false,
-    icon: <Icons.Messages />,
+    icon: <Icons.Chart />,
     title: "Speed / On-Time Delivery",
     description:
       "Deadlines matter. We plan carefully and use agile methods to deliver results when promised.",
@@ -44,10 +44,10 @@ const WhyUsContent: ContentItem[] = [
   {
     id: 5,
     isVideo: false,
-    icon: <Icons.Messages />,
-    title: "Consistent Quality",
+    icon: <Icons.MedalStar />,
+    title: "Support / Follow-Up",
     description:
-      "We combine strong design principles and clean code to ensure reliability and scalability.",
+      "Even after delivery, we ensure your satisfaction with dedicated support.",
   },
   {
     id: 6,

@@ -33,5 +33,5 @@ export const footerData = {
       href: "/contact-us",
     },
   ],
-  CONTACT: ["info@growztech.com", "+251947344248", "+251947344248"],
+  CONTACT: ["info@venas.tech", "+251947344248", "+251947344248"],
 };
