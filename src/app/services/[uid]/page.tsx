@@ -83,7 +83,8 @@ export async function generateStaticParams() {
 const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
   const { uid } = await params;
   const client = createClient();
-  const service = await client.getByUID("service", uid).catch(() => {
+  const service = await client.getByUID("service", uid).catch((error) => {
+    console.log(error);
     return notFound();
   });
 
@@ -94,10 +95,7 @@ const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
   if (service.data)
     return (
       <div>
-        <ServiceHeroDetail
-          images={bannerImages}
-          title="Restaurant Ordering & Management Systems"
-        />
+        <ServiceHeroDetail images={bannerImages} title={service.data.title!} />
         <div className="max-w-6xl px-4  mx-auto">
           <SliceZone slices={service.data.slices} components={components} />
         </div>

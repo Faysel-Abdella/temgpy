@@ -9,6 +9,8 @@ import FooterSocials from "./footer-socials";
 import Image from "next/image";
 import CopyButton from "./copy-button";
 import { usePathname, useRouter } from "next/navigation";
+import FooterNewsletter from "./footer-newsletter";
+import { footerData } from "@/config/footer";
 
 const CustomLink: React.FC<{
   children: React.ReactNode;
@@ -16,11 +18,11 @@ const CustomLink: React.FC<{
   className?: string;
 }> = ({ children, href, className = "" }) => {
   return (
-    <div className="relative group">
+    <div className="relative group flex">
       <Link
         href={href}
         className={cn(
-          "justify-start text-white/70 text-base font-normal font-inter leading-normal",
+          "justify-start text-white/70 text-base font-normal font-inter leading-normal  w-full",
           className
         )}
       >
@@ -72,8 +74,9 @@ export default function Footer() {
   return (
     <footer
       id="contact-us"
-      className="bg-background2 border-t-2 border-stone-600/40 w-full mx-auto items-center justify-center flex flex-col text-white pt-32 gap-8 pb-10 px-4"
+      className="bg-background2 border-t-2 border-stone-600/40 w-full mx-auto items-center justify-center flex flex-col text-white pt-16 md:pt-32 gap-8 pb-10 px-4"
     >
+      <FooterNewsletter />
       <div className="max-w-7xl w-full relative mx-auto flex flex-col lg:flex-row justify-between gap-14">
         <div className="flex flex-col gap-8">
           <Image
@@ -90,10 +93,11 @@ export default function Footer() {
             data-aos="fade-up"
             data-aos-duration="500"
             data-aos-delay="200"
-            className="text-xl md:text-2xl font-normal font-gilroy leading-normal lg:max-w-[490px]"
+            className="text-xl  font-normal font-gilroy leading-normal lg:max-w-[490px]"
           >
-            We growing up your business with custom software solutions tailored
-            to your business.
+            Your trusted partner for secure, scalable software solutions, talent
+            outsourcing, and expertise in AI and Cloud. Let&apos;s build the
+            future together.
           </p>
           <p
             data-aos="fade-up"
@@ -112,38 +116,14 @@ export default function Footer() {
             className="flex flex-col space-y-4"
           >
             <p className="justify-start text-white text-lg font-normal font-gilroy uppercase leading-normal pb-3">
-              Landing
+              Services
             </p>
-            <div className="relative group">
-              <Link
-                href="/#home"
-                onClick={(e) => handleNavClick(e, "#home")}
-                className="text-white/70"
-              >
-                Home
-                <span className="absolute -bottom-1 left-0 w-full h-[1px] bg-gradient-to-r from-white/30 via-white to-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </Link>
-            </div>
-            <div className="relative group">
-              <Link
-                href="/#services"
-                onClick={(e) => handleNavClick(e, "#services")}
-                className="text-white/70"
-              >
-                Services
-                <span className="absolute -bottom-1 left-0 w-full h-[1px] bg-gradient-to-r from-white/30 via-white to-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </Link>
-            </div>
-            <div className="relative group">
-              <Link
-                href="/#contact-us"
-                onClick={(e) => handleNavClick(e, "#contact-us")}
-                className="text-white/70"
-              >
-                Contact Us
-                <span className="absolute -bottom-1 left-0 w-full h-[1px] bg-gradient-to-r from-white/30 via-white to-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </Link>
-            </div>
+
+            {footerData.SERVICES.map((service) => (
+              <div key={service} className="relative group">
+                <div className="text-white/70">{service}</div>
+              </div>
+            ))}
           </div>
 
           <div
@@ -155,9 +135,11 @@ export default function Footer() {
             <p className="justify-start text-white text-lg font-normal font-gilroy uppercase leading-normal pb-3">
               Links
             </p>
-            <CustomLink href={"/about-us"}>About Us</CustomLink>
-            <CustomLink href={"/blogs"}>Blogs</CustomLink>
-            <CustomLink href={"/projects"}>Projects</CustomLink>
+            {footerData.LINKS.map((link) => (
+              <CustomLink key={link.href} href={link.href}>
+                {link.label}
+              </CustomLink>
+            ))}
           </div>
 
           <div
@@ -169,10 +151,13 @@ export default function Footer() {
             <p className="justify-start text-white text-lg font-normal font-gilroy uppercase leading-normal pb-3">
               Contact
             </p>
-            <CopyButton text="info@venas.tech" />
-            <CopyButton text="+251947344248" />
-            <CopyButton text="+251954624638" />
-            {/* <p className="text-white/70">More Coming soon...</p> */}
+
+            {footerData.CONTACT.map((contact, index) => (
+              <CopyButton key={index} text={contact} />
+            ))}
+            <div className="relative group">
+              <div className="text-white/70">Coming soon...</div>
+            </div>
           </div>
         </div>
       </div>

@@ -16,7 +16,7 @@ export function BlogFilters() {
   const searchParams = useSearchParams();
   const currentFilter = searchParams.get("filter");
   const [activeFilter, setActiveFilter] = useState(currentFilter || "All");
-  const isMobile = useIsMobile();
+  const isMobile = useIsMobile(1000);
   const router = useRouter();
   const firstRender = useRef(true);
 

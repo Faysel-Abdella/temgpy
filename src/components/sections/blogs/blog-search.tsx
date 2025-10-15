@@ -18,7 +18,7 @@ export function BlogSearch({ searchQuery }: BlogSearchProps) {
   const searchParams = useSearchParams();
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const router = useRouter();
-  const isMobile = useIsMobile();
+  const isMobile = useIsMobile(1000);
   const debouncedValue = useDebounce(search);
   const firstRender = useRef(true);
 
