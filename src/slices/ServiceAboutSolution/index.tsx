@@ -22,13 +22,6 @@ const ServiceAboutSolution: FC<ServiceAboutSolutionProps> = ({ slice }) => {
     >
       <div className="flex w-full  flex-col md:flex-row gap-7 md:gap-12 lg:gap-16 items-center justify-center">
         <div className="flex  flex-col gap-3 md:gap-5 w-full md:w-1/2 mx-auto">
-          <h1
-            data-aos="fade-right"
-            data-aos-duration="500"
-            className="text-2xl lg:text-3xl font-extrabold font-gilroy"
-          >
-            About the Solution
-          </h1>
           <div
             data-aos="fade-right"
             data-aos-duration="1200"
