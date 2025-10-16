@@ -78,26 +78,14 @@ export default function Navbar() {
             className="md:hidden hover:cursor-pointer"
             onClick={() => router.push("/")}
           >
-            <Image
-              src="/logo.svg"
-              alt="logo"
-              width={152}
-              height={40}
-              className="h-fit w-fit"
-            />
+            <Image src="/dark-logo.svg" alt="logo" width={256} height={30} />
           </div>
 
           <div
             className="hidden md:flex hover:cursor-pointer "
             onClick={() => router.push("/")}
           >
-            <Image
-              src="/logo.svg"
-              alt="logo"
-              width={100}
-              height={100}
-              className="h-fit w-fit"
-            />
+            <Image src="/dark-logo.svg" alt="logo" width={256} height={90} />
           </div>
         </div>
 
