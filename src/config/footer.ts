@@ -20,10 +20,6 @@ export const footerData = {
       label: "Blogs",
       href: "/blogs",
     },
-    // {
-    //   label: "Projects",
-    //   href: "/projects",
-    // },
     {
       label: "Services",
       href: "/services",
