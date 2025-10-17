@@ -4,7 +4,7 @@ const OrganizationSchema = () => {
   const organization: WithContext<Organization> = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "@id": " https://www.venastechnology.com/#organization",
+    "@id": "https://www.venastechnology.com/#organization",
     name: "Venas Technologies",
     legalName: "Venas Technologies PLC",
     areaServed: [
@@ -22,7 +22,8 @@ const OrganizationSchema = () => {
     ],
     url: "https://www.venastechnology.com/",
     email: "info@venastechnology.com",
-    logo: "logo url",
+    logo: "https://www.venastechnology.com/tab-icon.svg",
+    image: "https://www.venastechnology.com/tab-icon.svg",
     description:
       "Venas Technologies is a leading software outsourcing company helping global brands turn their ideas into intelligent digital solutions.",
     sameAs: [
@@ -34,7 +35,7 @@ const OrganizationSchema = () => {
     contactPoint: [
       {
         "@type": "ContactPoint",
-        "@id": " https://www.venastechnology.com/contact-us",
+        "@id": "https://www.venastechnology.com/contact-us",
         telephone: "+1-202-555-0147",
         contactType: "customer service",
         areaServed: "US",
@@ -43,7 +44,7 @@ const OrganizationSchema = () => {
       },
       {
         "@type": "ContactPoint",
-        "@id": " https://www.venastechnology.com/contact-us",
+        "@id": "https://www.venastechnology.com/contact-us",
         telephone: " +251947344248 ",
         contactType: "customer service",
         areaServed: "ET",
@@ -52,7 +53,7 @@ const OrganizationSchema = () => {
       },
       {
         "@type": "ContactPoint",
-        "@id": " https://www.venastechnology.com/contact-us",
+        "@id": "https://www.venastechnology.com/contact-us",
         telephone: "+44-20-7946-0958",
         contactType: "customer service",
         areaServed: "GB",
