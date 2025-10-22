@@ -82,8 +82,8 @@ export default function Footer() {
           <Image
             src="/footer-icon.svg"
             alt="logo"
-            width={50}
-            height={50}
+            width={100}
+            height={100}
             data-aos="fade-up"
             data-aos-duration="500"
             data-aos-delay="100"
