@@ -153,10 +153,13 @@ export default function Footer() {
             </p>
 
             {footerData.CONTACT.map((contact, index) => (
-              <CopyButton key={index} text={contact} />
+              <p key={index} className="flex items-center gap-2">
+                {contact.country && contact.country + ": "}
+                <CopyButton key={index} text={contact.contact} />
+              </p>
             ))}
             <div className="relative group">
-              <div className="text-white/70">Coming soon...</div>
+              <div className="text-white/70">UK: Coming soon...</div>
             </div>
           </div>
         </div>

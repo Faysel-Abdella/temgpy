@@ -29,5 +29,10 @@ export const footerData = {
       href: "/contact-us",
     },
   ],
-  CONTACT: ["info@venas.tech", "+251947344248", "+251947344248"],
+  CONTACT: [
+    { contact: "info@venas.tech" },
+    { country: "USA", contact: "+1 (929) 385-3116" },
+    { country: "UAE", contact: "+971 50 354 4904" },
+    { country: "ETH", contact: "+251 947344248" },
+  ],
 };
