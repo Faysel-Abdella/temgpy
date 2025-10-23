@@ -31,13 +31,14 @@ const ContactUsPage = () => {
           <div className="flex flex-col max-lg:items-center">
             <SectionShow title="Contact us" className="bg-white" />
             <p className="font-outfit xl:6xl mt-5 text-4xl font-medium lg:text-5xl max-lg:text-center">
-              Let&apos;s Transform Your Vision into Reality
+              Your Vision. Our Expertise. Let&apos;s Make It Happen.
             </p>
             <p className="mt-6 lg:mt-8 text-description text-center lg:text-justify max-lg:max-w-xl">
-              The right team changes everything. We believe technology moves us,
-              processes guide us, but people define us. Contact us to explore
-              solutions designed to deliver great service and turn big goals
-              into tangible outcomes
+              From concept to code, we help businesses build scalable, reliable,
+              and beautiful software. Whether you need a dedicated team, project
+              partnership, or full-cycle development — we&apos;re ready to
+              deliver. Contact us today and discover how the right team can
+              bring your goals to life.
             </p>
           </div>
 
@@ -51,14 +52,22 @@ const ContactUsPage = () => {
             </div>
             <div className="flex flex-col gap-4 sm:gap-2 max-lg:items-center">
               <p className="font-gilroy text-lg font-medium">Phone Address</p>
-              <div className="flex max-sm:flex-col items-center gap-2 sm:gap-12">
+              <div className="flex flex-col gap-2">
                 <div className="flex items-center gap-1">
                   <Phone size={16} />
-                  <p className=" ">+251947344248</p>
+                  <p className=" ">USA: +1 (929) 385-3116</p>
                 </div>
                 <div className="flex items-center gap-1">
                   <Phone size={16} />
-                  <p className=" ">+251954624638</p>
+                  <p className=" ">UAE: +971 50 354 4904</p>
+                </div>
+                <div className="flex items-center gap-1">
+                  <Phone size={16} />
+                  <p className=" ">ETH: +251 947 34 42 48</p>
+                </div>
+                <div className="flex items-center gap-1">
+                  <Phone size={16} />
+                  <p className=" ">UK: Coming Soon...</p>
                 </div>
               </div>
             </div>
