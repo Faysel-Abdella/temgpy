@@ -99,10 +99,6 @@ export default function RootLayout({
       <body className="flex flex-col overflow-x-hidden max-w-screen">
         {/* SEO - Schema.org */}
         <OrganizationSchema />
-
-        {/* Favicon */}
-        <link rel="icon" href="/tab-icon.svg" type="image/svg+xml" />
-
         <Navbar />
         {children}
         <Footer />
