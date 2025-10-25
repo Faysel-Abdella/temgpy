@@ -32,7 +32,7 @@ const BlogCardSkeleton = () => (
 export function BlogsGridSkeleton() {
   const count = 3;
   return (
-    <div className="grid  max-w-[1212px]   justify-start items-start  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:space-x-6 space-y-8 w-full mt-5 mb-20">
+    <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3  max-w-7xl  justify-start items-start   md:space-x-6 space-y-8 w-full mt-5 mb-20">
       {Array.from({ length: count }).map((_, index) => (
         <div key={index} className="w-full  ">
           <BlogCardSkeleton />

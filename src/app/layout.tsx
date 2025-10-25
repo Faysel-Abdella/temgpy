@@ -30,6 +30,10 @@ const inter = localFont({
 
 // Site-wide metadata with image for social previews
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.venastechnology.com"),
+  alternates: {
+    canonical: "https://www.venastechnology.com/",
+  },
   title: {
     default:
       "Best Software Development & Outsourcing Company | Venas Technologies",
@@ -99,10 +103,6 @@ export default function RootLayout({
       <body className="flex flex-col overflow-x-hidden max-w-screen">
         {/* SEO - Schema.org */}
         <OrganizationSchema />
-
-        {/* Favicon */}
-        <link rel="icon" href="/tab-icon.svg" type="image/svg+xml" />
-
         <Navbar />
         {children}
         <Footer />
