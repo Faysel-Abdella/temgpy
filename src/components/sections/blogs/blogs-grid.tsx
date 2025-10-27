@@ -24,7 +24,7 @@ export function BlogsGrid({ blogs, isSearchActive }: BlogsGridProps) {
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: -20 }}
         transition={{ duration: 0.3 }}
-        className="flex flex-wrap max-w-[1212px] justify-start items-start md:space-x-6 space-y-8 w-full mt-5 mb-20"
+        className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3  max-w-7xl justify-start items-start md:space-x-6 space-y-8 w-full mt-5 mb-20"
       >
         {blogs.length > 0
           ? blogs.map((blog, index) => (
@@ -54,7 +54,7 @@ export function BlogsGrid({ blogs, isSearchActive }: BlogsGridProps) {
                       <p className="text-lg hover:opacity-80 md:text-xl font-semibold line-clamp-3 font-gilroy leading-[27px]">
                         {blog.data.title}
                       </p>
-                      <div className="text-md hover:opacity-80 font-inter text-description mt-2 font-normal">
+                      <div className="text-md hover:opacity-80 font-inter text-description mt-2 font-normal line-clamp-2">
                         <PrismicRichText field={blog.data.short_description} />
                       </div>
                     </div>
