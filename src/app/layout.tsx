@@ -91,6 +91,10 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${gilroy.variable} ${clashgrotesk.variable} scroll-smooth`}
     >
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/logo.svg" />
+      </head>
       {/* Inject GTM scripts automatically - Google Analytics  */}
       <GoogleTagManager gtmId="G-EWPVM392NT" />
 

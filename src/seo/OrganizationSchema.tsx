@@ -22,8 +22,8 @@ const OrganizationSchema = () => {
     ],
     url: "https://www.venastechnology.com/",
     email: "info@venastechnology.com",
-    logo: "https://www.venastechnology.com/tab-icon.svg",
-    image: "https://www.venastechnology.com/tab-icon.svg",
+    logo: "https://www.venastechnology.com/logo.svg",
+    image: "https://www.venastechnology.com/logo.svg",
     description:
       "Venas Technologies is a leading software outsourcing company helping global brands turn their ideas into intelligent digital solutions.",
     sameAs: [
