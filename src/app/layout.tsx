@@ -94,10 +94,6 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/logo.svg" />
-        <meta
-          property="og:image"
-          content="https://www.venastechnology.com/logo.svg"
-        />
       </head>
       {/* Inject GTM scripts automatically - Google Analytics  */}
       <GoogleTagManager gtmId="G-EWPVM392NT" />
