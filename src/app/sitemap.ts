@@ -22,37 +22,37 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
   return [
     {
-      url: "https://venastechnology.com/",
+      url: "https://www.venastechnology.com/",
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 1,
     },
     {
-      url: "https://venastechnology.com/about-us",
+      url: "https://www.venastechnology.com/about-us",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: "https://venastechnology.com/contact-us",
+      url: "https://www.venastechnology.com/contact-us",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: "https://venastechnology.com/faq",
+      url: "https://www.venastechnology.com/faq",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: "https://venastechnology.com/blogs",
+      url: "https://www.venastechnology.com/blogs",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
-      url: "https://venastechnology.com/services",
+      url: "https://www.venastechnology.com/services",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
