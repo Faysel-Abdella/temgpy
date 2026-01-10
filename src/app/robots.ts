@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: ["/", "/about-us", "/blogs"],
       disallow: "/private/",
     },
-    sitemap: "https://venastechnology.com/sitemap.xml",
+    sitemap: "https://www.venastechnology.com/sitemap.xml",
   };
 }
