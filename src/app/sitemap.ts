@@ -5,7 +5,7 @@ import type { MetadataRoute } from "next";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const client = createClient();
   const baseUrl =
-    process.env.NEXT_PUBLIC_BASE_URL || "https://venastechnology.com";
+    process.env.NEXT_PUBLIC_BASE_URL || "https://www.venastechnology.com";
 
   const blogs = await client.getAllByType("blog");
 
