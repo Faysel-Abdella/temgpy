@@ -43,7 +43,7 @@ const ContactUsPage = () => {
       <div className="max-w-7xl container  mx-auto gap-16 lg:flex-row  flex flex-col ">
         <div className="lg:w-1/2 h-full px-4">
           <div className="flex flex-col max-lg:items-center">
-            <SectionShow title="Contact us" className="bg-white" />
+            <SectionShow title="Contact us" level="h1" className="bg-white" />
             <p className="font-outfit xl:6xl mt-5 text-4xl font-medium lg:text-5xl max-lg:text-center">
               Your Vision. Our Expertise. Let&apos;s Make It Happen.
             </p>
