@@ -11,6 +11,20 @@ import { useEffect } from "react";
 // cal.com calender integration for the booking button
 import { getCalApi } from "@calcom/embed-react";
 
+//canonical url for contact us page
+
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact Us | Venas Technology",
+  description:
+    "Get in touch with Venas Technology for custom software development, consulting, and digital solutions.",
+  alternates: {
+    canonical: "https://www.venastechnology.com/contact-us",
+  },
+};
+
+
 const ContactUsPage = () => {
   useEffect(() => {
     (async function () {
