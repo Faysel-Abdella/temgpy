@@ -31,9 +31,9 @@ const inter = localFont({
 // Site-wide metadata with image for social previews
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.venastechnology.com"),
-  alternates: {
-    canonical: "https://www.venastechnology.com/",
-  },
+  // alternates: {
+  //   canonical: "https://www.venastechnology.com/",
+  // },
   title: {
     default:
       "Best Software Development & Outsourcing Company | Venas Technologies",
