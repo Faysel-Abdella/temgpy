@@ -8,6 +8,8 @@ import Footer from "@/components/common/footer";
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
 import { Toaster } from "sonner";
+import Script from "next/script";
+
 
 import OrganizationSchema from "@/seo/OrganizationSchema";
 
@@ -59,7 +61,7 @@ export const metadata: Metadata = {
       "Best Software Development & Outsourcing Company | Venas Technologies",
     description:
       "Venas Technologies is a leading software company offering scalable custom software, AI, cloud, and outsourcing solutions to drive business growth globally",
-    url: "https://venastechnology.com",
+    // url: "https://venastechnology.com",
     type: "website",
     images: [
       {
@@ -95,8 +97,22 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/logo.svg" />
       </head>
-      {/* Inject GTM scripts automatically - Google Analytics  */}
-      <GoogleTagManager gtmId="G-EWPVM392NT" />
+      {/* Inject GTM scripts automatically - Google Analytics 
+      <GoogleTagManager gtmId="G-EWPVM392NT" /> */}
+      {/* Google tag (gtag.js) */}
+<Script
+  src="https://www.googletagmanager.com/gtag/js?id=G-EWPVM392NT"
+  strategy="afterInteractive"
+/>
+<Script id="google-analytics" strategy="afterInteractive">
+  {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-EWPVM392NT');
+  `}
+</Script>
+
 
       {/* Tidio chatbot integration */}
       <script

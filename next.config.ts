@@ -1,7 +1,8 @@
+
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  /* existing config options */
   images: {
     remotePatterns: [
       {
@@ -9,6 +10,23 @@ const nextConfig: NextConfig = {
         hostname: "images.prismic.io",
       },
     ],
+  },
+
+  // Redirect non-www to www
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "venastechnology.com", // non-www version
+          },
+        ],
+        destination: "https://www.venastechnology.com/:path*", // redirect to www
+        permanent: true, // 301 redirect
+      },
+    ];
   },
 };
 

@@ -10,6 +10,8 @@ import {
 import { Separator } from "@/components/ui/separator";
 import TechStacks from "@/components/sections/works/project-details/tech-stacks";
 
+
+
 // Generate metadata for each project dynamically
 export async function generateMetadata({
   params,

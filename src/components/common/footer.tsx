@@ -76,7 +76,7 @@ export default function Footer() {
       id="contact-us"
       className="bg-background2 border-t-2 border-stone-600/40 w-full mx-auto items-center justify-center flex flex-col text-white pt-16 md:pt-32 gap-8 pb-10 px-4"
     >
-      <FooterNewsletter />
+      {/* <FooterNewsletter /> */}
       <div className="max-w-7xl w-full relative mx-auto flex flex-col lg:flex-row justify-between gap-14">
         <div className="flex flex-col gap-8">
           <Image

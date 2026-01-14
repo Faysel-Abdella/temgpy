@@ -45,7 +45,7 @@ export default function AboutUs() {
               className="lg:w-[550px] justify-start text-background2-description text-md md:text-lg pr-5 font-normal font-inter leading-relaxed"
             >
               From software development to IT consultation, we deliver solutions
-              that drive results.consultation, we deliver high quality.
+              that drive results.
             </p>
             <div className="pl-1 text-md md:text-lg mt-3 md:mt-5 inline-flex flex-col justify-start items-start gap-3 md:gap-4">
               <div

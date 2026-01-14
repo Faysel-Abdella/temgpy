@@ -24,7 +24,7 @@ export default function WhyChooseUs() {
             data-aos-duration="600"
             className="w-full md:w-[437px] text-description text-base md:text-lg font-normal font-inter leading-relaxed">
             From software development to IT consultation, we deliver solutions
-            that drive results. Consultation, we deliver high quality.
+            that drive results. 
           </div>
         </div>
       </div>

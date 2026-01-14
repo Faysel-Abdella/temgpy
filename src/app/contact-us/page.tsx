@@ -16,13 +16,18 @@ import { getCalApi } from "@calcom/embed-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Venas Technology",
+  title: "Contact Us | Venas Technologies",
   description:
-    "Get in touch with Venas Technology for custom software development, consulting, and digital solutions.",
+    "Get in touch with Venas Technologies for custom software development, consulting, and digital solutions.",
   alternates: {
     canonical: "https://www.venastechnology.com/contact-us",
   },
+  openGraph: {
+    url: "https://www.venastechnology.com/contact-us",
+    type: "website",
+  },
 };
+
 
 
 const ContactUsPage = () => {
