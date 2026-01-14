@@ -12,22 +12,21 @@ const nextConfig: NextConfig = {
     ],
   },
 
-  // Redirect non-www to www
-  async redirects() {
-    return [
-      {
-        source: "/:path*",
-        has: [
-          {
-            type: "host",
-            value: "venastechnology.com", // non-www version
-          },
-        ],
-        destination: "https://www.venastechnology.com/:path*", // redirect to www
-        permanent: true, // 301 redirect
-      },
-    ];
-  },
+ async redirects() {
+  return [
+    {
+      source: "/:path*",
+      has: [
+        {
+          type: "host",
+          value: "venastechnology.com", // non-www
+        },
+      ],
+      destination: "https://www.venastechnology.com/:path*", // www version
+      permanent: true, // <- THIS MAKES IT 301
+    },
+  ];
+}
 };
 
 export default nextConfig;
