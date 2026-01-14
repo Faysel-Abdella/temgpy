@@ -9,8 +9,7 @@ import {
 } from "@/components/sections/works/projects-data";
 import { Separator } from "@/components/ui/separator";
 import TechStacks from "@/components/sections/works/project-details/tech-stacks";
-
- 
+import { redirect } from "next/navigation";
 
 // Generate metadata for each project dynamically
 export async function generateMetadata({
@@ -78,9 +77,21 @@ export default async function Page({
   const project: Project | undefined = getOneProject(slug);
   // console.log("projects , ", project);
 
-  if (!project) {
-    return <div>Project not found</div>;
-  }
+  // if (!project) {
+  //   return <div>Project not found</div>;
+  // }
+
+  const removedProjects = [
+  "billion-views-ai",
+  "taza-house",
+  "study-nest-app",
+];
+
+
+  if (!project || removedProjects.includes(slug)) {
+  redirect("/projects"); 
+}
+
 
   const projects = getManyProjects();
   // console.log("projects , ", projects);
