@@ -1,5 +1,7 @@
 "use client";
 
+import Canonical from "@/seo/Canonical";
+
 import SectionShow from "@/components/section-show";
 import BlogSocials from "@/components/sections/blogs/blogs-socials";
 import ContactUsForm from "@/components/sections/contact-us/ContactUsForm";
@@ -10,24 +12,6 @@ import { useEffect } from "react";
 
 // cal.com calender integration for the booking button
 import { getCalApi } from "@calcom/embed-react";
-
-//canonical url for contact us page
-
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Contact Us | Venas Technologies",
-  description:
-    "Get in touch with Venas Technologies for custom software development, consulting, and digital solutions.",
-  alternates: {
-    canonical: "https://www.venastechnology.com/contact-us",
-  },
-  openGraph: {
-    url: "https://www.venastechnology.com/contact-us",
-    type: "website",
-  },
-};
-
 
 
 const ContactUsPage = () => {
@@ -44,11 +28,13 @@ const ContactUsPage = () => {
   }, []);
 
   return (
+<>
+      <Canonical uid="contact-us" /> {/* dynamic canonical */}
     <section className=" pt-28 md:pt-32 lg:pt-40   min-h-dvh bg-gradient-to-b from-background3 via-white to-white">
       <div className="max-w-7xl container  mx-auto gap-16 lg:flex-row  flex flex-col ">
         <div className="lg:w-1/2 h-full px-4">
           <div className="flex flex-col max-lg:items-center">
-            <SectionShow title="Contact us" level="h1" className="bg-white" />
+            <SectionShow title="Contact us"  className="bg-white" />
             <p className="font-outfit xl:6xl mt-5 text-4xl font-medium lg:text-5xl max-lg:text-center">
               Your Vision. Our Expertise. Let&apos;s Make It Happen.
             </p>
@@ -128,7 +114,9 @@ const ContactUsPage = () => {
           </Button>
         </div>
       </div>
+      
     </section>
+    </>
   );
 };
 

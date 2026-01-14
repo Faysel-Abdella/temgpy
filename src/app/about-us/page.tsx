@@ -8,7 +8,7 @@ import OurTeam from "@/components/sections/about/our-team";
 import Vision from "@/components/sections/about/vision";
 import FeaturesCarousel from "@/components/common/features";
 import Partners from "@/components/sections/main/partners";
-
+import Canonical from "@/seo/Canonical";
 import React from "react";
 import ContactFooter from "@/components/common/contact-footer";
 
@@ -19,6 +19,7 @@ import AboutPageSchema from "@/seo/AboutPageSchema";
 export default function page() {
   return (
     <>
+      <Canonical uid="about-us" /> {/* dynamic canonical */}
       <AboutPageSchema />
       <main className="relative">
         <Home />

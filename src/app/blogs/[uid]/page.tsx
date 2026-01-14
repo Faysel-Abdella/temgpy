@@ -11,6 +11,7 @@ import RelatedPosts from "@/components/sections/blogs/related-posts";
 import { getHeadingId } from "@/lib/utils";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Canonical from "@/seo/Canonical";
 
 export async function generateMetadata({
   params,
@@ -105,11 +106,13 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
     });
 
   return (
-    <div className="flex flex-col gap-6 bg-background">
-      <BlogHome blog={blog} />
-      <WriterAndShare blog={blog} />
-      <Separator className="mx-auto w-full px-4 max-w-[1055px]" />
-      <ReadingBlog
+    <>
+      <Canonical uid={blog.uid} /> {/* dynamic canonical */}
+      <div className="flex flex-col gap-6 bg-background">
+        <BlogHome blog={blog} />
+        <WriterAndShare blog={blog} />
+        <Separator className="mx-auto w-full px-4 max-w-[1055px]" />
+        <ReadingBlog
         blog={blog}
         slices={blog.data.slices}
         tocSections={tocSections}
@@ -119,6 +122,8 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
       </div>
       <Subscribe />
     </div>
+    </>
+
   );
 };
 

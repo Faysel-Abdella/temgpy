@@ -8,10 +8,13 @@ import HowWeWork from "@/components/sections/services/how-we-work";
 import ServicesHero from "@/components/sections/services/services-hero";
 import WhyChooseUs from "@/components/sections/services/why-choose-us";
 import React from "react";
+import Canonical from "@/seo/Canonical";
+
 
 const ServicesPage = () => {
   return (
     <div>
+      <Canonical uid="services" /> {/* dynamic canonical */}
       <ServicesHero />
       <CoreServices />
       <SpecializedExpertise />

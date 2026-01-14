@@ -8,6 +8,7 @@ import { SliceZone } from "@prismicio/react";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import React from "react";
+import Canonical from "@/seo/Canonical";
 
 interface ServiceDetailPageProps {
   params: Promise<{ uid: string }>;
@@ -93,7 +94,10 @@ const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
     .filter((url): url is string => Boolean(url));
 
   if (service.data)
+    
     return (
+      <>
+        <Canonical uid={`services/${service.uid}`} />
       <div>
         <ServiceHeroDetail images={bannerImages} title={service.data.title!} />
         <div className="max-w-6xl px-4  mx-auto">
@@ -142,6 +146,7 @@ const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
           <OtherServices currentServiceId={uid} />
         </div>
       </div>
+      </>
     );
 };
 
