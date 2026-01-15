@@ -22,11 +22,11 @@ export const metadata: Metadata = {
     title: "Venas Technologies Blog | Innovating the Digital Future",
     description:
       "Stay ahead with Venas Technologies’s blog: Expert insights on software, AI, and cloud solutions.",
-    url: "https://venastechnology.com/blogs",
+    url: "https://www.venastechnology.com/blogs",
     type: "website",
     images: [
       {
-        url: "https://venastechnology.com/media-preview.png",
+        url: "https://www.venastechnology.com/media-preview.png",
         width: 1200,
         height: 630,
         alt: "Venas Technologies Blog Preview",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     title: "Venas Technologies Blog | Innovating the Digital Future",
     description:
       "Stay ahead with Venas Technologies’s blog: Expert insights on software, AI, and cloud solutions.",
-    images: ["https://venastechnology.com/media-preview.png"],
+    images: ["https://www.venastechnology.com/media-preview.png"],
   },
 };
 

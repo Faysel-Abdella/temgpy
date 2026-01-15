@@ -38,7 +38,7 @@ export async function generateMetadata({
   const socialImage: string =
     service.data.social_image && service.data.social_image.url
       ? service.data.social_image.url
-      : "https://venastechnology.com/media-preview.png";
+      : "https://www.venastechnology.com/media-preview.png";
 
   return {
     title,
@@ -53,7 +53,7 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      url: `https://venastechnology.com/services/${service.uid}`,
+      url: `https://www.venastechnology.com/services/${service.uid}`,
       type: "article",
       images: [
         {

@@ -19,11 +19,11 @@ export const metadata: Metadata = {
       "Venas Technologies Projects | Leading Software Development Company Portfolio",
     description:
       "See how Venas Technologies stands among leading software development companies with custom projects in AI, cloud, and scalable digital solutions",
-    url: "https://venastechnology.com/projects",
+    url: "https://www.venastechnology.com/projects",
     type: "website",
     images: [
       {
-        url: "https://venastechnology.com/media-preview.png",
+        url: "https://www.venastechnology.com/media-preview.png",
         width: 1200,
         height: 630,
         alt: "Venas Technologies Projects Preview",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
       "Venas Technologies Projects | Leading Software Development Company Portfolio",
     description:
       "See how Venas Technologies stands among leading software development companies with custom projects in AI, cloud, and scalable digital solutions",
-    images: ["https://venastechnology.com/media-preview.png"],
+    images: ["https://www.venastechnology.com/media-preview.png"],
   },
 };
 export default function RootLayout({

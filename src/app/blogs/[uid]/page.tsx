@@ -45,13 +45,13 @@ export async function generateMetadata({
     openGraph: {
       title,
       description,
-      url: `https://venastechnology.com/blogs/${blog.uid}`,
+      url: `https://www.venastechnology.com/blogs/${blog.uid}`,
       type: "article",
       images: [
         {
           url:
             blog.data.featured_image.url ||
-            "https://venastechnology.com/media-preview.png",
+            "https://www.venastechnology.com/media-preview.png",
           width: blog.data.featured_image.dimensions
             ? blog?.data.featured_image.dimensions.width
             : 1200,
@@ -68,7 +68,7 @@ export async function generateMetadata({
       description,
       images: [
         blog.data.featured_image.url ||
-          "https://venastechnology.com/media-preview.png",
+          "https://www.venastechnology.com/media-preview.png",
       ],
     },
   };

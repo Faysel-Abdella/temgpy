@@ -44,11 +44,11 @@ export async function generateMetadata({
       description:
         project.description ||
         "Check out this Venas Technologies project delivering innovative tech solutions.",
-      url: `https://venastechnology.com/projects/${slug}`,
+      url: `https://www.venastechnology.com/projects/${slug}`,
       type: "article",
       images: [
         {
-          url: "https://venastechnology.com/media-preview.png",
+          url: "https://www.venastechnology.com/media-preview.png",
           width: 1200,
           height: 630,
           alt: `${project.title} Preview`,
@@ -61,7 +61,7 @@ export async function generateMetadata({
       description:
         project.description ||
         "Check out this Venas Technologies project delivering innovative tech solutions.",
-      images: ["https://venastechnology.com/media-preview.png"],
+      images: ["https://www.venastechnology.com/media-preview.png"],
     },
   };
 }

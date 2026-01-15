@@ -23,11 +23,11 @@ export const metadata: Metadata = {
       "Our Services | Venas Technologies - Software Development & AI Solutions",
     description:
       "Explore our comprehensive services at Venas Technologies, from AI and cloud platforms to scalable custom software that drives digital transformation.",
-    url: "https://venastechnology.com/services",
+    url: "https://www.venastechnology.com/services",
     type: "website",
     images: [
       {
-        url: "https://venastechnology.com/services-preview.png",
+        url: "https://www.venastechnology.com/services-preview.png",
         width: 1200,
         height: 630,
         alt: "Venas Technologies Services Preview",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
       "Our Services | Venas Technologies -Software Development & AI Solutions",
     description:
       "Discover how Venas Technologies delivers AI, cloud, and custom software solutions to power your digital growth.",
-    images: ["https://venastechnology.com/services-preview.png"],
+    images: ["https://www.venastechnology.com/services-preview.png"],
   },
 };
 

@@ -6,9 +6,9 @@ const AboutSchema = () => {
     "@type": "AboutPage",
     "@id": "https://venas.tech/about-us/#aboutpage",
     name: "About Venas Technologies",
-    url: "https://venastechnology.com/about-us",
+    url: "https://www.venastechnology.com/about-us",
     mainEntity: {
-      "@id": "https://venastechnology.com/#organization",
+      "@id": "https://www.venastechnology.com/#organization",
     },
   };
 
