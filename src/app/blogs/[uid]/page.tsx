@@ -107,7 +107,7 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
 
   return (
     <>
-      <Canonical uid={blog.uid} /> {/* dynamic canonical */}
+      <Canonical uid={`blogs/${blog.uid}`} />
       <div className="flex flex-col gap-6 bg-background">
         <BlogHome blog={blog} />
         <WriterAndShare blog={blog} />
