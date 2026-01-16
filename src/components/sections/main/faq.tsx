@@ -12,13 +12,13 @@ const FAQ = () => {
             title="FAQ"
             className="bg-[#F4F6FF]/10 text-white outline-[#565656]"
           />
-          <h2
+          <h1
             data-aos="fade-up"
             data-aos-duration="600"
             className="mt-4 text-3xl font-extrabold font-gilroy text-background2-foreground md:text-4xl lg:text-5xl"
           >
             Frequently Asked Questions
-          </h2>
+          </h1>
           <p
             data-aos="fade-up"
             data-aos-duration="700"

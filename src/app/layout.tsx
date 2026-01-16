@@ -1,4 +1,4 @@
-import { GoogleTagManager } from "@next/third-parties/google";
+// import { GoogleTagManager } from "@next/third-parties/google";
 
 import type { Metadata } from "next";
 import "./globals.css";
@@ -8,7 +8,7 @@ import Footer from "@/components/common/footer";
 import { PrismicPreview } from "@prismicio/next";
 import { repositoryName } from "@/prismicio";
 import { Toaster } from "sonner";
-
+import Script from "next/script";
 import OrganizationSchema from "@/seo/OrganizationSchema";
 
 const gilroy = localFont({
@@ -91,9 +91,23 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/logo.svg" />
+
+         {/* Google tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-EWPVM392NT"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-EWPVM392NT');
+          `}
+        </Script>
       </head>
-      {/* Inject GTM scripts automatically - Google Analytics  */}
-      <GoogleTagManager gtmId="G-EWPVM392NT" />
+    
 
       {/* Tidio chatbot integration */}
       <script
