@@ -22,13 +22,13 @@ export default function Home() {
               title="Blog article"
               className="bg-muted/15 outline-muted/20 text-white"
             />
-            <p
+            <h1
               data-aos="fade-up"
               data-aos-duration="500"
               className="text-center font-gilroy text-background2-foreground mt-2 text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[57px] lg:leading-[90px]"
             >
               Blogs and Publications
-            </p>
+            </h1>
             <p
               data-aos="fade-up"
               data-aos-duration="700"

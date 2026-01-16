@@ -31,16 +31,13 @@ const ContactUsPage = () => {
 <>
       <Canonical uid="contact-us" /> {/* dynamic canonical */}
     <section className=" pt-28 md:pt-32 lg:pt-40   min-h-dvh bg-gradient-to-b from-background3 via-white to-white">
-      <h1 className="text-4xl lg:text-5xl font-bold text-center mb-6">
-    Contact Venas Technologies | Get in Touch with Our Team
-  </h1>
       <div className="max-w-7xl container  mx-auto gap-16 lg:flex-row  flex flex-col ">
         <div className="lg:w-1/2 h-full px-4">
           <div className="flex flex-col max-lg:items-center">
             <SectionShow title="Contact us"  className="bg-white" />
-            <p className="font-outfit xl:6xl mt-5 text-4xl font-medium lg:text-5xl max-lg:text-center">
+            <h1 className="font-outfit xl:6xl mt-5 text-4xl font-medium lg:text-5xl max-lg:text-center">
               Your Vision. Our Expertise. Let&apos;s Make It Happen.
-            </p>
+            </h1>
             <p className="mt-6 lg:mt-8 text-description text-center lg:text-justify max-lg:max-w-xl">
               From concept to code, we help businesses build scalable, reliable,
               and beautiful software. Whether you need a dedicated team, project

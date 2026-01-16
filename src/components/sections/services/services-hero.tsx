@@ -45,13 +45,13 @@ export default function ServicesHero() {
       <div className="w-full  lg:max-w-6xl mx-auto flex-col   pt-28 pb-10 px-6   lg:px-14    h-fit flex items-center justify-center ">
         <HeroSectionShow title="Quality. Speed. Trust." />
 
-        <p
+        <h1
           data-aos="fade-up"
           data-aos-duration="600"
           className="font-clashgrotesk mt-8  flex flex-wrap font-semibold text-3xl md:text-5xl  lg:text-6xl xl:text-7xl text-center"
         >
           Software That Scales. Partnerships That Last.{" "}
-        </p>
+        </h1>
         <div
           data-aos="fade-up"
           data-aos-duration="700"

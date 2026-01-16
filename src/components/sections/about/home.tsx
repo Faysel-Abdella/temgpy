@@ -12,9 +12,9 @@ export default function Home() {
         <SectionShow title="More About Us" className="bg-white" />
         <div className=" flex  mt-6  items-stretch max-lg:gap-5 max-lg:flex-col">
           <div className="flex flex-col w-full lg:w-4/5   gap-6 ">
-            <p className="w-full justify-start mt-3 max-lg:text-center text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold font-gilroy lg:pr-10 ">
+            <h1 className="w-full justify-start mt-3 max-lg:text-center text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold font-gilroy lg:pr-10 ">
               Expertise for Every Step of Your Digital Journey
-            </p>
+            </h1>
 
             <div className=" lg:pr-6 justify-start max-lg:text-center text-description  md:text-lg lg:max-w-2xl xl:max-w-4xl font-normal font-inter leading-relaxed">
               Venas Technologies is a leading tech company serving clients
