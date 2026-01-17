@@ -76,7 +76,7 @@ export default function Hero() {
             data-aos-duration="600"
             className="font-clashgrotesk mt-8  flex flex-wrap font-semibold text-3xl md:text-5xl  lg:text-6xl xl:text-7xl text-center"
           >
-            
+            Grow your business with scalable software solutions
           </p>
           <div
             data-aos="fade-up"
