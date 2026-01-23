@@ -33,13 +33,13 @@ const FAQPage = () => {
         <div className="container mx-auto max-w-7xl px-4">
           <div className="mx-auto  max-w-3xl text-center">
             <SectionShow title="FAQs" className="bg-white" />
-            <h2
+            <h1
               data-aos="fade-up"
               data-aos-duration="600"
               className="mt-6 text-3xl font-extrabold font-gilroy text-foreground md:text-4xl lg:text-5xl"
             >
               Frequently Asked Questions
-            </h2>
+            </h1>
             <p
               data-aos="fade-up"
               data-aos-duration="700"
