@@ -33,12 +33,13 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.venastechnology.com"),
   title: {
     default:
-      "Best Software Development & Outsourcing Company | Venas Technologies",
+      "Software Development Company in Ethiopia | Venas Technologies",
     template: "%s | Venas Technologies",
   },
   description:
     "Venas Technologies is a leading software company offering scalable custom software, AI, cloud, and outsourcing solutions to drive business growth globally",
   keywords: [
+    "software development company in Ethiopia",
     "custom software development",
     "AI solutions",
     "cloud technology",
@@ -47,13 +48,14 @@ export const metadata: Metadata = {
     "tech talent solutions",
     "digital platforms",
     "AI automation",
+    "Venas Technologies",
     "enterprise software solutions",
     "scalable software solutions",
   ],
   robots: "index, follow",
   openGraph: {
     title:
-      "Best Software Development & Outsourcing Company | Venas Technologies",
+      "Software Development Company in Ethiopia | Venas Technologies",
     description:
       "Venas Technologies is a leading software company offering scalable custom software, AI, cloud, and outsourcing solutions to drive business growth globally",
     url: "https://venastechnology.com",
@@ -71,7 +73,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "Best Software Development & Outsourcing Company | Venas Technologies",
+      "Software Development Company in Ethiopia | Venas Technologies",
     description:
       "Venas Technologies is a leading software company offering scalable custom software, AI, cloud, and outsourcing solutions to drive business growth globally",
     images: ["https://venastechnology.com/media-preview.png"],

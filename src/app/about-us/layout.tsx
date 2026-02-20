@@ -22,7 +22,7 @@ export const metadata: Metadata = {
       "About Venas Technologies | Software Development & Outsourcing Company",
     description:
       "Discover Venas Technologies, a trusted software and AI solutions company delivering custom software, cloud platforms, and tech talent to empower businesses globally.",
-    url: "https://www.venastechnology.com/about",
+    url: "https://www.venastechnology.com/about-us",
     type: "website",
     images: [
       {
