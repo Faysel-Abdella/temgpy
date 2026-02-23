@@ -71,4 +71,11 @@ export const services: Service[] = [
     description:
       "Showcase properties with advanced search, filtering, and management tools that simplify buying, selling, or renting.",
   },
+  {
+    id: "service-11",
+    image: "/services/Top-Software-development-Company.webp",
+    title: "Custom Software Development Services",
+    description:
+      "Professional custom software development services for global businesses.",
+  },
 ];
