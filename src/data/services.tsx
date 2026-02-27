@@ -78,4 +78,11 @@ export const services: Service[] = [
     description:
       "Professional custom software development services for global businesses.",
   },
+  {
+    id: "service-12",
+    image: "/services/web-development-services.png",
+    title: "Website Development Services",
+    description:
+      "Reliable web development services for businesses looking to build modern, scalable, and user-friendly websites that drive growth and strengthen their online presence.",
+  },
 ];
