@@ -9,7 +9,7 @@ import Canonical from "@/seo/Canonical";
 export default function Home() {
   return (
     <>
-    <Canonical uid="" /> {/* rest of homepage */}
+    {/* <Canonical uid="" />  */}
     <main className="w-screen h-fit flex items-center pb-10 justify-center pt-28 md:pt-32 lg:pt-42 bg-gradient-to-b from-indigo-50 to-white">
       <div className="w-full p-4  lg:max-w-7xl  h-fit flex flex-col max-lg:items-center ">
         <SectionShow title="More About Us" className="bg-white" />

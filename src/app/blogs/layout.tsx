@@ -4,7 +4,7 @@ import React from "react";
 
 // Blog-section-wide metadata
 export const metadata: Metadata = {
-  title: "Venas Technologies Blog | Insights on Digital Transformation",
+  title: "Blog | Insights on Digital Transformation",
   description:
     "Explore the Venas Technologies Blog for insights, tips, and updates on custom software, AI solutions, cloud platforms, and digital transformation from a leading tech innovator.",
   keywords: [
