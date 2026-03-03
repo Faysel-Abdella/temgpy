@@ -12,6 +12,7 @@ import HeroSectionShow from "./hero-section-show";
 
 // cal.com calender integration for the booking button
 import { getCalApi } from "@calcom/embed-react";
+import Canonical from "@/seo/Canonical";
 
 export default function Hero() {
   useEffect(() => {
@@ -37,6 +38,7 @@ export default function Hero() {
   }, []);
 
   return (
+    <><Canonical uid="" />
     <main
       className="w-screen relative  bg-gradient-to-b from-background3 via-background3 to-white "
       id="home"
@@ -121,5 +123,7 @@ export default function Hero() {
       </div>
       <HeroPartners />
     </main>
+    </>
   );
 }
+
